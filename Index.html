@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Rotation Study Calendar — Aug 2026 to Aug 2028</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PM Mega-Cycle Study Calendar — Sep 2026 to Sep 2028</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -12,18 +13,16 @@
     --ink:#22231E;
     --ink-soft:#6B6A63;
     --line:#E2E0D7;
-    --js:#C8912A;
-    --js-bg:#FBF0DB;
-    --dsa:#5B5FE9;
-    --dsa-bg:#EAEAFC;
     --pm:#1C8F6E;
     --pm-bg:#E1F3EC;
+    --js:#C8912A;
+    --js-bg:#FBF0DB;
     --ai:#D8467E;
     --ai-bg:#FBE6EE;
+    --dsa:#5B5FE9;
+    --dsa-bg:#EAEAFC;
     --bus:#35618E;
     --bus-bg:#E2ECF6;
-    --uiux:#9B4FD6;
-    --uiux-bg:#F2E7FB;
     --da:#1C93A6;
     --da-bg:#DEF4F7;
     --comm:#D9633C;
@@ -54,7 +53,7 @@
     margin:0 0 6px;
     letter-spacing:-.01em;
   }
-  .sub{color:var(--ink-soft);font-size:14.5px;line-height:1.5;max-width:640px;}
+  .sub{color:var(--ink-soft);font-size:14.5px;line-height:1.5;max-width:660px;}
 
   .phases{
     display:grid;
@@ -76,7 +75,7 @@
     display:flex;
     flex-wrap:wrap;
     gap:10px;
-    margin:0 0 26px;
+    margin:0 0 12px;
   }
   .tag{
     display:flex;align-items:center;gap:7px;
@@ -87,10 +86,20 @@
     background:var(--card);
   }
   .dot{width:9px;height:9px;border-radius:50%;}
-  .dot.js{background:var(--js);} .dot.dsa{background:var(--dsa);}
-  .dot.pm{background:var(--pm);} .dot.ai{background:var(--ai);}
-  .dot.bus{background:var(--bus);} .dot.uiux{background:var(--uiux);}
-  .dot.da{background:var(--da);} .dot.comm{background:var(--comm);}
+  .dot.pm{background:var(--pm);} .dot.js{background:var(--js);}
+  .dot.ai{background:var(--ai);} .dot.dsa{background:var(--dsa);}
+  .dot.bus{background:var(--bus);} .dot.da{background:var(--da);}
+  .dot.comm{background:var(--comm);}
+
+  .cycle-strip{
+    display:flex;flex-wrap:wrap;gap:6px;
+    margin:0 0 26px;
+    font-family:'Space Grotesk',sans-serif;
+    font-size:11px;font-weight:600;color:var(--ink-soft);
+  }
+  .cycle-strip span{
+    padding:5px 9px;border-radius:6px;border:1px solid var(--line);background:var(--card);
+  }
 
   #jump{
     margin-bottom:24px;
@@ -151,12 +160,11 @@
   }
   .cell .topic{font-size:11px;line-height:1.25;color:var(--ink);opacity:.85;}
 
-  .cell.js{background:var(--js-bg);} .cell.js .subj{background:var(--js);color:#fff;}
-  .cell.dsa{background:var(--dsa-bg);} .cell.dsa .subj{background:var(--dsa);color:#fff;}
   .cell.pm{background:var(--pm-bg);} .cell.pm .subj{background:var(--pm);color:#fff;}
+  .cell.js{background:var(--js-bg);} .cell.js .subj{background:var(--js);color:#fff;}
   .cell.ai{background:var(--ai-bg);} .cell.ai .subj{background:var(--ai);color:#fff;}
+  .cell.dsa{background:var(--dsa-bg);} .cell.dsa .subj{background:var(--dsa);color:#fff;}
   .cell.bus{background:var(--bus-bg);} .cell.bus .subj{background:var(--bus);color:#fff;}
-  .cell.uiux{background:var(--uiux-bg);} .cell.uiux .subj{background:var(--uiux);color:#fff;}
   .cell.da{background:var(--da-bg);} .cell.da .subj{background:var(--da);color:#fff;}
   .cell.comm{background:var(--comm-bg);} .cell.comm .subj{background:var(--comm);color:#fff;}
 
@@ -168,7 +176,7 @@
   .overlay.show{display:flex;}
   .modal{
     background:var(--card);
-    max-width:520px;width:100%;
+    max-width:540px;width:100%;
     border-radius:16px;
     padding:26px 26px 22px;
     max-height:86vh;overflow-y:auto;
@@ -199,32 +207,80 @@
   }
   .close:hover{background:var(--line);}
   footer{margin-top:30px;font-size:12px;color:var(--ink-soft);text-align:center;}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 860px){
+    .phases{grid-template-columns:repeat(2,1fr);}
+  }
+
+  @media (max-width: 700px){
+    body{padding:20px 14px 48px;}
+    h1{font-size:27px;}
+    .sub{font-size:13.5px;}
+    .cell{min-height:66px;padding:7px 7px 6px;border-radius:9px;}
+    .cell .num{font-size:12px;}
+    .cell .subj{font-size:9px;padding:2px 5px;}
+    .cell .topic{font-size:10px;-webkit-line-clamp:3;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden;}
+    .grid{gap:4px;}
+    .wd{font-size:9.5px;}
+    .month h2{font-size:17px;}
+  }
+
+  @media (max-width: 520px){
+    .phases{grid-template-columns:1fr 1fr;}
+    .phase .p-goal{font-size:11.5px;}
+    .legend{gap:7px;}
+    .tag{font-size:11.5px;padding:5px 10px;}
+    .cycle-strip{font-size:10px;gap:5px;}
+    .cycle-strip span{padding:4px 7px;}
+    .cell{min-height:58px;padding:6px 6px 5px;}
+    .cell .num{font-size:11px;}
+    .cell .subj{font-size:8.5px;letter-spacing:.02em;}
+    .cell .topic{font-size:9.5px;line-height:1.2;-webkit-line-clamp:2;}
+    .grid{gap:3px;}
+    .wd{font-size:8.5px;letter-spacing:0;}
+    #jump a{font-size:10.5px;padding:4px 8px;}
+    .modal{padding:20px 18px 18px;border-radius:14px;max-height:90vh;}
+    .modal h3{font-size:18px;}
+    .modal .date-line{font-size:11.5px;margin-bottom:14px;}
+    .block .desc{font-size:13px;}
+    .close{width:28px;height:28px;top:12px;right:12px;}
+  }
+
+  @media (max-width: 380px){
+    .phases{grid-template-columns:1fr;}
+    .cell .topic{display:none;}
+    .cell{min-height:44px;flex-direction:row;align-items:center;justify-content:space-between;}
+  }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <div class="eyebrow">One track a day · 2.5 hrs deep focus · 730 days</div>
-    <h1>Rotation Study Calendar</h1>
-    <div class="sub">Aug 17–24: unchanged — JS → DSA → PM → AI every 4 days. From Aug 25: Business, UI/UX and Data Analytics join the rotation as full 2.5-hr days of their own, and Communication gets a dedicated day roughly once a month. JS also switches gears — from Aug 25 it's pure implementation, building real websites 0 to hero, since the basics are already covered. Tap any day for the full plan.</div>
+    <div class="eyebrow">10-day mega-cycle · 2.5 hrs deep focus · 730 days · restarted Sep 10, 2026</div>
+    <h1>AI-Expert PM Study Calendar</h1>
+    <div class="sub">The 10-day cycle repeats for all 730 days: PM → JS → PM → AI → PM → DSA → PM → Business → Communication (teach the week back) → Data Analytics. PM carries 50% of the load, technical tracks (JS/AI/DSA/Business/Data) carry 40%, and Day 9 of every cycle is a teaching day where you explain the last week's concepts out loud. Topics deepen every time a track loops back around — later passes go further than earlier ones. Tap any day for the full plan.</div>
   </header>
 
   <div class="phases">
-    <div class="phase"><div class="p-label">Phase 1 · Foundation</div><div class="p-range">Aug 2026 – Jan 2027</div><div class="p-goal">Core fundamentals across all 4 tracks.</div></div>
-    <div class="phase"><div class="p-label">Phase 2 · Depth</div><div class="p-range">Feb 2027 – Jul 2027</div><div class="p-goal">Backends, advanced DSA, ship project 1.</div></div>
-    <div class="phase"><div class="p-label">Phase 3 · Integration</div><div class="p-range">Aug 2027 – Jan 2028</div><div class="p-goal">React, system design, ship project 2.</div></div>
-    <div class="phase"><div class="p-label">Phase 4 · Mastery</div><div class="p-range">Feb 2028 – Aug 2028</div><div class="p-goal">Polish, interviews, portfolio complete.</div></div>
+    <div class="phase"><div class="p-label">Phase 1 · PM Foundation</div><div class="p-range">Sep 10 – Nov 18, 2026</div><div class="p-goal">Strategy, research, market analysis. JS/AI/DSA basics. Business & Data Analytics intro.</div></div>
+    <div class="phase"><div class="p-label">Phase 2 · PM Intermediate</div><div class="p-range">Nov 19, 2026 – Jan 27, 2027</div><div class="p-goal">PRDs, roadmapping, metrics. React thinking, prompting. Build AI product idea #1.</div></div>
+    <div class="phase"><div class="p-label">Phase 3 · PM Integration</div><div class="p-range">Jan 28 – Apr 7, 2027</div><div class="p-goal">GTM, stakeholder mgmt, RAG & production AI. Build AI product #2 (real MVP).</div></div>
+    <div class="phase"><div class="p-label">Phase 4 · PM Mastery</div><div class="p-range">Apr 8, 2027 – Sep 8, 2028</div><div class="p-goal">Leadership, negotiation, scaling, fundraising. Deepening rounds on every track.</div></div>
   </div>
 
   <div class="legend">
+    <div class="tag"><span class="dot pm"></span>Product Management</div>
     <div class="tag"><span class="dot js"></span>JavaScript</div>
-    <div class="tag"><span class="dot dsa"></span>DSA</div>
-    <div class="tag"><span class="dot pm"></span>Product Mgmt</div>
     <div class="tag"><span class="dot ai"></span>AI Fundamentals</div>
+    <div class="tag"><span class="dot dsa"></span>DSA (evaluation-level)</div>
     <div class="tag"><span class="dot bus"></span>Business</div>
-    <div class="tag"><span class="dot uiux"></span>UI/UX Design</div>
     <div class="tag"><span class="dot da"></span>Data Analytics</div>
-    <div class="tag"><span class="dot comm"></span>Communication (~monthly)</div>
+    <div class="tag"><span class="dot comm"></span>Communication (teach-back)</div>
+  </div>
+
+  <div class="cycle-strip">
+    <span>Day 1 PM</span><span>Day 2 JS</span><span>Day 3 PM</span><span>Day 4 AI</span><span>Day 5 PM</span><span>Day 6 DSA</span><span>Day 7 PM</span><span>Day 8 Business</span><span>Day 9 Communication</span><span>Day 10 Data Analytics</span>
   </div>
 
   <div id="jump"></div>
@@ -240,19 +296,19 @@
 
 <script>
 const SUBJECTS = {
-  JS:   {name:"JavaScript",       key:"js"},
-  DSA:  {name:"Data Structures & Algorithms", key:"dsa"},
   PM:   {name:"Product Management", key:"pm"},
-  AI:   {name:"AI Fundamentals",  key:"ai"},
-  BUS:  {name:"Business",         key:"bus"},
-  UIUX: {name:"UI/UX Design",     key:"uiux"},
-  DA:   {name:"Data Analytics",   key:"da"},
-  COMM: {name:"Communication",    key:"comm"}
+  JS:   {name:"JavaScript",         key:"js"},
+  AI:   {name:"AI Fundamentals",    key:"ai"},
+  DSA:  {name:"Data Structures & Algorithms", key:"dsa"},
+  BUS:  {name:"Business",           key:"bus"},
+  DA:   {name:"Data Analytics",     key:"da"},
+  COMM: {name:"Communication",      key:"comm"}
 };
-const OLD_ORDER = ["JS","DSA","PM","AI"];
-const NEW_ORDER = ["JS","DSA","PM","AI","BUS","UIUX","DA"];
 
-// ---------- Hand-written detailed topics (first 14 sessions of each track) ----------
+// The 10-day mega-cycle pattern. Repeats unchanged for all 730 days.
+const PATTERN = ["PM","JS","PM","AI","PM","DSA","PM","BUS","COMM","DA"];
+
+// ---------- Hand-written detailed topics (first sessions of each track) ----------
 const DETAILED = {
 JS: [
 {t:"Variables, Data Types & Operators",
@@ -328,15 +384,15 @@ JS: [
 ],
 DSA: [
 {t:"Big O Notation",
- learn:"O(1), O(n), O(n²), O(log n) with concrete examples of each.",
+ learn:"O(1), O(n), O(n²), O(log n) with concrete examples of each — read as a PM would: what to ask an engineer, not what to implement.",
  practice:"Classify the time complexity of 10 short code snippets on paper first, then verify.",
  build:"Write 3 tiny functions that clearly demonstrate O(1), O(n), and O(n²) behavior.",
- review:"Explain Big O to a total beginner in 3 sentences, no jargon."},
+ review:"Explain Big O to a total beginner in 3 sentences, no jargon — this is the version you'll use in a standup."},
 {t:"Array Operations & Complexity",
  learn:"push/pop/shift/unshift and the real time complexity behind each.",
  practice:"Implement push/pop/shift/unshift manually, without using the built-ins.",
  build:"Time-test shift() vs push() on a 10,000-item array and compare the speed gap.",
- review:"Note why shift/unshift are O(n) while push/pop are O(1)."},
+ review:"Note why shift/unshift are O(n) while push/pop are O(1) — and why an engineer might push back on a 'simple' feature request because of this."},
 {t:"String Operations & Complexity",
  learn:"String immutability in JS and the complexity of common string operations.",
  practice:"Reverse a string 3 different ways: loop, recursion, and a built-in method.",
@@ -376,14 +432,14 @@ DSA: [
  learn:"What a heap is and how the heapify process works.",
  practice:"Build a max-heap from an array by hand, then implement heap sort.",
  build:"Use your heap sort logic to pull the top-5 largest values from a dataset.",
- review:"Note one real use of heaps beyond sorting (hint: priority queues)."},
+ review:"Note one real use of heaps beyond sorting (hint: priority queues, ranking feeds)."},
 {t:"Counting Sort & Radix Sort",
  learn:"Non-comparison sorting and when it applies (bounded integer ranges).",
  practice:"Implement counting sort on an array of ages between 0–100.",
  build:"Implement radix sort on a list of 4-digit numbers.",
  review:"Note why these sorts can beat O(n log n) in the right situations."},
 {t:"Sorting Comparison & Recap",
- learn:"Revisit every sort covered across the last two weeks.",
+ learn:"Revisit every sort covered so far.",
  practice:"Build a table: best/avg/worst time, space used, and stability for each sort.",
  build:"Write one function that picks a 'best' sort based on input size and type.",
  review:"Pick your favorite sorting algorithm and justify the choice in 2 sentences."},
@@ -399,36 +455,41 @@ DSA: [
  review:"Rate your confidence 1–10 on every algorithm covered; flag what to revisit."}
 ],
 PM: [
-{t:"What is PM? PM vs Project Management",
- learn:"What a Product Manager actually owns, and how that differs from project management.",
+{t:"What is PM? Product Strategy & Vision Basics",
+ learn:"What a Product Manager actually owns, and how strategy differs from a to-do list of features.",
  practice:"Write a 1-page comparison of PM vs Project Manager responsibilities.",
- build:"List 5 decisions you'd make differently as a PM than as a project manager.",
+ build:"Draft a one-paragraph 'vision statement' for an AI product idea of your own.",
  review:"Define 'Product Manager' in your own words, with zero jargon."},
-{t:"Product Development Lifecycle",
- learn:"The Idea → Development → Growth → Maturity → Decline stages.",
+{t:"Product Development Lifecycle & Frameworks",
+ learn:"The Idea → Development → Growth → Maturity → Decline stages, plus a first look at strategy frameworks (Vision → Strategy → Roadmap → Backlog).",
  practice:"Draw and label the full lifecycle using a real product you know well.",
  build:"Map an AI product (e.g. ChatGPT) onto each stage of the lifecycle.",
  review:"Note how a PM's priorities shift at each stage of the lifecycle."},
-{t:"Idea Generation Techniques",
- learn:"Brainstorming frameworks: SCAMPER and 'How Might We' questions.",
- practice:"Brainstorm 10 product problems you personally run into day to day.",
- build:"Pick your top 3 ideas and write a 2-sentence pitch for each.",
- review:"Note which technique generated your strongest ideas and why."},
-{t:"User Research Intro",
- learn:"Qualitative vs quantitative research, and interview basics.",
- practice:"Design 8 user research questions for an AI chatbot product.",
+{t:"User Research Intro: Jobs To Be Done",
+ learn:"Qualitative vs quantitative research, and the Jobs To Be Done framework (functional, emotional, social jobs).",
+ practice:"Design 8 user research questions for an AI chatbot product, framed around JTBD.",
  build:"Run a mock 10-minute interview with a friend or family member using your questions.",
  review:"Note 2 things that surprised you from the mock interview."},
+{t:"User Research Methods: Interviews & Surveys",
+ learn:"How to structure an unbiased interview, and when a survey beats an interview.",
+ practice:"Write 10 interview questions and 5 survey questions for the same research goal — compare what each reveals.",
+ build:"Run one real interview (5–10 min) with someone outside your household and write up the findings.",
+ review:"Note one leading question you almost asked, and how you fixed it."},
 {t:"Market Analysis Basics",
  learn:"Market sizing basics: TAM, SAM, SOM.",
  practice:"Pick a product you use daily and roughly estimate its TAM/SAM/SOM.",
  build:"Write a half-page market analysis for a hypothetical AI note-taking app.",
  review:"Note the single biggest uncertainty in your market-size estimate."},
-{t:"Competitive Analysis",
+{t:"Competitive Landscape Analysis",
  learn:"How to structure a clear competitor comparison.",
  practice:"Build a table comparing 4 AI chatbots on features, pricing, strengths, weaknesses.",
  build:"Identify one real gap that none of the 4 competitors currently address.",
  review:"Note which competitor would worry you most if you were building this product."},
+{t:"Ideation: Blue Ocean & SCAMPER",
+ learn:"Blue Ocean Strategy (compete where there's no competition) and the SCAMPER brainstorming technique.",
+ practice:"Run SCAMPER on an existing AI product to generate 7 new feature ideas.",
+ build:"Pick your top 3 ideas and write a 2-sentence pitch for each, framed in Blue Ocean terms.",
+ review:"Note which technique generated your strongest ideas and why."},
 {t:"Value Proposition Deep Dive",
  learn:"The value proposition canvas: pains, gains, jobs.",
  practice:"Write value propositions for 2 products — one AI-based, one traditional.",
@@ -439,11 +500,6 @@ PM: [
  practice:"Create 2 detailed personas for an AI product of your choice.",
  build:"Write a 'day in the life' scenario for each persona.",
  review:"Note how these two personas would actually use your product differently."},
-{t:"Jobs To Be Done (JTBD)",
- learn:"The functional, emotional, and social jobs framework.",
- practice:"Define 3 jobs (one of each type) for an AI product.",
- build:"Rewrite one feature description in JTBD language: 'when I ___, I want to ___, so I can ___.'",
- review:"Note how JTBD thinking differs from persona-based thinking."},
 {t:"Product Positioning",
  learn:"How a positioning statement is structured, and what makes differentiation real.",
  practice:"Write a 1-page positioning statement for an AI product.",
@@ -459,13 +515,13 @@ PM: [
  practice:"Take 12 feature ideas and sort every one into a MoSCoW bucket.",
  build:"Justify in one sentence why each 'Must Have' actually earned that label.",
  review:"Recall a time you saw a 'Should Have' get over-prioritized in real life."},
-{t:"Recap: Foundations (Week 1)",
- learn:"Revisit lifecycle, idea generation, user research, and market analysis.",
+{t:"Recap: Strategy & Research Foundations",
+ learn:"Revisit lifecycle, JTBD, user research, market analysis, and competitive analysis.",
  practice:"Write down 5 concepts learned so far plus 3 open questions.",
  build:"Apply one of these concepts directly to a product idea of your own.",
  review:"Rate your confidence 1–10 on explaining each concept to someone else."},
-{t:"Recap: Strategy Toolkit (Week 2)",
- learn:"Revisit value prop, personas, JTBD, positioning, PRDs, and prioritization.",
+{t:"Recap: Positioning & Prioritization Toolkit",
+ learn:"Revisit value prop, personas, positioning, PRDs, and prioritization.",
  practice:"Write 5 more concepts, each with a note on how it applies to AI products.",
  build:"Draft a mini one-page product brief that combines 3+ of these concepts.",
  review:"Identify your weakest PM concept so far, and why it hasn't clicked yet."}
@@ -480,7 +536,7 @@ AI: [
  learn:"What tokens are, and how context windows limit a conversation.",
  practice:"Count tokens in 5 sample prompts using an online tokenizer.",
  build:"Test what happens when you push a conversation past a small model's context limit.",
- review:"Note why token limits matter for both cost and performance."},
+ review:"Note why token limits matter for both cost and performance — this is a PM-relevant constraint."},
 {t:"Temperature, Top-p & Max Tokens",
  learn:"How each sampling parameter shapes model output.",
  practice:"Run the same prompt at temperature 0, 0.7, and 1.2 — compare the outputs.",
@@ -496,11 +552,11 @@ AI: [
  practice:"Write one prompt with examples and one without, for the exact same task.",
  build:"Use few-shot examples to get reliably consistent JSON-formatted output.",
  review:"Note when few-shot examples help most — usually format-sensitive tasks."},
-{t:"Prompt Anatomy Deep Dive",
- learn:"The 4 components of a strong prompt: role, instruction, context, format.",
- practice:"Dissect one complex prompt and label each of its 4 components.",
- build:"Write your own 4-part prompt from scratch for a real task you actually need done.",
- review:"Note which component you tend to skip most often — and why."},
+{t:"Chain-of-Thought Prompting",
+ learn:"How chain-of-thought prompting improves multi-step reasoning.",
+ practice:"Compare a plain prompt vs a CoT prompt on the same math or logic problem.",
+ build:"Apply chain-of-thought prompting to a real problem you're actually working on.",
+ review:"Note when CoT genuinely helps vs when it's unnecessary overhead."},
 {t:"System Prompts & Role-Playing",
  learn:"How a system prompt shapes a model's behavior and tone.",
  practice:"Write one system prompt and test it against 3 different user queries.",
@@ -510,12 +566,7 @@ AI: [
  learn:"Why hallucinations happen and the common failure modes behind them.",
  practice:"Ask the model 5 tricky questions specifically designed to trigger a hallucination.",
  build:"Write a prompt strategy that reduces hallucination risk (ask for sources, ask for uncertainty).",
- review:"Note 2 domains where you'd never trust an unverified AI answer."},
-{t:"Chain-of-Thought Prompting",
- learn:"How chain-of-thought prompting improves multi-step reasoning.",
- practice:"Compare a plain prompt vs a CoT prompt on the same math or logic problem.",
- build:"Apply chain-of-thought prompting to a real problem you're actually working on.",
- review:"Note when CoT genuinely helps vs when it's unnecessary overhead."},
+ review:"Note 2 domains where you'd never trust an unverified AI answer — this becomes a product risk list."},
 {t:"Prompt Engineering Frameworks",
  learn:"Overview of structured frameworks like RTF and CRISPE.",
  practice:"Test one framework on a real task and document exactly how you structured it.",
@@ -526,7 +577,7 @@ AI: [
  practice:"Run the same prompt on 2–3 different models and compare output quality.",
  build:"Write a short 'when to use which model' cheat sheet based on your own tests.",
  review:"Note the single biggest quality difference you observed between models."},
-{t:"Use Case Analysis",
+{t:"Use Case Analysis Across Industries",
  learn:"How AI is being applied across different industries today.",
  practice:"Pick one domain (healthcare, finance, education) and list 5 concrete AI use cases.",
  build:"Pick your favorite use case and sketch a rough product concept around it.",
@@ -536,6 +587,11 @@ AI: [
  practice:"Generate embeddings for 5 sentences and compare their similarity scores.",
  build:"Build a tiny 'find the most similar sentence' demo using cosine similarity.",
  review:"Note one product idea that embeddings could power."},
+{t:"Function Calling / Tool Use Basics",
+ learn:"How models call external tools and functions, and why this matters for real products.",
+ practice:"Design a simple tool schema (name, params, description) for a weather-lookup tool.",
+ build:"Sketch a mini agent flow: user question → tool call → tool result → final answer.",
+ review:"Note one feature in an app you use that's probably a tool-call under the hood."},
 {t:"End-to-End Prompt Engineering Workflow",
  learn:"Review the full workflow: role + instruction + example + format, combined.",
  practice:"Design one complete, production-quality prompt using all 4 elements together.",
@@ -544,36 +600,27 @@ AI: [
 ]
 };
 
-// ---------- Extended curriculum titles (sessions 15 onward), by phase ----------
+// ---------- Extended curriculum titles (sessions beyond the hand-written ones) ----------
 const EXTRA_TITLES = {
-JS: ["ES6+ Modules (import/export)","Closures","Higher-Order Functions","Functional Programming Basics","OOP in JS: Classes & Constructors","Prototypes & Inheritance","The `this` Keyword & Binding","Generators & Iterators","Map & Set Data Structures","Date & Math Objects","Immutability & Pure Functions","Currying & Function Composition","Memoization","Recursion in JavaScript","The Event Loop & Call Stack","Microtasks vs Macrotasks","DOM Selection & Traversal","DOM Manipulation & Rendering","Event Listeners & Event Object","Event Delegation","Forms & Input Validation","localStorage & sessionStorage","Browser APIs Overview","AbortController & Fetch Cancellation","Debugging with DevTools","Code Quality & ESLint","Unit Testing Basics (Jest)","Mocking in Tests","Git Basics for JS Projects","npm & package.json","Module Bundlers (Webpack/Vite) Overview","CommonJS vs ES Modules","Node.js Fundamentals","The Node.js Module System","Building a REST API with Express","Express Routing","Express Middleware","Connecting to a Database (MongoDB/Postgres)","CRUD Operations End-to-End","Authentication Basics (JWT)","Environment Variables & Config","Error Handling in Express Apps","RESTful API Design Principles","Building a Full Backend Service","Testing APIs with Postman/curl","Rate Limiting Basics","CORS Explained","Deploying a Node App","Logging & Monitoring Basics","Caching Strategies","WebSockets Introduction","Real-Time Features with Sockets","GraphQL Introduction","GraphQL vs REST","Building a GraphQL API","ORMs (Prisma/Sequelize) Basics","Database Schema Design","Migrations & Seeding","Connecting Frontend to Backend","Loading & Error State Patterns","Full CRUD App: End-to-End Build","Backend Performance Profiling","Security Basics: SQL Injection & XSS","Input Sanitization","Background Jobs & Queues Intro","React Fundamentals & JSX","Props & State","The useState Hook","The useEffect Hook","Component Lifecycle in React","Conditional Rendering & Lists","Forms in React (Controlled Inputs)","Custom Hooks","The Context API","useReducer & State Patterns","React Router Basics","Fetching Data in React","Component Composition Patterns","Performance: useMemo & useCallback","Testing React (React Testing Library)","Multi-Page React App Build","Connecting React to Your Backend","Authentication in React Apps","Protected Routes","Deploying a React App","Styling: CSS Modules & Tailwind","Component Libraries Overview","Accessibility Basics in React","Responsive Design Patterns","Animation Basics (Framer Motion)","Full-Stack Project Architecture","CI Basics for Frontend","Error Boundaries","Code Splitting & Lazy Loading","SEO Basics for SPAs","State Persistence Patterns","Optimistic UI Updates","WebSocket Integration in React","Real-Time Chat Feature Build","File Upload Handling","Image Optimization","Form Libraries (React Hook Form)","Validation Libraries (Zod)","Building a Dashboard UI","Data Visualization Basics","Building a Settings/Profile Page","TypeScript Basics","Types & Interfaces","Generics Introduction","Typing React Components","Typing API Responses","Advanced Types (Union/Intersection)","TypeScript in a Node Backend","Migrating JS to TypeScript","Design Patterns: Singleton & Factory","Design Patterns: Observer & Module","Clean Code Principles","Refactoring Techniques","Performance Optimization Deep Dive","Bundle Size Optimization","Memory Leaks & Debugging","Browser Rendering Pipeline","Web Vitals & Performance Metrics","Accessibility Deep Dive (ARIA)","Testing Strategy: Unit vs Integration vs E2E","E2E Testing (Playwright/Cypress)","CI/CD Pipeline Basics","Docker Basics for JS Apps","Production Deployment Checklist","Monitoring & Error Tracking (Sentry)","System Design for Frontend Engineers","JS Interview Pattern Drilling","Mock Coding Interview Practice","Capstone Project: Planning & Architecture","Capstone Project: Core Build","Capstone Project: Testing & Polish","Capstone Project: Deployment","Capstone Project: Documentation & Demo","Interview Storytelling for JS Projects"],
-DSA: ["Linked Lists: Singly Linked List","Linked Lists: Doubly Linked List","Linked List Problems (Reverse, Cycle Detection)","Stacks: Concept & Implementation","Stack Problems (Valid Parentheses, Min Stack)","Queues: Concept & Implementation","Circular Queues & Deques","Stack/Queue Applications","Hash Maps Deep Dive","Hash Map Problems (Two Sum, Anagrams)","Hash Set Use Cases","Recursion Deep Dive","Recursion vs Iteration","Backtracking Introduction","Backtracking: Subsets & Permutations","Backtracking: N-Queens","Trees: Terminology & Structure","Binary Trees: Implementation","Tree Traversal (Inorder/Preorder/Postorder)","Tree BFS (Level Order Traversal)","Tree Height & Depth Problems","Binary Search Trees (BST)","BST Insert, Delete & Search","BST Validation","Balanced Trees Concept (AVL)","Tries: Introduction & Implementation","Trie Problems (Autocomplete)","Heaps Deep Dive","Priority Queue Problems","Graphs: Representation (List/Matrix)","Graph BFS","Graph DFS","Graph Traversal Problems","Connected Components","Cycle Detection in Graphs","Topological Sort","Dijkstra's Algorithm","Bellman-Ford Introduction","Union-Find (Disjoint Set)","Union-Find: Kruskal's MST","Minimum Spanning Tree Concepts","Two Pointers Technique","Two-Pointer Problems","Sliding Window Technique","Sliding Window Problems (Max Subarray)","Fast & Slow Pointers (Cycle Detection)","Prefix Sum Technique","Prefix Sum Problems","Bit Manipulation Basics","Bit Manipulation Problems","Dynamic Programming: Memoization vs Tabulation","DP: Fibonacci & Climbing Stairs","DP: Coin Change","DP: 0/1 Knapsack","DP: Longest Common Subsequence","DP: Longest Increasing Subsequence","DP: Edit Distance","DP: Matrix Path Problems","Greedy Algorithms Introduction","Greedy Problems (Activity Selection)","Interval Problems (Merge Intervals)","Matrix Traversal Problems","String Matching (KMP Introduction)","Advanced String Problems","Segment Trees Introduction","Fenwick Tree (BIT) Introduction","Advanced Graph Algorithms (Floyd-Warshall)","System Design: Scalability Basics","System Design: Load Balancing","System Design: Caching Strategies","System Design: Database Sharding","System Design: URL Shortener","System Design: Rate Limiter","System Design: Chat System","Mock Interview: Arrays & Strings","Mock Interview: Trees & Graphs","Mock Interview: Dynamic Programming","Company-Style Problem Set: Round 1","Company-Style Problem Set: Round 2","Company-Style Problem Set: Round 3","Time Complexity Drilling","Space Optimization Techniques","Advanced DP: Bitmask DP","Advanced DP: Tree DP","Graph Coloring Problems","A* Search Algorithm Introduction","Randomized Algorithms Introduction","Advanced Backtracking (Sudoku Solver)","Timed Practice: Arrays & Strings","Timed Practice: Linked Lists & Stacks","Timed Practice: Trees & Graphs","Timed Practice: Dynamic Programming","Timed Practice: Greedy & Intervals","Timed Practice: Bit Manipulation & Math","Weak-Spot Review Session","DSA Portfolio: Problem Write-Ups","DSA Interview Storytelling Prep","Mock Interview: Full Marathon Round 1","Mock Interview: Full Marathon Round 2"],
-PM: ["Design Thinking Basics","Wireframing Fundamentals","Low-Fidelity Prototyping","Usability Testing Basics","MVP Definition","Go-To-Market Strategy Basics","Metrics & KPIs Introduction","North Star Metric Framework","A/B Testing Fundamentals","Funnel Analysis","Retention & Churn Basics","Cohort Analysis","User Interviews: Advanced Techniques","Stakeholder Mapping","Roadmapping Fundamentals","Roadmap Prioritization Frameworks (RICE)","Writing a Full PRD","Writing User Stories","Acceptance Criteria & Definition of Done","Working with Engineering: Sprint Basics","Agile & Scrum Fundamentals","Working with Design: Handoff Process","Launch Planning","Beta Testing Programs","Gathering & Synthesizing Feedback","Iteration Planning Post-Launch","Pricing Strategy Basics","Monetization Models (Freemium, Subscription)","Unit Economics Basics (CAC, LTV)","Growth Loops & Virality","Onboarding Design Principles","Activation Metrics","Feature Flagging & Rollouts","Experimentation Culture","Data-Informed Decision Making","Building Dashboards for Product Metrics","Platform Thinking","Partnerships & Integrations Strategy","API Products & Developer Experience","Competitive Positioning at Scale","Product Strategy Frameworks","Vision & Strategy Documents","OKRs for Product Teams","Cross-Functional Leadership","Influence Without Authority","Managing Up: Working with Execs","Prioritization Under Constraints","Saying No: Scope Management","Handling Conflicting Stakeholder Needs","Product Ops Basics","Internationalization & Localization Strategy","Accessibility as a Product Requirement","Trust & Safety Considerations","Privacy & Data Governance for PMs","Building for Enterprise vs Consumer","B2B Product Management Basics","Sales & Customer Success Collaboration","Customer Advisory Boards","Case Study: A Successful AI Product","Case Study: A Failed Product Launch","Writing a Product Case Study","Building a Product Portfolio","Product Sense Interview Practice","Metrics Interview Practice","Execution Interview Practice","Strategy Interview Practice","Behavioral Interview Prep for PMs","Mock PM Interview: Product Design","Mock PM Interview: Root Cause Analysis","Mock PM Interview: Estimation Questions","Building Your PM Narrative","Negotiation Basics for PMs","Building & Leading Teams","Hiring for Product Teams","Managing PM Career Growth","Final Portfolio Review & Polish","Final Interview Readiness Check"],
-AI: ["Retrieval-Augmented Generation (RAG) Basics","Vector Databases Introduction","Building a Simple RAG Pipeline","Fine-Tuning: Concepts & When to Use It","LoRA & Parameter-Efficient Fine-Tuning","Evaluation Metrics for LLMs","Building an Evaluation Harness","AI Safety Basics","Bias & Fairness in AI Models","Building Your First AI App (Chatbot)","Multi-Turn Conversation Management","Context Management Strategies","Function Calling / Tool Use Basics","Building an AI Agent: Core Loop","Agent Planning & Reasoning Patterns","Multi-Agent Systems Intro","Building an Agent with Tool Access","Observability for AI Applications","Logging & Tracing LLM Calls","Cost Optimization for LLM Apps","Latency & Throughput Analysis","Prompt Caching Strategies","Structured Output & JSON Mode","Guardrails & Content Filtering","Semantic Search Deep Dive","Hybrid Search (Keyword + Semantic)","Chunking Strategies for RAG","Advanced RAG: Re-ranking","Advanced RAG: Query Rewriting","LLMOps: Deployment Basics","LLMOps: Versioning & Rollbacks","LLMOps: Monitoring in Production","Building an AI Feature into a Real Product","API Design for AI Features","Streaming Responses (SSE)","Rate Limiting AI API Usage","Handling AI API Failures Gracefully","Cost Analysis: Model Pricing Comparison","AI Business Models Overview","Build vs Buy Decisions for AI Features","AI Product Metrics That Matter","Multi-Modal Models: Vision + Language","Image Generation Models Overview","Audio & Speech Models Overview","Building a Multi-Modal Feature","Advanced Prompt Architectures","Prompt Chaining & Pipelines","Orchestration Frameworks Overview","Building a Custom Tool for an Agent","Memory Systems for AI Agents","Long-Term vs Short-Term Context","Evaluating Agent Reliability","Red-Teaming Your AI Application","Handling Adversarial Prompts","AI Regulation & Compliance Basics","Explainability in AI Systems","Scaling AI Infrastructure Concepts","Choosing the Right Model for a Task","Open Source vs Proprietary Models","Self-Hosting Models: Trade-offs","Emerging Trends: Reasoning Models","Emerging Trends: Autonomous Agents","Case Study: A Successful AI Product","Case Study: An AI Product Failure","Portfolio AI Project: Planning","Portfolio AI Project: Core Build","Portfolio AI Project: Evaluation","Portfolio AI Project: Polish","Portfolio AI Project: Demo & Docs","AI Interview Prep: Technical Concepts","AI Interview Prep: Product Thinking","AI Interview Prep: System Design for AI","Mock AI Interview: Full Round","Final AI Portfolio Review"]
+PM: ["Design Thinking Basics","Wireframing Fundamentals (Read-Level)","Low-Fidelity Prototyping (Read-Level)","Usability Testing Basics","MVP Definition","Go-To-Market Strategy Basics","Metrics & KPIs Introduction","North Star Metric Framework","A/B Testing Fundamentals","Funnel Analysis","Retention & Churn Basics","Cohort Analysis","User Interviews: Advanced Techniques","Stakeholder Mapping","Roadmapping Fundamentals","Roadmap Prioritization Frameworks (RICE)","Writing a Full PRD","Writing User Stories","Acceptance Criteria & Definition of Done","Working with Engineering: Sprint Basics","Agile & Scrum Fundamentals","Working with Design: Handoff Process","Launch Planning","Beta Testing Programs","Gathering & Synthesizing Feedback","Iteration Planning Post-Launch","Pricing Strategy Basics","Monetization Models (Freemium, Subscription)","Unit Economics Basics (CAC, LTV)","Growth Loops & Virality","Onboarding Design Principles","Activation Metrics","Feature Flagging & Rollouts","Experimentation Culture","Data-Informed Decision Making","Building Dashboards for Product Metrics","Platform Thinking","Partnerships & Integrations Strategy","API Products & Developer Experience","Competitive Positioning at Scale","Product Strategy Frameworks","Vision & Strategy Documents","OKRs for Product Teams","Cross-Functional Leadership","Influence Without Authority","Managing Up: Working with Execs","Prioritization Under Constraints","Saying No: Scope Management","Handling Conflicting Stakeholder Needs","Product Ops Basics","Internationalization & Localization Strategy","Accessibility as a Product Requirement","Trust & Safety Considerations","Privacy & Data Governance for PMs","Building for Enterprise vs Consumer","B2B Product Management Basics","Sales & Customer Success Collaboration","Customer Advisory Boards","Case Study: A Successful AI Product","Case Study: A Failed Product Launch","Writing a Product Case Study","Building a Product Portfolio","Product Sense Interview Practice","Metrics Interview Practice","Execution Interview Practice","Strategy Interview Practice","Behavioral Interview Prep for PMs","Mock PM Interview: Product Design","Mock PM Interview: Root Cause Analysis","Mock PM Interview: Estimation Questions","Building Your PM Narrative","Negotiation Basics for PMs","Negotiation: Real Scenario Practice","Crisis Management: A Product Outage","Crisis Management: A PR Crisis","Pivots & Course Correction: Case Studies","Building & Leading Teams","Hiring for Product Teams","Managing PM Career Growth","AI Product Strategy: Build vs Buy vs Fine-Tune","AI Product Strategy: Evaluating Model Providers","AI Product Ethics & Responsible AI","International Markets: Expansion Playbook","Localization Strategy for AI Products","Fundraising for AI Products: Investor Narrative","Company Building: Vision to Org Chart","Final Portfolio Review & Polish","Final Interview Readiness Check"],
+AI: ["Retrieval-Augmented Generation (RAG) Basics","Vector Databases Introduction","Building a Simple RAG Pipeline (Concept Walkthrough)","Fine-Tuning: Concepts & When to Use It","LoRA & Parameter-Efficient Fine-Tuning — Concept Level","Evaluation Metrics for LLMs","Building an Evaluation Harness — Concept Level","AI Safety Basics","Bias & Fairness in AI Models","Multi-Turn Conversation Management","Context Management Strategies","Building an AI Agent: Core Loop","Agent Planning & Reasoning Patterns","Multi-Agent Systems Intro","Observability for AI Applications","Logging & Tracing LLM Calls","Cost Optimization for LLM Apps","Latency & Throughput Analysis","Prompt Caching Strategies","Structured Output & JSON Mode","Guardrails & Content Filtering","Semantic Search Deep Dive","Hybrid Search (Keyword + Semantic)","Chunking Strategies for RAG","Advanced RAG: Re-ranking","Advanced RAG: Query Rewriting","LLMOps: Deployment Basics","LLMOps: Versioning & Rollbacks","LLMOps: Monitoring in Production","Building an AI Feature into a Real Product — Case Study","API Design for AI Features","Streaming Responses (SSE) — Concept Level","Rate Limiting AI API Usage","Handling AI API Failures Gracefully","Cost Analysis: Model Pricing Comparison","AI Business Models Overview","Build vs Buy Decisions for AI Features","AI Product Metrics That Matter","Multi-Modal Models: Vision + Language","Image Generation Models Overview","Audio & Speech Models Overview","Advanced Prompt Architectures","Prompt Chaining & Pipelines","Orchestration Frameworks Overview","Memory Systems for AI Agents","Long-Term vs Short-Term Context","Evaluating Agent Reliability","Red-Teaming Your AI Application","Handling Adversarial Prompts","AI Regulation & Compliance Basics","Explainability in AI Systems","Scaling AI Infrastructure Concepts","Choosing the Right Model for a Task","Open Source vs Proprietary Models","Self-Hosting Models: Trade-offs","Emerging Trends: Reasoning Models","Emerging Trends: Autonomous Agents","Case Study: A Successful AI Product","Case Study: An AI Product Failure","Production AI Systems: Reading an Architecture Diagram","Production AI Systems: Cost Optimization Deep Dive","Production AI Systems: Reliability & Fallbacks","AI Interview Prep: Technical Concepts","AI Interview Prep: Product Thinking","AI Interview Prep: System Design for AI","Mock AI Interview: Full Round","Final AI Portfolio Review"],
+JS: ["ES6+ Modules (import/export)","Closures","Higher-Order Functions","Functional Programming Basics","OOP in JS: Classes & Constructors","Prototypes & Inheritance","The `this` Keyword & Binding","Generators & Iterators","Map & Set Data Structures","Date & Math Objects","Immutability & Pure Functions","Currying & Function Composition","Memoization","Recursion in JavaScript","The Event Loop & Call Stack","Microtasks vs Macrotasks","DOM Selection & Traversal (read-level)","DOM Manipulation & Rendering (read-level)","Event Listeners & Event Object","Event Delegation","Forms & Input Validation","localStorage & sessionStorage","Browser APIs Overview","Debugging with DevTools","Code Quality & Linting: What Good Looks Like","Unit Testing Basics — Reading a Test Suite","Git Basics for Reading a Codebase","npm & package.json: What Engineers Mean By It","Module Bundlers (Webpack/Vite) — Concept Level","CommonJS vs ES Modules","Node.js Fundamentals — What It's For","The Node.js Module System","How a REST API Is Structured (Express)","Express Routing — Reading Route Files","Express Middleware — What It Does","Databases 101: SQL vs NoSQL, Read-Level","CRUD Operations End-to-End (Concept)","Authentication Basics (JWT) — What PMs Need to Know","Environment Variables & Config","Error Handling in Backend Apps","RESTful API Design Principles","Reading a Full Backend Service","Testing APIs with Postman/curl","Rate Limiting — Why Engineers Push Back","CORS Explained (Why It Breaks Demos)","Deploying an App — What 'Ship It' Actually Means","Logging & Monitoring Basics","Caching Strategies — Why 'Just Make It Faster' Isn't Simple","WebSockets Introduction","Real-Time Features — What They Cost to Build","GraphQL Introduction","GraphQL vs REST — Trade-offs a PM Should Know","Reading a GraphQL Schema","ORMs — What They Abstract Away","Database Schema Design — Reading an ERD","Migrations & Seeding — Why 'Just Add a Field' Isn't Free","Frontend-Backend Contracts (API Specs)","Loading & Error State Patterns","Reading a Full CRUD App's Architecture","Backend Performance — What 'Slow' Usually Means","Security Basics: SQL Injection & XSS (for risk assessment)","Input Sanitization — Why Every Form Needs It","Background Jobs & Queues — Concept Level","React Fundamentals & Component Thinking","Props & State — The Mental Model","The useState Hook (read-level)","The useEffect Hook (read-level)","Component Lifecycle in React — Concept","Conditional Rendering & Lists","Forms in React — Concept Level","Custom Hooks — What They're For","The Context API — Why It Exists","State Management Patterns (Redux/Zustand) — Concept","React Router — Reading Navigation Structure","Fetching Data in React — Concept Level","Component Composition Patterns","Performance: Why Re-Renders Matter","Testing React — What Coverage Actually Tells You","Reading a Multi-Page React App's Structure","Authentication in React Apps — Concept","Protected Routes — Concept","Deploying a React App — What CI/CD Means","Styling Systems: CSS Modules & Tailwind — Concept","Component Libraries — Build vs Buy","Accessibility Basics — Why It's a Requirement, Not a Nice-to-Have","Responsive Design Patterns — Reading a Breakpoint Strategy","Full-Stack Architecture — Reading a System Diagram","CI Basics — What a Pipeline Actually Checks","Error Boundaries — Concept Level","Code Splitting & Lazy Loading — Why Load Times Vary","SEO Basics for SPAs","State Persistence Patterns","Optimistic UI Updates — Why Some Apps 'Feel' Faster","WebSocket Integration — Reading a Real-Time Feature Spec","File Upload Handling — What Breaks in Practice","Image Optimization — Why Assets Bloat Load Time","Form Libraries — Concept Level","Validation Libraries (Zod) — Why Type Safety Matters","Reading a Dashboard's Data Flow","TypeScript Basics — Why Teams Adopt It","Types & Interfaces — Reading Type Definitions","Typing API Responses — Why Contracts Matter","Design Patterns: Singleton & Factory — Concept","Design Patterns: Observer & Module — Concept","Clean Code Principles — What 'Technical Debt' Means","Refactoring — Why Engineers Ask for Time to Do It","Performance Optimization — Reading a Profiler Report","Bundle Size Optimization — Why It Matters for Mobile","Memory Leaks — What They Look Like From the Outside","Browser Rendering Pipeline — Concept Level","Web Vitals & Performance Metrics — PM-Relevant Ones","Accessibility Deep Dive (ARIA) — Reading an Audit","Testing Strategy: Unit vs Integration vs E2E — What to Ask For","E2E Testing — What It Catches That Unit Tests Miss","CI/CD Pipeline Basics — Reading a Deploy Log","Docker Basics — What 'Containerized' Means","Production Deployment Checklist — What Engineers Actually Check","Monitoring & Error Tracking (Sentry) — Reading a Dashboard","System Design for Frontend — Concept Level","Reading a Technical RFC","Evaluating a Pull Request as a PM","Reviewing an Engineering Estimate — What to Ask","Full-Stack Capstone: Reading a Real Codebase","Full-Stack Capstone: Writing Technical Requirements","Full-Stack Capstone: Evaluating a Build vs Buy Decision","Advanced Evaluation: Spotting Scope Creep in a Spec","Advanced Evaluation: Reading a Postmortem","Advanced Evaluation: Sitting in on a Code Review","Advanced Evaluation: Estimating Engineering Effort","Advanced Evaluation: Technical Debt Triage"],
+DSA: ["Linked Lists: Singly Linked List","Linked Lists: Doubly Linked List","Linked List Problems (Reverse, Cycle Detection)","Stacks: Concept & Implementation","Stack Problems (Valid Parentheses, Min Stack)","Queues: Concept & Implementation","Circular Queues & Deques","Stack/Queue Applications","Hash Maps Deep Dive","Hash Map Problems (Two Sum, Anagrams)","Hash Set Use Cases","Recursion Deep Dive","Recursion vs Iteration","Backtracking Introduction","Backtracking: Subsets & Permutations","Trees: Terminology & Structure","Binary Trees: Implementation","Tree Traversal (Inorder/Preorder/Postorder)","Tree BFS (Level Order Traversal)","Tree Height & Depth Problems","Binary Search Trees (BST)","BST Insert, Delete & Search","Balanced Trees Concept (AVL)","Tries: Introduction & Autocomplete Use Case","Heaps Deep Dive","Priority Queue Problems","Graphs: Representation (List/Matrix)","Graph BFS","Graph DFS","Graph Traversal Problems — Concept Level","Connected Components","Cycle Detection in Graphs","Topological Sort","Dijkstra's Algorithm — Concept Level","Union-Find (Disjoint Set)","Minimum Spanning Tree Concepts","Two Pointers Technique","Sliding Window Technique","Fast & Slow Pointers (Cycle Detection)","Prefix Sum Technique","Bit Manipulation Basics","Dynamic Programming: Memoization vs Tabulation","DP: Fibonacci & Climbing Stairs","DP: Coin Change","DP: 0/1 Knapsack","DP: Longest Common Subsequence","Greedy Algorithms Introduction","Interval Problems (Merge Intervals)","Matrix Traversal Problems","String Matching — Concept Level","System Design: Scalability Basics","System Design: Load Balancing","System Design: Caching Strategies","System Design: Database Sharding","System Design: URL Shortener (classic case study)","System Design: Rate Limiter","System Design: Chat System","System Design: Recommendation System (PM-relevant)","System Design: Feed Ranking System (PM-relevant)","System Design: Search System (PM-relevant)","Reading a System Design Doc","Evaluating Trade-offs: Consistency vs Availability","Evaluating Trade-offs: Latency vs Cost","Evaluating Trade-offs: Build vs Buy Infrastructure","Capacity Planning — Concept Level","Database Indexing — Why Queries Get Slow","Sharding & Replication — Concept Level","Microservices vs Monolith — Trade-offs","API Gateway & Service Mesh — Concept Level","Event-Driven Architecture — Concept Level","Message Queues — Concept Level","CAP Theorem — What It Means for Product Decisions","Scalability Case Study: A Real Outage","Reading an Incident Postmortem","Time Complexity Drilling — Interview-Style","Space Optimization Techniques — Concept Level","Advanced Graph Algorithms — Concept Level (Floyd-Warshall)","A* Search Algorithm — Concept Level","Randomized Algorithms — Concept Level","Mock Technical Interview (As the Interviewer)","Evaluating a Candidate's System Design Answer","Estimating System Cost from an Architecture Diagram","Reading a Load Test Report","Reading a Database Query Plan","When to Say 'This Needs a Redesign'","Technical Risk Assessment for a Roadmap Item","System Design: AI Inference Pipeline","System Design: RAG Pipeline at Scale","System Design: Multi-Tenant SaaS Architecture","System Design: Real-Time Collaboration Feature","System Design: Payments System — Concept Level","System Design: Notification System","Reviewing an Architecture Decision Record (ADR)","Weak-Spot Review: Pick Your Shakiest Topic","Mock Interview: Full System Design Round","Mock Interview: Full System Design Round 2"],
+BUS: ["Business Models 101 (How Companies Make Money)","Revenue Models: Subscription vs Transactional vs Ads","Reading a P&L Statement (Profit & Loss)","Reading a Balance Sheet","Unit Economics Deep Dive (CAC, LTV, Payback)","Break-Even Analysis","SWOT Analysis Practice","Porter's Five Forces Framework","Industry & Market Analysis","Competitive Strategy Basics","Marketing Fundamentals: The 4 Ps","Branding & Positioning Basics","Sales Fundamentals: The Sales Funnel","B2B vs B2C Business Models","Startup Fundamentals: Idea to MVP","Fundraising Basics: Seed to Series A","Startup Valuation Basics","Business Case Writing","Financial Projections Basics","Pricing Strategy Deep Dive","Negotiation Fundamentals","Business Communication: Emails & Memos","Reading a Company's Annual Report","Economics 101: Supply & Demand","Operations Management Basics","Business Ethics & Corporate Governance","Case Study: A Business Failure","Case Study: A Business Turnaround","Case Interview Practice: Market Sizing","Case Interview Practice: Profitability","Business Plan: Executive Summary","Business Plan: Financial Plan","Growth Strategy: Ansoff Matrix","Blue Ocean Strategy Applied to Business Models","Lean Startup Methodology","Business Model Canvas Practice","Customer Acquisition Strategy","Customer Retention Strategy","Partnerships & Business Development","Understanding Venture Capital","International Business Basics","Business Risk Management","Analyzing a Tech Company's Business Model","Analyzing an AI Company's Business Model (OpenAI/Anthropic)","Investing Basics for Financial Literacy","Pitch Deck: Structure","Pitch Deck: Storytelling","Practice Pitch: Present Your AI Product Idea","Company Building: Org Design Basics","Company Building: Hiring Your First 10 People","Scaling: Operational Bottlenecks","Scaling: Process vs Speed Trade-offs","Fundraising: Reading a Term Sheet","Fundraising: Cap Table Basics","M&A Basics: Why Companies Get Acquired","Corporate Strategy vs Business Unit Strategy","International Expansion Playbook","Localization Strategy for Products","Crisis Management: Reading a PR Crisis","Strategy Capstone: Planning","Strategy Capstone: Research","Strategy Capstone: Recommendations","Strategy Capstone: Presentation"],
+DA: ["Spreadsheets Deep Dive: Formulas & Functions","Pivot Tables Mastery","Data Cleaning Techniques","SQL Basics: SELECT, WHERE, ORDER BY","SQL: JOINs (Inner, Left, Right, Full)","SQL: GROUP BY & Aggregate Functions","SQL: Subqueries","SQL: Window Functions","SQL Practice Problem Set 1","SQL Practice Problem Set 2","Statistics Basics: Mean, Median, Mode, Variance","Statistics: Distributions (Normal, Binomial)","Statistics: Standard Deviation & Z-Scores","Hypothesis Testing Basics","A/B Test Analysis: Statistical Significance","Confidence Intervals Explained","Correlation vs Causation","Regression Analysis Basics","Data Visualization Principles","Charts: Bar, Line, Pie — When to Use What","Dashboard Design Principles","Product Analytics Tools Overview (Amplitude/Mixpanel)","Funnel Analysis: Deep Dive","Cohort Analysis: Deep Dive","Retention Curves & Analysis","AARRR Metrics Framework","North Star Metric: Deep Application","OKRs: Setting Metrics That Matter","Building a Metrics Dashboard (Mock Data)","Public Dataset Exploration","Public Dataset: Drawing Insights","Writing a Data-Driven Report","Storytelling with Data: Best Practices","KPI Design: Choosing the Right Metrics","Experimentation: Designing an A/B Test","Experimentation: Reading Test Results","Forecasting Basics: Trend Analysis","Building a Simple Forecast Model","Data Quality: Spotting Bad Data","Survey Design & Analysis","Customer Segmentation Analysis","RFM Analysis (Recency, Frequency, Monetary)","Building a Churn Analysis","Acquisition Channel Analysis","SQL + Product Case Study 1","SQL + Product Case Study 2","Analytics Case Interview Practice","Analytics Report: Planning","Analytics Report: Analysis","Analytics Report: Presentation","Advanced Formulas (INDEX/MATCH)","AI Product Metrics: Token Costs & Latency Dashboards","AI Product Metrics: Model Quality & Eval Scores","Prediction & Recommendation Metrics","Analytics Capstone: Dataset Selection","Analytics Capstone: Cleaning & Exploration","Analytics Capstone: Analysis & Insights","Analytics Capstone: Dashboard Build","Analytics Capstone: Presentation & Write-Up"]
 };
-
-// ---------- New tracks, added to the rotation starting Aug 25, 2026 ----------
-const JS_WEBDEV = ["Connecting JS to the DOM (Real Project)","Interactive Navbar (Mobile Menu)","Image Carousel / Slider","Modal / Popup Component","Tabs Component","Accordion Component","Form Validation in a Real Form","Multi-Step Form","To-Do List App","Weather App (API Integration)","Quiz App","Countdown Timer","Image Gallery with Filtering","LocalStorage: Persisting App Data","Notes App with LocalStorage","CSS Animations & Transitions","Landing Page with Animations","HTML Fundamentals: Structure & Semantic Tags","CSS Fundamentals: Selectors & Box Model","CSS Flexbox Layout","CSS Grid Layout","Responsive Design & Media Queries","CSS Positioning & Stacking Context","Typography & Web Fonts","Color Systems & CSS Variables","Landing Page: Hero Section","Landing Page: Features Section","Landing Page: Nav & Footer","Portfolio Website: Planning","Portfolio Website: Hero & About","Portfolio Website: Projects Section","Portfolio Website: Contact Form","Portfolio Website: Polish & Deploy","Git & GitHub for Web Projects","Deploying a Static Site (Netlify/Vercel)","Blog Layout (Static)","E-commerce Product Page","Shopping Cart (Client-Side Logic)","Pricing Page","Dashboard Layout (Static)","Dashboard with Live Data (API)","Recipe Finder App (API)","Movie Search App (API)","GitHub Profile Finder (API)","Currency Converter (API)","Expense Tracker App","Habit Tracker App","CSS Preprocessors (Sass) Intro","Utility-First CSS (Tailwind Basics)","Rebuild a Past Project with Tailwind","Chat UI (Static + Mock Data)","Kanban Board (Drag & Drop)","Calendar / Scheduler UI","Music Player UI","Social Media Feed UI","Performance: Optimize a Real Page","Accessibility Pass on a Real Project","SEO Basics: Meta Tags & Structure","Multi-Page Site with Routing","Connecting a Real Backend API","Login/Signup Flow (Frontend)","Personal Project: Planning","Personal Project: Core Build","Personal Project: Polish","Personal Project: Deploy & Share","Refactor an Old Project","Resume/CV Website","Landing Page for a Fake Startup","SaaS Marketing Site","Newsletter Signup Widget","Testimonials Carousel","Pricing Toggle (Monthly/Yearly)","FAQ Accordion Section","Job Board Listing Page","Event Landing Page","Website Speed Optimization","Cross-Browser Compatibility Testing","PWA Basics","Capstone: Planning","Capstone: Build Week 1","Capstone: Build Week 2","Capstone: Testing & Polish","Capstone: Deploy & Showcase"];
-
-const BUS_TITLES = ["What is Business Strategy? Core Concepts","Business Models 101 (How Companies Make Money)","Revenue Models: Subscription vs Transactional vs Ads","Reading a P&L Statement (Profit & Loss)","Reading a Balance Sheet","Unit Economics Deep Dive (CAC, LTV, Payback)","Break-Even Analysis","SWOT Analysis Practice","Porter's Five Forces Framework","Industry & Market Analysis","Competitive Strategy Basics","Marketing Fundamentals: The 4 Ps","Branding & Positioning Basics","Sales Fundamentals: The Sales Funnel","B2B vs B2C Business Models","Startup Fundamentals: Idea to MVP","Fundraising Basics: Seed to Series A","Startup Valuation Basics","Business Case Writing","Financial Projections Basics","Pricing Strategy Deep Dive","Negotiation Fundamentals","Negotiation: Real Scenario Practice","Business Communication: Emails & Memos","Reading a Company's Annual Report","Stock Markets Basics","Economics 101: Supply & Demand","Economics: Market Structures","Operations Management Basics","Supply Chain Fundamentals","Business Ethics & Corporate Governance","Mergers & Acquisitions Basics","Case Study: A Business Failure","Case Study: A Business Turnaround","Case Interview Practice: Market Sizing","Case Interview Practice: Profitability","Case Interview Practice: Growth Strategy","Business Plan: Executive Summary","Business Plan: Market Analysis","Business Plan: Financial Plan","Growth Strategy: Ansoff Matrix","Blue Ocean Strategy Basics","Lean Startup Methodology","Business Model Canvas Practice","Customer Acquisition Strategy","Customer Retention Strategy","Partnerships & Business Development","Understanding Venture Capital","Understanding Private Equity Basics","International Business Basics","Business Risk Management","Corporate vs Business Unit Strategy","Analyzing a Public Company (10-K Style)","Analyzing a Tech Company's Business Model","Analyzing an AI Company's Business Model","Investing Basics for Financial Literacy","Business Negotiation: Vendor Contracts","Pitch Deck: Structure","Pitch Deck: Storytelling","Practice Pitch: Present Your Business Idea","Strategy Capstone: Planning","Strategy Capstone: Research","Strategy Capstone: Recommendations","Strategy Capstone: Presentation"];
-
-const UIUX_TITLES = ["What is UX Design? Core Principles","Design Thinking Process Deep Dive","User Research Methods for Design","Information Architecture Basics","User Flows & Journey Mapping","Wireframing: Low-Fidelity Sketches","Wireframing Tools: Figma Basics","Figma: Frames, Components & Auto Layout","Typography Fundamentals for UI","Color Theory for Digital Products","Visual Hierarchy Principles","Nielsen's 10 Usability Heuristics","Designing for Accessibility (WCAG Basics)","Mobile-First Design Principles","Responsive Design Patterns for UI","Design Systems: What & Why","Building a Mini Design System in Figma","Component Design: Buttons & Inputs","Component Design: Cards & Lists","Navigation Patterns (Nav Bars, Tabs, Drawers)","Form Design Best Practices","Onboarding Flow Design","Empty States & Error States Design","Microinteractions & Animation Principles","Prototyping in Figma: Basic Interactions","Prototyping in Figma: Advanced Flows","Usability Testing: Planning a Test","Usability Testing: Running & Analyzing","Heuristic Evaluation Practice","Redesign an App You Use Daily","Critique a Popular App's UX","Critique an AI Product's UX","Mobile App Design: Wireframes","Mobile App Design: High-Fidelity Screens","Mobile App Design: Prototype & Test","Designing a Dashboard: Data-Heavy UI","Onboarding for an AI Product","Designing a Chat Interface (AI Product UX)","Designing for Trust in AI Products","Dark Patterns: What to Avoid","Content Design & UX Writing Basics","Microcopy: Better Button & Error Text","Design Handoff to Engineering","UX Portfolio Case Study: Structure","UX Portfolio Case Study: Problem Framing","UX Portfolio Case Study: Process","UX Portfolio Case Study: Outcomes","Design Critique Skills: Giving Feedback","Design Critique Skills: Receiving Feedback","Accessibility Deep Dive: Screen Readers & ARIA","Designing for Different Cultures","Landing Page UX Best Practices","E-commerce UX Patterns","SaaS Product UX Patterns","UX for AI Agents & Conversational Interfaces","UX Capstone: Problem & Research","UX Capstone: Design & Prototype","UX Capstone: Test & Iterate","UX Capstone: Case Study Write-Up"];
-
-const DA_TITLES = ["Spreadsheets Deep Dive: Formulas & Functions","Pivot Tables Mastery","Data Cleaning Techniques","SQL Basics: SELECT, WHERE, ORDER BY","SQL: JOINs (Inner, Left, Right, Full)","SQL: GROUP BY & Aggregate Functions","SQL: Subqueries","SQL: Window Functions","SQL Practice Problem Set 1","SQL Practice Problem Set 2","Statistics Basics: Mean, Median, Mode, Variance","Statistics: Distributions (Normal, Binomial)","Statistics: Standard Deviation & Z-Scores","Hypothesis Testing Basics","A/B Test Analysis: Statistical Significance","Confidence Intervals Explained","Correlation vs Causation","Regression Analysis Basics","Intro to Python for Data Analysis","Python: Pandas Basics (DataFrames)","Python: Data Cleaning with Pandas","Python: Grouping & Aggregating with Pandas","Python: Merging Datasets with Pandas","Data Visualization Principles","Charts: Bar, Line, Pie — When to Use What","Dashboard Design Principles","Product Analytics Tools Overview (Amplitude/Mixpanel)","Funnel Analysis: Deep Dive","Cohort Analysis: Deep Dive","Retention Curves & Analysis","Building a Metrics Dashboard (Mock Data)","Public Dataset Exploration","Public Dataset: Drawing Insights","Writing a Data-Driven Report","Storytelling with Data: Best Practices","KPI Design: Choosing the Right Metrics","North Star Metric: Deep Application","Experimentation: Designing an A/B Test","Experimentation: Reading Test Results","Forecasting Basics: Trend Analysis","Building a Simple Forecast Model","Data Quality: Spotting Bad Data","Survey Design & Analysis","Customer Segmentation Analysis","RFM Analysis (Recency, Frequency, Monetary)","Building a Churn Analysis","Acquisition Channel Analysis","SQL + Product Case Study 1","SQL + Product Case Study 2","Analytics Case Interview Practice","Analytics Report: Planning","Analytics Report: Analysis","Analytics Report: Presentation","Advanced Formulas (INDEX/MATCH)","Analytics Capstone: Dataset Selection","Analytics Capstone: Cleaning & Exploration","Analytics Capstone: Analysis & Insights","Analytics Capstone: Dashboard Build","Analytics Capstone: Presentation & Write-Up"];
-
-const COMM_TITLES = ["Public Speaking Fundamentals","Structuring a Clear Presentation","Storytelling with Data (Communication Angle)","Writing Clearly & Concisely","Active Listening Skills","Giving Constructive Feedback","Receiving Feedback Gracefully","Executive Communication: Talking to Leadership","Facilitating a Meeting Effectively","Negotiation Communication Tactics","Cross-Cultural Communication Basics","Email & Slack Communication Norms","Explaining Technical Concepts to Non-Technical People","Handling Difficult Conversations","Building Your Elevator Pitch","Practicing a Mock Presentation","Persuasive Communication Techniques","Communicating Product Decisions to Stakeholders","Written Communication: Documentation Clarity","Record & Review Your Own Presentation"];
 
 function templateBlocks(subj, title){
   if(subj==="JS") return {
-    learn:`Study ${title}: the core concept, mental model, and 2–3 short reference examples.`,
-    practice:`Drill ${title} with 6–8 targeted exercises until the pattern feels automatic.`,
-    build:`Apply ${title} inside a small script or feature you build from scratch today.`,
+    learn:`Study ${title}: the core concept, mental model, and 2–3 short reference examples — read at the depth a PM needs to evaluate it, not necessarily ship it.`,
+    practice:`Drill ${title} with 6–8 targeted exercises or a close read of real code until the pattern feels familiar.`,
+    build:`Apply ${title} inside a small script, or write a one-paragraph explanation you could give a non-technical stakeholder.`,
     review:`Write 3 notes on ${title}: one gotcha, one use case, one thing to revisit.`
   };
   if(subj==="DSA") return {
-    learn:`Study how ${title} works: the core idea, complexity, and a worked example.`,
-    practice:`Solve 4–6 problems using ${title}, starting easy and increasing difficulty.`,
-    build:`Implement ${title} from scratch without references, then test it on edge cases.`,
+    learn:`Study how ${title} works: the core idea, complexity, and a worked example — with an eye toward what it costs to build.`,
+    practice:`Solve or trace 4–6 problems/examples using ${title}, starting easy and increasing difficulty.`,
+    build:`Implement ${title} from scratch, or write the trade-off summary you'd give an engineer proposing it.`,
     review:`Note when ${title} is the right tool to reach for, and its complexity trade-offs.`
   };
   if(subj==="PM") return {
@@ -581,6 +628,18 @@ function templateBlocks(subj, title){
     practice:`Apply ${title} directly to an AI product idea you're tracking — write it out fully.`,
     build:`Turn today's work on ${title} into a one-page artifact (doc, table, or diagram).`,
     review:`Note how ${title} would change a real product decision you've seen made.`
+  };
+  if(subj==="BUS") return {
+    learn:`Study ${title}: the core concept and a real business example it shows up in.`,
+    practice:`Work through 2–3 exercises or mini-cases applying ${title}.`,
+    build:`Apply ${title} to a real company or your own AI product idea — write it out fully.`,
+    review:`Note how ${title} connects to a decision a PM would actually make.`
+  };
+  if(subj==="DA") return {
+    learn:`Study ${title}: the core concept and why it matters for product decisions.`,
+    practice:`Work through 3–5 exercises or queries applying ${title}.`,
+    build:`Apply ${title} to a real or sample dataset and write down what you find.`,
+    review:`Note one product decision ${title} could actually inform.`
   };
   return {
     learn:`Study ${title}: the core idea and why it matters for working with LLMs day to day.`,
@@ -599,7 +658,7 @@ function roundBlocks(title){
 }
 
 function getTopic(subj, sessionIdx){
-  const detailed = DETAILED[subj];
+  const detailed = DETAILED[subj] || [];
   if(sessionIdx < detailed.length) return detailed[sessionIdx];
   const extraIdx = sessionIdx - detailed.length;
   const arr = EXTRA_TITLES[subj];
@@ -611,105 +670,53 @@ function getTopic(subj, sessionIdx){
   return {t:title, ...blocks};
 }
 
-// ---------- Blocks + getters for the new tracks (Business, UI/UX, Data Analytics, Communication, JS web-dev) ----------
-function jsWebBlocks(title){
+// ---------- Communication (teach-back) day: built dynamically from the past week's topics ----------
+function buildCommTopic(weekLog, cycleNumber){
+  const pmEntries = weekLog.filter(e=>e.subj==="PM");
+  const otherEntries = weekLog.filter(e=>e.subj!=="PM");
+  const pmList = pmEntries.map(e=>e.title).join("; ");
+  const otherList = otherEntries.map(e=>`${e.subj} — ${e.title}`).join("; ");
+  const fullList = weekLog.map(e=>`Day ${e.day} (${e.subj}): ${e.title}`).join(" · ");
   return {
-    learn:`Study ${title}: the key concept, and look at 1–2 real sites that use it.`,
-    practice:`Code along and get the base version fully working — build it, don't just read.`,
-    build:`Extend it and make it your own: different content, better styling, or an extra feature.`,
-    review:`Note one bug you hit and how you fixed it, plus one snippet worth reusing later.`
+    t: `Teach-Back — Cycle ${cycleNumber} Recap`,
+    learn: `No new material today. Re-read your notes from the past week: ${fullList}.`,
+    practice: `Prepare a 10–15 minute teaching session covering all 4 PM concepts from this cycle (${pmList}), plus a one-line summary of the technical day (${otherList}). Write it out as if explaining to a smart friend with zero context.`,
+    build: `Record yourself teaching it out loud — phone video or audio, actually say it, don't just think it. This is where the week's concepts actually stick.`,
+    review: `Note which concept you explained shakily — that's your flag to revisit next time it comes around. Rate your teaching clarity 1–10.`
   };
-}
-function getTopicJSWeb(idx){
-  if(idx===0){
-    return {
-      t:"JavaScript Basics: Quick Refresher",
-      learn:"Skim back through variables, functions, arrays/objects, loops, and conditionals — just enough to feel sharp again before building.",
-      practice:"Rewrite 8–10 short snippets from memory: a function, a loop, an array method, an object with a method.",
-      build:"Build one tiny script that combines several of these — e.g. a function that loops over an array of objects and logs results.",
-      review:"Note anything that felt rusty — that's what to keep an eye on once real DOM projects start next session."
-    };
-  }
-  const arr = JS_WEBDEV;
-  const cycle = Math.floor((idx-1)/arr.length);
-  const i = (idx-1) % arr.length;
-  const baseTitle = arr[i];
-  if(cycle===0) return {t:baseTitle, ...jsWebBlocks(baseTitle)};
-  return {t:`${baseTitle} (Round ${cycle+1})`, ...roundBlocks(baseTitle)};
 }
 
-function templateBlocksNew(subj, title){
-  if(subj==="BUS") return {
-    learn:`Study ${title}: the core concept and a real business example it shows up in.`,
-    practice:`Work through 2–3 exercises or mini-cases applying ${title}.`,
-    build:`Apply ${title} to a real company or product you know — write it out fully.`,
-    review:`Note how ${title} connects to a decision a PM would actually make.`
-  };
-  if(subj==="UIUX") return {
-    learn:`Study ${title}: the core principle, with 2–3 real examples from apps you use.`,
-    practice:`Practice ${title} hands-on — sketch, critique, or design something small.`,
-    build:`Apply ${title} to a real screen or flow in Figma (or on paper if no Figma).`,
-    review:`Note one thing you'd change in a real app based on ${title}.`
-  };
-  if(subj==="DA") return {
-    learn:`Study ${title}: the core concept and why it matters for product decisions.`,
-    practice:`Work through 3–5 exercises or queries applying ${title}.`,
-    build:`Apply ${title} to a real or sample dataset and write down what you find.`,
-    review:`Note one product decision ${title} could actually inform.`
-  };
-  return {
-    learn:`Study ${title}: what good looks like, with 1–2 real examples.`,
-    practice:`Practice ${title} out loud or in writing — do the actual rep, don't just read.`,
-    build:`Apply ${title} to something real — a message you need to send or say this week.`,
-    review:`Note what felt awkward and what you'd do differently next time.`
-  };
-}
-function getTopicGeneric(subj, arr, idx){
-  const cycle = Math.floor(idx/arr.length);
-  const i = idx % arr.length;
-  const baseTitle = arr[i];
-  if(cycle===0) return {t:baseTitle, ...templateBlocksNew(subj, baseTitle)};
-  return {t:`${baseTitle} (Round ${cycle+1})`, ...roundBlocks(baseTitle)};
-}
-
-// ---------- Build 730 days starting Monday Aug 17, 2026 ----------
-// Days 0-7 (Aug 17-24): original 4-subject rotation, untouched.
-// Day 8 onward (Aug 25+): Business / UI/UX / Data Analytics join, JS becomes
-// practical web-dev, and Communication takes over one day roughly every 4 weeks.
-const startDate = new Date(2026,7,17);
+// ---------- Build 730 days starting Thursday Sep 10, 2026 ----------
+const startDate = new Date(2026,8,10);
 const TOTAL_DAYS = 730;
 
-let jsOldCounter=0, dsaCounter=0, pmCounter=0, aiCounter=0;
-let jsWebCounter=0, busCounter=0, uiuxCounter=0, daCounter=0, commCounter=0;
+let pmCounter=0, jsCounter=0, aiCounter=0, dsaCounter=0, busCounter=0, daCounter=0;
+let weekLog = [];
+let cycleNumber = 0;
 
 const DAYS = [];
 for(let i=0;i<TOTAL_DAYS;i++){
   const d = new Date(startDate);
   d.setDate(startDate.getDate()+i);
-  let subj, topic;
 
-  if(i<8){
-    subj = OLD_ORDER[i%4];
-    if(subj==="JS")       topic = getTopic("JS", jsOldCounter++);
-    else if(subj==="DSA") topic = getTopic("DSA", dsaCounter++);
-    else if(subj==="PM")  topic = getTopic("PM", pmCounter++);
-    else                  topic = getTopic("AI", aiCounter++);
+  const cyclePos = i % 10; // 0..9
+  if(cyclePos===0) cycleNumber++;
+  const subj = PATTERN[cyclePos];
+  let topic;
+
+  if(subj==="COMM"){
+    topic = buildCommTopic(weekLog, cycleNumber);
   } else {
-    const j = i-8;
-    if((j+1)%28===0){
-      subj = "COMM";
-      topic = getTopicGeneric("COMM", COMM_TITLES, commCounter++);
-    } else {
-      subj = NEW_ORDER[j%7];
-      if(subj==="JS")        topic = getTopicJSWeb(jsWebCounter++);
-      else if(subj==="DSA")  topic = getTopic("DSA", dsaCounter++);
-      else if(subj==="PM")   topic = getTopic("PM", pmCounter++);
-      else if(subj==="AI")   topic = getTopic("AI", aiCounter++);
-      else if(subj==="BUS")  topic = getTopicGeneric("BUS", BUS_TITLES, busCounter++);
-      else if(subj==="UIUX") topic = getTopicGeneric("UIUX", UIUX_TITLES, uiuxCounter++);
-      else                   topic = getTopicGeneric("DA", DA_TITLES, daCounter++);
-    }
+    if(subj==="PM")       topic = getTopic("PM", pmCounter++);
+    else if(subj==="JS")  topic = getTopic("JS", jsCounter++);
+    else if(subj==="AI")  topic = getTopic("AI", aiCounter++);
+    else if(subj==="DSA") topic = getTopic("DSA", dsaCounter++);
+    else if(subj==="BUS") topic = getTopic("BUS", busCounter++);
+    else if(subj==="DA")  topic = getTopic("DA", daCounter++);
+    weekLog.push({day:cyclePos+1, subj, title:topic.t});
   }
+  if(cyclePos===8) weekLog = []; // reset after the teach-back day consumes it
+
   DAYS.push({date:d, subj, topic});
 }
 

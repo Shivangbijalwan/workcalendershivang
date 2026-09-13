@@ -3,30 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PM Mega-Cycle Study Calendar — Sep 2026 to Sep 2028</title>
+<title>AI-Expert PM Intensive — 365 Days</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#F5F4EF;
+    --paper:#F9F7F3;
     --card:#FFFFFF;
-    --ink:#22231E;
-    --ink-soft:#6B6A63;
-    --line:#E2E0D7;
-    --pm:#1C8F6E;
-    --pm-bg:#E1F3EC;
-    --js:#C8912A;
-    --js-bg:#FBF0DB;
-    --ai:#D8467E;
-    --ai-bg:#FBE6EE;
-    --dsa:#5B5FE9;
-    --dsa-bg:#EAEAFC;
-    --bus:#35618E;
-    --bus-bg:#E2ECF6;
-    --da:#1C93A6;
-    --da-bg:#DEF4F7;
-    --comm:#D9633C;
-    --comm-bg:#FBE8DF;
+    --ink:#1A1A18;
+    --ink-soft:#5A5956;
+    --line:#E8E5DF;
+    --pm:#1C3A4B;
+    --pm-bg:#E8F0F5;
+    --ai:#FF6B35;
+    --ai-bg:#FFF3E8;
   }
   *{box-sizing:border-box;}
   body{
@@ -34,294 +24,290 @@
     background:var(--paper);
     color:var(--ink);
     font-family:'Inter',sans-serif;
-    padding:28px 20px 60px;
+    padding:32px 20px 60px;
   }
-  .wrap{max-width:980px;margin:0 auto;}
-  header{margin-bottom:20px;}
+  .wrap{max-width:1000px;margin:0 auto;}
+  header{margin-bottom:24px;}
   .eyebrow{
     font-family:'Space Grotesk',sans-serif;
     font-size:12px;
     letter-spacing:.14em;
     text-transform:uppercase;
     color:var(--ink-soft);
-    margin-bottom:6px;
+    margin-bottom:8px;
   }
   h1{
     font-family:'Space Grotesk',sans-serif;
-    font-size:34px;
+    font-size:36px;
     font-weight:700;
-    margin:0 0 6px;
-    letter-spacing:-.01em;
+    margin:0 0 8px;
+    letter-spacing:-.015em;
+    color:var(--ink);
   }
-  .sub{color:var(--ink-soft);font-size:14.5px;line-height:1.5;max-width:660px;}
+  .sub{color:var(--ink-soft);font-size:15px;line-height:1.6;max-width:720px;}
 
   .phases{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:8px;
-    margin:20px 0 26px;
+    gap:12px;
+    margin:28px 0 32px;
   }
   .phase{
     background:var(--card);
     border:1px solid var(--line);
-    border-radius:10px;
-    padding:10px 12px;
+    border-radius:12px;
+    padding:16px 14px;
   }
-  .phase .p-label{font-family:'Space Grotesk',sans-serif;font-size:10.5px;font-weight:700;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.05em;}
-  .phase .p-range{font-size:11px;color:var(--ink-soft);margin:2px 0 5px;}
-  .phase .p-goal{font-size:12px;line-height:1.35;}
+  .phase .p-label{font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;}
+  .phase .p-range{font-size:11.5px;color:var(--ink-soft);margin:3px 0 8px;font-weight:500;}
+  .phase .p-goal{font-size:13px;line-height:1.4;color:var(--ink);}
 
   .legend{
     display:flex;
     flex-wrap:wrap;
-    gap:10px;
-    margin:0 0 12px;
+    gap:12px;
+    margin:0 0 16px;
   }
   .tag{
-    display:flex;align-items:center;gap:7px;
+    display:flex;align-items:center;gap:8px;
     font-family:'Space Grotesk',sans-serif;
-    font-size:12.5px;font-weight:600;
-    padding:6px 12px;border-radius:20px;
+    font-size:13px;font-weight:600;
+    padding:7px 14px;border-radius:22px;
     border:1px solid var(--line);
     background:var(--card);
   }
-  .dot{width:9px;height:9px;border-radius:50%;}
-  .dot.pm{background:var(--pm);} .dot.js{background:var(--js);}
-  .dot.ai{background:var(--ai);} .dot.dsa{background:var(--dsa);}
-  .dot.bus{background:var(--bus);} .dot.da{background:var(--da);}
-  .dot.comm{background:var(--comm);}
+  .dot{width:10px;height:10px;border-radius:50%;}
+  .dot.pm{background:var(--pm);} .dot.ai{background:var(--ai);}
 
   .cycle-strip{
-    display:flex;flex-wrap:wrap;gap:6px;
-    margin:0 0 26px;
+    display:flex;flex-wrap:wrap;gap:7px;
+    margin:0 0 28px;
     font-family:'Space Grotesk',sans-serif;
     font-size:11px;font-weight:600;color:var(--ink-soft);
   }
   .cycle-strip span{
-    padding:5px 9px;border-radius:6px;border:1px solid var(--line);background:var(--card);
+    padding:6px 11px;border-radius:7px;border:1px solid var(--line);background:var(--card);
   }
 
   .progress{
     background:var(--card);
     border:1px solid var(--line);
-    border-radius:10px;
-    padding:12px 16px;
-    margin:0 0 26px;
+    border-radius:12px;
+    padding:16px 20px;
+    margin:0 0 28px;
   }
   .progress .p-title{
     font-family:'Space Grotesk',sans-serif;
-    font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;
-    color:var(--ink-soft);margin-bottom:8px;
+    font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;
+    color:var(--ink-soft);margin-bottom:12px;
   }
   .progress .p-row{
-    display:flex;gap:8px;align-items:baseline;
-    font-size:12.5px;line-height:1.5;margin-bottom:3px;
+    display:flex;gap:12px;align-items:baseline;
+    font-size:13px;line-height:1.6;margin-bottom:5px;
   }
   .progress .p-row .p-subj{
     font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:11px;
-    min-width:112px;flex-shrink:0;
+    min-width:90px;flex-shrink:0;
   }
-  .progress .p-subj.pm{color:var(--pm);} .progress .p-subj.js{color:var(--js);}
-  .progress .p-subj.ai{color:var(--ai);} .progress .p-subj.dsa{color:var(--dsa);}
-  .progress .p-subj.bus{color:var(--bus);} .progress .p-subj.da{color:var(--da);}
+  .progress .p-subj.pm{color:var(--pm);} .progress .p-subj.ai{color:var(--ai);}
 
   #jump{
-    margin-bottom:24px;
-    display:flex;flex-wrap:wrap;gap:6px;
+    margin-bottom:28px;
+    display:flex;flex-wrap:wrap;gap:8px;
   }
   #jump a{
     font-family:'Space Grotesk',sans-serif;
     font-size:11.5px;font-weight:600;
-    padding:5px 10px;border-radius:7px;
+    padding:6px 12px;border-radius:8px;
     background:var(--card);border:1px solid var(--line);
     color:var(--ink-soft);text-decoration:none;
+    transition:background .15s ease;
   }
   #jump a:hover{background:var(--line);}
 
-  .month{margin-bottom:38px;scroll-margin-top:16px;}
+  .month{margin-bottom:40px;scroll-margin-top:20px;}
   .month h2{
     font-family:'Space Grotesk',sans-serif;
-    font-size:19px;font-weight:700;
-    margin:0 0 12px;
-    padding-bottom:8px;
+    font-size:20px;font-weight:700;
+    margin:0 0 14px;
+    padding-bottom:10px;
     border-bottom:2px solid var(--ink);
     display:inline-block;
   }
   .grid{
     display:grid;
     grid-template-columns:repeat(7,1fr);
-    gap:6px;
+    gap:7px;
   }
   .wd{
     font-family:'Space Grotesk',sans-serif;
-    font-size:11px;font-weight:600;
+    font-size:11px;font-weight:700;
     color:var(--ink-soft);
     text-align:center;
-    padding-bottom:4px;
+    padding-bottom:6px;
     text-transform:uppercase;
-    letter-spacing:.06em;
+    letter-spacing:.08em;
   }
   .cell{
-    min-height:78px;
-    border-radius:10px;
-    padding:8px 8px 7px;
+    min-height:85px;
+    border-radius:11px;
+    padding:10px 9px;
     cursor:pointer;
-    border:1px solid var(--line);
+    border:1.5px solid var(--line);
     background:var(--card);
     display:flex;flex-direction:column;justify-content:space-between;
-    transition:transform .12s ease, box-shadow .12s ease;
+    transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;
   }
-  .cell:hover{transform:translateY(-2px);box-shadow:0 4px 14px rgba(0,0,0,.08);}
+  .cell:hover{
+    transform:translateY(-3px);
+    box-shadow:0 6px 18px rgba(0,0,0,.1);
+    border-color:var(--ink-soft);
+  }
   .cell.empty{visibility:hidden;pointer-events:none;}
-  .cell .num{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;}
+  .cell .num{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:var(--ink);}
   .cell .subj{
     font-family:'Space Grotesk',sans-serif;
     font-size:10px;font-weight:700;
-    letter-spacing:.05em;
+    letter-spacing:.06em;
     text-transform:uppercase;
-    padding:2px 6px;border-radius:5px;
+    padding:3px 8px;border-radius:6px;
     display:inline-block;width:fit-content;
+    margin-bottom:4px;
   }
-  .cell .topic{font-size:11px;line-height:1.25;color:var(--ink);opacity:.85;}
+  .cell .topic{font-size:11.5px;line-height:1.3;color:var(--ink);opacity:.8;font-weight:500;}
 
   .cell.pm{background:var(--pm-bg);} .cell.pm .subj{background:var(--pm);color:#fff;}
-  .cell.js{background:var(--js-bg);} .cell.js .subj{background:var(--js);color:#fff;}
   .cell.ai{background:var(--ai-bg);} .cell.ai .subj{background:var(--ai);color:#fff;}
-  .cell.dsa{background:var(--dsa-bg);} .cell.dsa .subj{background:var(--dsa);color:#fff;}
-  .cell.bus{background:var(--bus-bg);} .cell.bus .subj{background:var(--bus);color:#fff;}
-  .cell.da{background:var(--da-bg);} .cell.da .subj{background:var(--da);color:#fff;}
-  .cell.comm{background:var(--comm-bg);} .cell.comm .subj{background:var(--comm);color:#fff;}
 
   .overlay{
-    position:fixed;inset:0;background:rgba(20,20,16,.55);
+    position:fixed;inset:0;background:rgba(15,15,12,.6);
     display:none;align-items:center;justify-content:center;
     padding:20px;z-index:50;
+    backdrop-filter:blur(2px);
   }
   .overlay.show{display:flex;}
   .modal{
     background:var(--card);
-    max-width:540px;width:100%;
+    max-width:560px;width:100%;
     border-radius:16px;
-    padding:26px 26px 22px;
-    max-height:86vh;overflow-y:auto;
+    padding:28px;
+    max-height:88vh;overflow-y:auto;
     position:relative;
+    box-shadow:0 20px 60px rgba(0,0,0,.2);
   }
   .modal .subj{
     font-family:'Space Grotesk',sans-serif;
-    font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
-    padding:4px 10px;border-radius:6px;display:inline-block;color:#fff;margin-bottom:10px;
+    font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+    padding:5px 12px;border-radius:7px;display:inline-block;color:#fff;margin-bottom:12px;
   }
   .modal h3{
     font-family:'Space Grotesk',sans-serif;
-    font-size:21px;margin:0 0 4px;line-height:1.25;
+    font-size:22px;margin:0 0 6px;line-height:1.3;font-weight:700;
   }
-  .modal .date-line{font-size:12.5px;color:var(--ink-soft);margin-bottom:18px;}
-  .block{margin-bottom:14px;padding-left:14px;border-left:3px solid var(--line);}
+  .modal .date-line{font-size:13px;color:var(--ink-soft);margin-bottom:20px;font-weight:500;}
+  .block{margin-bottom:18px;padding-left:16px;border-left:3.5px solid;}
+  .block.learn{border-color:var(--pm);}
+  .block.practice{border-color:var(--ai);}
+  .block.build{border-color:var(--pm);}
+  .block.review{border-color:var(--ai);}
   .block .lbl{
     font-family:'Space Grotesk',sans-serif;
-    font-size:11.5px;font-weight:700;
-    display:flex;justify-content:space-between;margin-bottom:3px;
+    font-size:12px;font-weight:700;
+    display:flex;justify-content:space-between;margin-bottom:4px;
+    text-transform:uppercase;letter-spacing:.05em;
+    color:var(--ink);
   }
-  .block .desc{font-size:13.5px;line-height:1.5;color:#3a3a34;}
+  .block .desc{font-size:14px;line-height:1.6;color:var(--ink);}
   .close{
-    position:absolute;top:16px;right:16px;
-    width:30px;height:30px;border-radius:50%;
-    border:1px solid var(--line);background:var(--paper);
-    cursor:pointer;font-size:15px;line-height:1;color:var(--ink-soft);
+    position:absolute;top:18px;right:18px;
+    width:32px;height:32px;border-radius:50%;
+    border:1.5px solid var(--line);background:var(--paper);
+    cursor:pointer;font-size:16px;line-height:1;color:var(--ink-soft);
+    transition:background .15s ease, color .15s ease;
   }
-  .close:hover{background:var(--line);}
-  footer{margin-top:30px;font-size:12px;color:var(--ink-soft);text-align:center;}
+  .close:hover{background:var(--line);color:var(--ink);}
+  footer{margin-top:32px;font-size:12.5px;color:var(--ink-soft);text-align:center;line-height:1.6;}
 
-  /* ---------- Responsive ---------- */
-  @media (max-width: 860px){
+  @media (max-width: 900px){
     .phases{grid-template-columns:repeat(2,1fr);}
   }
 
-  @media (max-width: 700px){
-    body{padding:20px 14px 48px;}
-    h1{font-size:27px;}
-    .sub{font-size:13.5px;}
-    .cell{min-height:66px;padding:7px 7px 6px;border-radius:9px;}
-    .cell .num{font-size:12px;}
-    .cell .subj{font-size:9px;padding:2px 5px;}
-    .cell .topic{font-size:10px;-webkit-line-clamp:3;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden;}
-    .grid{gap:4px;}
-    .wd{font-size:9.5px;}
+  @media (max-width: 750px){
+    body{padding:24px 14px 48px;}
+    h1{font-size:28px;}
+    .sub{font-size:14px;}
+    .cell{min-height:72px;padding:8px 7px;}
+    .cell .num{font-size:13px;}
+    .cell .subj{font-size:9px;padding:2px 6px;}
+    .cell .topic{font-size:10.5px;-webkit-line-clamp:2;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden;}
+    .grid{gap:5px;}
+    .wd{font-size:9px;}
     .month h2{font-size:17px;}
   }
 
-  @media (max-width: 520px){
-    .phases{grid-template-columns:1fr 1fr;}
-    .phase .p-goal{font-size:11.5px;}
-    .legend{gap:7px;}
-    .tag{font-size:11.5px;padding:5px 10px;}
-    .cycle-strip{font-size:10px;gap:5px;}
-    .cycle-strip span{padding:4px 7px;}
-    .cell{min-height:58px;padding:6px 6px 5px;}
-    .cell .num{font-size:11px;}
-    .cell .subj{font-size:8.5px;letter-spacing:.02em;}
-    .cell .topic{font-size:9.5px;line-height:1.2;-webkit-line-clamp:2;}
-    .grid{gap:3px;}
-    .wd{font-size:8.5px;letter-spacing:0;}
-    #jump a{font-size:10.5px;padding:4px 8px;}
-    .modal{padding:20px 18px 18px;border-radius:14px;max-height:90vh;}
-    .modal h3{font-size:18px;}
-    .modal .date-line{font-size:11.5px;margin-bottom:14px;}
-    .block .desc{font-size:13px;}
-    .close{width:28px;height:28px;top:12px;right:12px;}
+  @media (max-width: 540px){
+    .phases{grid-template-columns:1fr;}
+    .phase .p-goal{font-size:12.5px;}
+    .legend{gap:8px;}
+    .tag{font-size:12px;padding:6px 11px;}
+    .cycle-strip{font-size:10px;gap:6px;}
+    .cycle-strip span{padding:5px 9px;}
+    .cell{min-height:60px;padding:6px 6px;}
+    .cell .num{font-size:12px;}
+    .cell .subj{font-size:8px;letter-spacing:.02em;}
+    .cell .topic{font-size:9.5px;line-height:1.2;-webkit-line-clamp:1;}
+    .grid{gap:4px;}
+    .wd{font-size:8px;letter-spacing:0;}
+    #jump a{font-size:10px;padding:5px 9px;}
+    .modal{padding:22px 18px;border-radius:14px;max-height:92vh;}
+    .modal h3{font-size:19px;}
+    .modal .date-line{font-size:12px;margin-bottom:16px;}
+    .block .desc{font-size:13.5px;}
+    .close{width:30px;height:30px;top:14px;right:14px;font-size:15px;}
   }
 
-  @media (max-width: 380px){
+  @media (max-width: 400px){
     .phases{grid-template-columns:1fr;}
     .cell .topic{display:none;}
-    .cell{min-height:44px;flex-direction:row;align-items:center;justify-content:space-between;}
+    .cell{min-height:48px;flex-direction:row;align-items:center;justify-content:space-between;}
   }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <div class="eyebrow">10-day mega-cycle · 2.5 hrs deep focus · 730 days · restarted Sep 10, 2026</div>
-    <h1>AI-Expert PM Study Calendar</h1>
-    <div class="sub">The 10-day cycle repeats for all 730 days: PM → JS → PM → AI → PM → DSA → PM → Business → Communication (teach the week back) → Data Analytics. PM carries 50% of the load, technical tracks (JS/AI/DSA/Business/Data) carry 40%, and Day 9 of every cycle is a teaching day where you explain the last week's concepts out loud. Topics deepen every time a track loops back around — later passes go further than earlier ones. Tap any day for the full plan.</div>
+    <div class="eyebrow">365-day intensive · 3 hrs deep focus · AI-Expert PM program</div>
+    <h1>AI-Expert Product Manager</h1>
+    <div class="sub">A focused 1-year curriculum for becoming a world-class AI product leader. The program alternates between PM fundamentals and AI depth: strategy & vision, technical foundations, user-centered design, real-world applications, metrics & execution, ethics & production. Each topic deepens as the cycle repeats — your second pass at "Prompting Strategy" builds on the first. Core principle: you can't lead AI products without understanding both the business and the technology at depth.</div>
   </header>
 
   <div class="phases">
-    <div class="phase"><div class="p-label">Phase 1 · PM Foundation</div><div class="p-range">Sep 10 – Nov 18, 2026</div><div class="p-goal">Strategy, research, market analysis. JS/AI/DSA basics. Business & Data Analytics intro.</div></div>
-    <div class="phase"><div class="p-label">Phase 2 · PM Intermediate</div><div class="p-range">Nov 19, 2026 – Jan 27, 2027</div><div class="p-goal">PRDs, roadmapping, metrics. React thinking, prompting. Build AI product idea #1.</div></div>
-    <div class="phase"><div class="p-label">Phase 3 · PM Integration</div><div class="p-range">Jan 28 – Apr 7, 2027</div><div class="p-goal">GTM, stakeholder mgmt, RAG & production AI. Build AI product #2 (real MVP).</div></div>
-    <div class="phase"><div class="p-label">Phase 4 · PM Mastery</div><div class="p-range">Apr 8, 2027 – Sep 8, 2028</div><div class="p-goal">Leadership, negotiation, scaling, fundraising. Deepening rounds on every track.</div></div>
+    <div class="phase"><div class="p-label">Q1 · Foundations</div><div class="p-range">Sep 14 – Dec 13, 2026</div><div class="p-goal">PM essentials + LLM basics. First pass at strategy, prompting, and user research.</div></div>
+    <div class="phase"><div class="p-label">Q2 · Depth</div><div class="p-range">Dec 14, 2026 – Mar 15, 2027</div><div class="p-goal">Advanced prompting, RAG, building your first AI product concept.</div></div>
+    <div class="phase"><div class="p-label">Q3 · Application</div><div class="p-range">Mar 16 – Jun 14, 2027</div><div class="p-goal">Real product work: metrics, PRDs, go-to-market for AI features.</div></div>
+    <div class="phase"><div class="p-label">Q4 · Mastery</div><div class="p-range">Jun 15 – Sep 13, 2027</div><div class="p-goal">Leadership, ethics, production systems, scaling AI products.</div></div>
   </div>
 
   <div class="progress">
-    <div class="p-title">Already completed before Sep 10, 2026 — skipped so nothing repeats</div>
-    <div class="p-row"><span class="p-subj pm">PM</span><span>through "User Research Methods: Interviews & Surveys" — next up: Market Analysis Basics</span></div>
-    <div class="p-row"><span class="p-subj js">JS</span><span>through "Variables, Data Types & Operators" — next up: Functions, Scope & Return Values</span></div>
-    <div class="p-row"><span class="p-subj ai">AI</span><span>through "Temperature, Top-p & Max Tokens" — next up: Hands-On Prompting Practice</span></div>
-    <div class="p-row"><span class="p-subj dsa">DSA</span><span>through "Linear Search vs Binary Search" — next up: Bubble Sort</span></div>
-    <div class="p-row"><span class="p-subj da">Data Analytics</span><span>through "Pivot Tables Mastery" — next up: Data Cleaning Techniques</span></div>
-    <div class="p-row"><span class="p-subj bus">Business</span><span>not started yet — begins fresh from "Business Models 101"</span></div>
+    <div class="p-title">Your Starting Point (Sep 13, 2026)</div>
+    <div class="p-row"><span class="p-subj pm">PM</span><span>New to formal product thinking; familiar with tech from engineering background</span></div>
+    <div class="p-row"><span class="p-subj ai">AI</span><span>Comfortable writing prompts; want to understand the full stack</span></div>
   </div>
 
   <div class="legend">
     <div class="tag"><span class="dot pm"></span>Product Management</div>
-    <div class="tag"><span class="dot js"></span>JavaScript</div>
-    <div class="tag"><span class="dot ai"></span>AI Fundamentals</div>
-    <div class="tag"><span class="dot dsa"></span>DSA (evaluation-level)</div>
-    <div class="tag"><span class="dot bus"></span>Business</div>
-    <div class="tag"><span class="dot da"></span>Data Analytics</div>
-    <div class="tag"><span class="dot comm"></span>Communication (teach-back)</div>
+    <div class="tag"><span class="dot ai"></span>AI Fundamentals & Applications</div>
   </div>
 
   <div class="cycle-strip">
-    <span>Day 1 PM</span><span>Day 2 JS</span><span>Day 3 PM</span><span>Day 4 AI</span><span>Day 5 PM</span><span>Day 6 DSA</span><span>Day 7 PM</span><span>Day 8 Business</span><span>Day 9 Communication</span><span>Day 10 Data Analytics</span>
+    <span>Day 1 PM: Strategy & Vision</span><span>Day 2 AI: Fundamentals</span><span>Day 3 PM: User Research & Design</span><span>Day 4 AI: Products & Applications</span><span>Day 5 PM: Execution & Metrics</span><span>Day 6 AI: Ethics, Production & Scale</span>
   </div>
 
   <div id="jump"></div>
 
   <div id="calendar"></div>
 
-  <footer>Send me your daily log and I'll track progress — weekly, we'll review and I can adjust the plan.</footer>
+  <footer>Send daily study logs weekly. We'll review progress and recalibrate based on what's landing. The depth comes from repetition across quarters — each pass at a topic assumes you've mastered the previous round.</footer>
 </div>
 
 <div class="overlay" id="overlay">
@@ -330,435 +316,169 @@
 
 <script>
 const SUBJECTS = {
-  PM:   {name:"Product Management", key:"pm"},
-  JS:   {name:"JavaScript",         key:"js"},
-  AI:   {name:"AI Fundamentals",    key:"ai"},
-  DSA:  {name:"Data Structures & Algorithms", key:"dsa"},
-  BUS:  {name:"Business",           key:"bus"},
-  DA:   {name:"Data Analytics",     key:"da"},
-  COMM: {name:"Communication",      key:"comm"}
+  PM:  {name:"Product Management", key:"pm"},
+  AI:  {name:"AI Fundamentals & Products", key:"ai"}
 };
 
-// The 10-day mega-cycle pattern. Repeats unchanged for all 730 days.
-const PATTERN = ["PM","JS","PM","AI","PM","DSA","PM","BUS","COMM","DA"];
+// 6-day cycle that repeats for all 365 days
+const PATTERN = ["PM","AI","PM","AI","PM","AI"];
 
-// ---------- Hand-written detailed topics (first sessions of each track) ----------
-const DETAILED = {
-JS: [
-{t:"Variables, Data Types & Operators",
- learn:"let / const / var, primitive types, comparison & arithmetic operators, type coercion.",
- practice:"Write 15 examples mixing let/const/var. Predict the output of 10 tricky coercion expressions before running them.",
- build:"Build a 'profile card' using variables for name/age/bio, output it with a template literal.",
- review:"Note 3 var-vs-let scoping gotchas you didn't know before today."},
-{t:"Functions, Scope & Return Values",
- learn:"Function declarations vs expressions vs arrow functions, parameters, the scope chain.",
- practice:"Write 8 functions incl. greet(), add(), isEven(), factorial() using different syntaxes.",
- build:"Build a small calculator (add/sub/mul/div) callable from the console.",
- review:"Write the difference between function scope and block scope, with your own example."},
-{t:"Arrays & Array Methods (map/filter/reduce)",
- learn:"Array creation, indexing, and how map / filter / reduce / forEach actually work under the hood.",
- practice:"Solve 10 array-transformation problems using map/filter/reduce only (no for-loops).",
- build:"Process a list of 20 'products' (name/price): filter by price range, then reduce to a total.",
- review:"Write one rule for when to reach for map vs forEach vs reduce."},
-{t:"Objects & Object Methods",
- learn:"Object literals, methods, how `this` behaves, Object.keys/values/entries.",
- practice:"Create 3 objects for real entities (e.g. book, user, order) and write 2 methods on each.",
- build:"Build a tiny 'contact book': array of objects with add/search/delete functions.",
- review:"Note how `this` behaves differently in a regular function vs an arrow function."},
-{t:"Loops (for / while / do-while)",
- learn:"for, while, do-while, break & continue.",
- practice:"Print a multiplication table, solve FizzBuzz, and build a pattern with nested loops.",
- build:"Simulate a number-guessing loop that logs each attempt until it succeeds.",
- review:"Compare readability of the 3 loop types — which would you default to and why?"},
-{t:"Conditionals (if/else, switch, ternary)",
- learn:"if/else chains, switch statements, the ternary operator.",
- practice:"Build a grading system (score → letter grade) written 3 ways: if/else, switch, ternary.",
- build:"Build a 'should I go outside' decision function using 4+ chained conditions.",
- review:"Write down when switch is genuinely better than an if/else chain."},
-{t:"Error Handling (try / catch)",
- learn:"try/catch/finally, throwing custom Error objects.",
- practice:"Write 5 functions that validate input and throw custom, descriptive errors.",
- build:"Build an input-validation module for a signup form: email, password, age.",
- review:"Note 3 real bugs proper error handling would have caught earlier."},
-{t:"Async Basics (callbacks, setTimeout)",
- learn:"The callback pattern, setTimeout/setInterval, and how 'callback hell' happens.",
- practice:"Chain 3 nested setTimeout calls to simulate a sequence of timed events.",
- build:"Simulate a traffic light changing color every 2 seconds using callbacks.",
- review:"Explain in your own words why callback hell happens and one way to avoid it."},
-{t:"Promises",
- learn:"The Promise constructor, .then/.catch/.finally, and chaining.",
- practice:"Convert 3 of your earlier callback functions into promise-based functions.",
- build:"Build a mock fetchUser() promise that resolves or rejects randomly; chain 3 .then() calls.",
- review:"Diagram the promise lifecycle: pending → fulfilled/rejected."},
-{t:"Async / Await",
- learn:"async functions, the await keyword, try/catch with async code.",
- practice:"Rewrite all of yesterday's promises using async/await.",
- build:"Write one async function that chains 3 sequential mock API calls in order.",
- review:"Compare readability: promises vs async/await for the exact same logic."},
-{t:"API Calls with fetch()",
- learn:"fetch() syntax, response.json(), and basic error handling for network calls.",
- practice:"Call a free API (JSONPlaceholder or OpenWeather) and log 3 different endpoints.",
- build:"Fetch and neatly display 5 posts from an API, formatted as readable text.",
- review:"Note the most common fetch mistakes (forgetting .json(), skipping error handling)."},
-{t:"JSON Parsing & Handling",
- learn:"JSON.parse / JSON.stringify, and navigating nested JSON structures.",
- practice:"Parse 3 sample JSON blobs and extract specific nested fields from each.",
- build:"Write a function that round-trips an array of objects to JSON and back.",
- review:"List 3 places JSON shows up in real apps (APIs, config files, storage)."},
-{t:"Destructuring & Spread Operator",
- learn:"Array/object destructuring, the spread and rest syntax.",
- practice:"Rewrite 10 lines of 'old-style' code using destructuring and spread.",
- build:"Write a function using rest params that merges any number of objects together.",
- review:"Note 3 places destructuring genuinely makes your code cleaner, not just shorter."},
-{t:"Template Literals & String Methods",
- learn:"Template literals plus slice, split, trim, replace, includes and friends.",
- practice:"Rebuild 5 old string-concatenation snippets using template literals.",
- build:"Build a 'receipt generator' that formats a list of items/prices into a printable string.",
- review:"List the 5 string methods you expect to use most going forward."}
-],
-DSA: [
-{t:"Big O Notation",
- learn:"O(1), O(n), O(n²), O(log n) with concrete examples of each — read as a PM would: what to ask an engineer, not what to implement.",
- practice:"Classify the time complexity of 10 short code snippets on paper first, then verify.",
- build:"Write 3 tiny functions that clearly demonstrate O(1), O(n), and O(n²) behavior.",
- review:"Explain Big O to a total beginner in 3 sentences, no jargon — this is the version you'll use in a standup."},
-{t:"Array Operations & Complexity",
- learn:"push/pop/shift/unshift and the real time complexity behind each.",
- practice:"Implement push/pop/shift/unshift manually, without using the built-ins.",
- build:"Time-test shift() vs push() on a 10,000-item array and compare the speed gap.",
- review:"Note why shift/unshift are O(n) while push/pop are O(1) — and why an engineer might push back on a 'simple' feature request because of this."},
-{t:"String Operations & Complexity",
- learn:"String immutability in JS and the complexity of common string operations.",
- practice:"Reverse a string 3 different ways: loop, recursion, and a built-in method.",
- build:"Write a palindrome checker that runs in O(n) time.",
- review:"Note why building strings with += inside a big loop can get expensive."},
-{t:"Linear Search vs Binary Search",
- learn:"How each search works, and why binary search needs sorted data.",
- practice:"Code both from scratch and test them against 5 different arrays.",
- build:"Build a 'guess the number' game whose logic mirrors binary search.",
- review:"Explain, with a small diagram, why binary search is O(log n)."},
-{t:"Bubble Sort",
- learn:"The swap-based mechanics of bubble sort.",
- practice:"Implement it, then trace it by hand through a 6-element array.",
- build:"Add a comparisons/swaps counter to visualize how much work it does.",
- review:"Note why bubble sort is rarely used in real production code."},
-{t:"Selection Sort",
- learn:"How selection sort minimizes swaps compared to bubble sort.",
- practice:"Implement it and compare its swap count against bubble sort on the same array.",
- build:"Benchmark both sorts on the same 1,000-item random array.",
- review:"Write the key mechanical difference between the two algorithms."},
-{t:"Insertion Sort & Merge Sort Intro",
- learn:"Insertion sort's mechanics, plus merge sort's divide-and-conquer idea.",
- practice:"Implement insertion sort fully; trace merge sort's splitting step on paper.",
- build:"Compare insertion sort's speed on a nearly-sorted array vs a fully random one.",
- review:"Explain in your own words why merge sort reaches O(n log n)."},
-{t:"Merge Sort Implementation",
- learn:"The merge step in detail, and the recursive structure that drives it.",
- practice:"Implement merge sort fully; trace the recursion through an 8-element example.",
- build:"Use your merge sort to sort an array of objects by a numeric field.",
- review:"Draw the recursion tree for sorting 8 elements."},
-{t:"Quick Sort",
- learn:"Pivot selection strategies and the partitioning logic.",
- practice:"Implement quicksort with 2 different pivot strategies (first vs random).",
- build:"Benchmark quicksort vs merge sort on random data vs already-sorted data.",
- review:"Explain why quicksort's worst case degrades to O(n²)."},
-{t:"Heap Sort",
- learn:"What a heap is and how the heapify process works.",
- practice:"Build a max-heap from an array by hand, then implement heap sort.",
- build:"Use your heap sort logic to pull the top-5 largest values from a dataset.",
- review:"Note one real use of heaps beyond sorting (hint: priority queues, ranking feeds)."},
-{t:"Counting Sort & Radix Sort",
- learn:"Non-comparison sorting and when it applies (bounded integer ranges).",
- practice:"Implement counting sort on an array of ages between 0–100.",
- build:"Implement radix sort on a list of 4-digit numbers.",
- review:"Note why these sorts can beat O(n log n) in the right situations."},
-{t:"Sorting Comparison & Recap",
- learn:"Revisit every sort covered so far.",
- practice:"Build a table: best/avg/worst time, space used, and stability for each sort.",
- build:"Write one function that picks a 'best' sort based on input size and type.",
- review:"Pick your favorite sorting algorithm and justify the choice in 2 sentences."},
-{t:"Searching Recap (Linear & Binary)",
- learn:"Revisit both search types, including edge cases like duplicates and empty arrays.",
- practice:"Solve 5 search-based problems: first/last occurrence, closest value, etc.",
- build:"Write a search function that auto-detects whether input is sorted and picks a strategy.",
- review:"Note 2 real-world uses of binary search you hadn't considered before."},
-{t:"Mixed Recap & Consolidation",
- learn:"Revisit whichever of the last 13 topics still feels shaky.",
- practice:"Solve 4 mixed sorting/searching problems (easy difficulty is fine).",
- build:"Re-implement your weakest sorting algorithm entirely from memory.",
- review:"Rate your confidence 1–10 on every algorithm covered; flag what to revisit."}
-],
-PM: [
-{t:"What is PM? Product Strategy & Vision Basics",
- learn:"What a Product Manager actually owns, and how strategy differs from a to-do list of features.",
- practice:"Write a 1-page comparison of PM vs Project Manager responsibilities.",
- build:"Draft a one-paragraph 'vision statement' for an AI product idea of your own.",
- review:"Define 'Product Manager' in your own words, with zero jargon."},
-{t:"Product Development Lifecycle & Frameworks",
- learn:"The Idea → Development → Growth → Maturity → Decline stages, plus a first look at strategy frameworks (Vision → Strategy → Roadmap → Backlog).",
- practice:"Draw and label the full lifecycle using a real product you know well.",
- build:"Map an AI product (e.g. ChatGPT) onto each stage of the lifecycle.",
- review:"Note how a PM's priorities shift at each stage of the lifecycle."},
-{t:"User Research Intro: Jobs To Be Done",
- learn:"Qualitative vs quantitative research, and the Jobs To Be Done framework (functional, emotional, social jobs).",
- practice:"Design 8 user research questions for an AI chatbot product, framed around JTBD.",
- build:"Run a mock 10-minute interview with a friend or family member using your questions.",
- review:"Note 2 things that surprised you from the mock interview."},
-{t:"User Research Methods: Interviews & Surveys",
- learn:"How to structure an unbiased interview, and when a survey beats an interview.",
- practice:"Write 10 interview questions and 5 survey questions for the same research goal — compare what each reveals.",
- build:"Run one real interview (5–10 min) with someone outside your household and write up the findings.",
- review:"Note one leading question you almost asked, and how you fixed it."},
-{t:"Market Analysis Basics",
- learn:"Market sizing basics: TAM, SAM, SOM.",
- practice:"Pick a product you use daily and roughly estimate its TAM/SAM/SOM.",
- build:"Write a half-page market analysis for a hypothetical AI note-taking app.",
- review:"Note the single biggest uncertainty in your market-size estimate."},
-{t:"Competitive Landscape Analysis",
- learn:"How to structure a clear competitor comparison.",
- practice:"Build a table comparing 4 AI chatbots on features, pricing, strengths, weaknesses.",
- build:"Identify one real gap that none of the 4 competitors currently address.",
- review:"Note which competitor would worry you most if you were building this product."},
-{t:"Ideation: Blue Ocean & SCAMPER",
- learn:"Blue Ocean Strategy (compete where there's no competition) and the SCAMPER brainstorming technique.",
- practice:"Run SCAMPER on an existing AI product to generate 7 new feature ideas.",
- build:"Pick your top 3 ideas and write a 2-sentence pitch for each, framed in Blue Ocean terms.",
- review:"Note which technique generated your strongest ideas and why."},
-{t:"Value Proposition Deep Dive",
- learn:"The value proposition canvas: pains, gains, jobs.",
- practice:"Write value propositions for 2 products — one AI-based, one traditional.",
- build:"Find a weak value prop online and rewrite it to be sharper.",
- review:"Note the 3 elements every strong value proposition needs."},
-{t:"User Personas",
- learn:"Persona structure: goals, pain points, behaviors, demographics.",
- practice:"Create 2 detailed personas for an AI product of your choice.",
- build:"Write a 'day in the life' scenario for each persona.",
- review:"Note how these two personas would actually use your product differently."},
-{t:"Product Positioning",
- learn:"How a positioning statement is structured, and what makes differentiation real.",
- practice:"Write a 1-page positioning statement for an AI product.",
- build:"Test your positioning against 2 real competitors' claims — does it hold up?",
- review:"Note whether your positioning is genuinely defensible or easy to copy."},
-{t:"PRD Intro (Product Requirements Doc)",
- learn:"Standard PRD structure: problem, goals, requirements, success metrics.",
- practice:"Read one real example PRD and annotate what each section is doing.",
- build:"Outline a skeleton PRD for a simple AI feature — empty sections with guiding prompts.",
- review:"Note the 3 sections you'd personally find hardest to write well."},
-{t:"Feature Prioritization (MoSCoW)",
- learn:"The Must / Should / Could / Won't framework, with a quick look at RICE.",
- practice:"Take 12 feature ideas and sort every one into a MoSCoW bucket.",
- build:"Justify in one sentence why each 'Must Have' actually earned that label.",
- review:"Recall a time you saw a 'Should Have' get over-prioritized in real life."},
-{t:"Recap: Strategy & Research Foundations",
- learn:"Revisit lifecycle, JTBD, user research, market analysis, and competitive analysis.",
- practice:"Write down 5 concepts learned so far plus 3 open questions.",
- build:"Apply one of these concepts directly to a product idea of your own.",
- review:"Rate your confidence 1–10 on explaining each concept to someone else."},
-{t:"Recap: Positioning & Prioritization Toolkit",
- learn:"Revisit value prop, personas, positioning, PRDs, and prioritization.",
- practice:"Write 5 more concepts, each with a note on how it applies to AI products.",
- build:"Draft a mini one-page product brief that combines 3+ of these concepts.",
- review:"Identify your weakest PM concept so far, and why it hasn't clicked yet."}
-],
-AI: [
-{t:"What is an LLM?",
- learn:"Watch a beginner-friendly LLM explainer (e.g. 3Blue1Brown's series).",
- practice:"Write 5 key points from the video in your own words.",
- build:"Explain 'what is an LLM' to a non-technical friend and refine based on what confuses them.",
- review:"Note 2 things about LLMs you still don't fully understand — flag for later."},
-{t:"Tokens & Context Windows",
- learn:"What tokens are, and how context windows limit a conversation.",
- practice:"Count tokens in 5 sample prompts using an online tokenizer.",
- build:"Test what happens when you push a conversation past a small model's context limit.",
- review:"Note why token limits matter for both cost and performance — this is a PM-relevant constraint."},
-{t:"Temperature, Top-p & Max Tokens",
- learn:"How each sampling parameter shapes model output.",
- practice:"Run the same prompt at temperature 0, 0.7, and 1.2 — compare the outputs.",
- build:"Pick a use case (code vs creative writing) and choose ideal settings, with reasoning.",
- review:"Note when you'd deliberately want low vs high temperature."},
-{t:"Hands-On Prompting Practice",
- learn:"Quick review of what makes a prompt clear and unambiguous.",
- practice:"Write 5 different prompts testing clarity, examples, and explicit format requests.",
- build:"Take your weakest prompt from today and iterate it 3 times to sharpen it.",
- review:"Note the single biggest lever you found for better output."},
-{t:"Few-Shot Prompting",
- learn:"Zero-shot vs few-shot prompting, and when each is appropriate.",
- practice:"Write one prompt with examples and one without, for the exact same task.",
- build:"Use few-shot examples to get reliably consistent JSON-formatted output.",
- review:"Note when few-shot examples help most — usually format-sensitive tasks."},
-{t:"Chain-of-Thought Prompting",
- learn:"How chain-of-thought prompting improves multi-step reasoning.",
- practice:"Compare a plain prompt vs a CoT prompt on the same math or logic problem.",
- build:"Apply chain-of-thought prompting to a real problem you're actually working on.",
- review:"Note when CoT genuinely helps vs when it's unnecessary overhead."},
-{t:"System Prompts & Role-Playing",
- learn:"How a system prompt shapes a model's behavior and tone.",
- practice:"Write one system prompt and test it against 3 different user queries.",
- build:"Create 2 distinct 'personas' via system prompts and compare their responses.",
- review:"Note how much the system prompt actually changed tone and behavior."},
-{t:"Hallucinations & AI Limitations",
- learn:"Why hallucinations happen and the common failure modes behind them.",
- practice:"Ask the model 5 tricky questions specifically designed to trigger a hallucination.",
- build:"Write a prompt strategy that reduces hallucination risk (ask for sources, ask for uncertainty).",
- review:"Note 2 domains where you'd never trust an unverified AI answer — this becomes a product risk list."},
-{t:"Prompt Engineering Frameworks",
- learn:"Overview of structured frameworks like RTF and CRISPE.",
- practice:"Test one framework on a real task and document exactly how you structured it.",
- build:"Create your own reusable prompt template for a task you do often.",
- review:"Note which framework felt most natural to your own thinking style."},
-{t:"Model Comparison",
- learn:"Overview of major model families and their relative strengths.",
- practice:"Run the same prompt on 2–3 different models and compare output quality.",
- build:"Write a short 'when to use which model' cheat sheet based on your own tests.",
- review:"Note the single biggest quality difference you observed between models."},
-{t:"Use Case Analysis Across Industries",
- learn:"How AI is being applied across different industries today.",
- practice:"Pick one domain (healthcare, finance, education) and list 5 concrete AI use cases.",
- build:"Pick your favorite use case and sketch a rough product concept around it.",
- review:"Note which use case felt most technically feasible to build today."},
-{t:"Embeddings Intro",
- learn:"What embeddings are, and why they enable semantic search.",
- practice:"Generate embeddings for 5 sentences and compare their similarity scores.",
- build:"Build a tiny 'find the most similar sentence' demo using cosine similarity.",
- review:"Note one product idea that embeddings could power."},
-{t:"Function Calling / Tool Use Basics",
- learn:"How models call external tools and functions, and why this matters for real products.",
- practice:"Design a simple tool schema (name, params, description) for a weather-lookup tool.",
- build:"Sketch a mini agent flow: user question → tool call → tool result → final answer.",
- review:"Note one feature in an app you use that's probably a tool-call under the hood."},
-{t:"End-to-End Prompt Engineering Workflow",
- learn:"Review the full workflow: role + instruction + example + format, combined.",
- practice:"Design one complete, production-quality prompt using all 4 elements together.",
- build:"Test your prompt against 3 edge-case inputs and refine it based on what breaks.",
- review:"Write your own personal 'prompt checklist' to reuse going forward."}
-]
-};
+// ========== DEEP PM CURRICULUM (365 days / 6-day cycle = ~61 cycles) ==========
+const PM_TOPICS = [
+// Q1: Foundation (cycles 0-15)
+{t:"What is a Product Manager?", learn:"Your role, your leverage, your constraints. Read: Marty Cagan's definitions of PM, APM, and why the title varies by company.", practice:"Write your own 1-page PM role definition. Interview 3 PMs at different companies on how they'd describe their job.", build:"Create a simple diagram: what a PM owns, what they influence, what they don't.", review:"Note 3 ways your understanding of PM has shifted from day 1."},
+{t:"Product Strategy vs Roadmap Basics", learn:"Strategy is 'why'. Roadmap is 'what + when'. How they connect. Read: Reforge's Strategy module intro.", practice:"Find a company's public roadmap and reverse-engineer their underlying strategy.", build:"Draft a 6-month vision + strategy for an AI product in a domain you know.", review:"What was harder: defining the 'why' or the 'what'? Note it."},
+{t:"Frameworks: Vision to OKRs to Backlog", learn:"The cascade: vision (north star) → strategy → OKRs → quarterly themes → stories. Who owns each layer.", practice:"Take a hypothetical AI startup and cascade from a bold vision down to 3 OKRs and 5 backlog items.", build:"Create this cascade for an AI product idea you care about.", review:"Which layer felt most natural? Which felt like box-ticking?"},
+{t:"User Research Foundations: Jobs to Be Done", learn:"Functional, emotional, social, and situational jobs. Why JTBD beats personas. Kano model intro.", practice:"Pick an AI tool you use. Write down 5-7 different jobs it could be doing for different user types.", build:"Design 8 interview questions rooted in JTBD, not features.", review:"How would your interview answers change if you asked about jobs instead of preferences?"},
+{t:"User Interview Mastery", learn:"How to run an unbiased, discovery-focused interview. Ask open questions. Don't lead. Synthesize notes.", practice:"Run 3 interviews (real or mock) about an AI product use case. Take notes. Synthesize patterns.", build:"Write a 2-page findings doc from your interviews.", review:"What surprised you? What did you assume wrong?"},
+{t:"Market Analysis & Sizing", learn:"TAM/SAM/SOM framework. How to research it without getting lost. Orders of magnitude thinking.", practice:"Size a real AI market: pick a domain, estimate TAM bottom-up and top-down, compare.", build:"Write a half-page market analysis for your AI idea.", review:"What's your biggest uncertainty? How would you reduce it?"},
+{t:"Competitive Analysis Deep Dive", learn:"Competitive matrix: who, what they do, strengths, weaknesses, price. Finding the gap.", practice:"Build a 4-5 competitor comparison for an AI product category. Identify one real gap.", build:"Write: 'If I were building this, I'd compete on _____ because _____.'", review:"Which competitor would you least want to compete against? Why?"},
+{t:"Value Proposition Canvas", learn:"Problem, solution, value. Jobs-Pains-Gains model. How to test fit. Differentiation.", practice:"Create a value prop canvas for 2 different AI products.", build:"Write value propositions for 3 different user personas for the same product.", review:"Can you defend each prop against a skeptical investor? Try it."},
+{t:"Ideation Methods: SCAMPER, Blue Ocean", learn:"SCAMPER (Substitute, Combine, Adapt, Modify, Put to other use, Eliminate, Reverse) for AI. Blue Ocean thinking.", practice:"Run SCAMPER on an existing AI tool. Generate 8-10 new ideas.", build:"Pick your top 3 ideas. Write a 1-sentence Blue Ocean positioning for each.", review:"Which framework generated your best idea? Why?"},
+{t:"PRD Fundamentals: Problem & Goals", learn:"A PRD's job is to clarify, not bury. Problem statement, context, goal, non-goals. What counts as success.", practice:"Read 3 real (or leaked) PRDs. Annotate what each section is doing.", build:"Write a 1-page skeleton PRD for an AI feature you want to build.", review:"What's missing? What feels clear already?"},
+{t:"PRD: Requirements & Design Approach", learn:"Acceptance criteria, edge cases, out-of-scope, design constraints. How designers and engineers use a PRD.", practice:"Expand your skeleton PRD with 10-15 detailed requirements.", build:"Mock up a Figma wireframe (low-fidelity) for your feature. Annotate it with PRD callouts.", review:"How much of the design is constrained by the PRD? How much is still open?"},
+{t:"PRD: Success Metrics & Rollout", learn:"How to define success before you build. Metric hierarchy. Guardrails. Launch strategy (beta, staged, dark mode).", practice:"Define 5 success metrics for your AI feature. Explain why each one matters.", build:"Write a go/no-go decision framework for your launch.", review:"Could you explain these metrics to your CEO in 60 seconds?"},
+{t:"Wireframing & Low-Fidelity Design", learn:"Why PMs should sketch. Not about aesthetics, about flow. Figma basics for PMs.", practice:"Low-fidelity sketch 3 different UI approaches for your AI feature.", build:"Present your 3 sketches to a designer friend. Get feedback on which flow is clearest.", review:"How did feedback change your thinking? What was wrong?"},
+{t:"MVP Definition: What's the Minimum?", learn:"MVP isn't 'a small version of your big idea.' MVP is 'the smallest experiment to test your riskiest assumption.'", practice:"Define 5 different MVPs for your AI product idea, each testing different assumptions.", build:"Pick one MVP. List 5 features. Cut to 2. Why those 2?", review:"What assumptions are you not testing in this MVP? Is that OK?"},
+{t:"Talking to Stakeholders: Engineering First", learn:"How to work with engineering. What engineers actually care about. Estimation and scope. Technical debt as a product decision.", practice:"Play-act: pitch your AI feature to an engineer who says 'that's complex.' How do you respond?", build:"Write an engineering brief for your feature: architecture questions, dependencies, risk.", review:"What did the engineer teach you about feasibility?"},
 
-// ---------- Extended curriculum titles (sessions beyond the hand-written ones) ----------
-const EXTRA_TITLES = {
-PM: ["Design Thinking Basics","Wireframing Fundamentals (Read-Level)","Low-Fidelity Prototyping (Read-Level)","Usability Testing Basics","MVP Definition","Go-To-Market Strategy Basics","Metrics & KPIs Introduction","North Star Metric Framework","A/B Testing Fundamentals","Funnel Analysis","Retention & Churn Basics","Cohort Analysis","User Interviews: Advanced Techniques","Stakeholder Mapping","Roadmapping Fundamentals","Roadmap Prioritization Frameworks (RICE)","Writing a Full PRD","Writing User Stories","Acceptance Criteria & Definition of Done","Working with Engineering: Sprint Basics","Agile & Scrum Fundamentals","Working with Design: Handoff Process","Launch Planning","Beta Testing Programs","Gathering & Synthesizing Feedback","Iteration Planning Post-Launch","Pricing Strategy Basics","Monetization Models (Freemium, Subscription)","Unit Economics Basics (CAC, LTV)","Growth Loops & Virality","Onboarding Design Principles","Activation Metrics","Feature Flagging & Rollouts","Experimentation Culture","Data-Informed Decision Making","Building Dashboards for Product Metrics","Platform Thinking","Partnerships & Integrations Strategy","API Products & Developer Experience","Competitive Positioning at Scale","Product Strategy Frameworks","Vision & Strategy Documents","OKRs for Product Teams","Cross-Functional Leadership","Influence Without Authority","Managing Up: Working with Execs","Prioritization Under Constraints","Saying No: Scope Management","Handling Conflicting Stakeholder Needs","Product Ops Basics","Internationalization & Localization Strategy","Accessibility as a Product Requirement","Trust & Safety Considerations","Privacy & Data Governance for PMs","Building for Enterprise vs Consumer","B2B Product Management Basics","Sales & Customer Success Collaboration","Customer Advisory Boards","Case Study: A Successful AI Product","Case Study: A Failed Product Launch","Writing a Product Case Study","Building a Product Portfolio","Product Sense Interview Practice","Metrics Interview Practice","Execution Interview Practice","Strategy Interview Practice","Behavioral Interview Prep for PMs","Mock PM Interview: Product Design","Mock PM Interview: Root Cause Analysis","Mock PM Interview: Estimation Questions","Building Your PM Narrative","Negotiation Basics for PMs","Negotiation: Real Scenario Practice","Crisis Management: A Product Outage","Crisis Management: A PR Crisis","Pivots & Course Correction: Case Studies","Building & Leading Teams","Hiring for Product Teams","Managing PM Career Growth","AI Product Strategy: Build vs Buy vs Fine-Tune","AI Product Strategy: Evaluating Model Providers","AI Product Ethics & Responsible AI","International Markets: Expansion Playbook","Localization Strategy for AI Products","Fundraising for AI Products: Investor Narrative","Company Building: Vision to Org Chart","Final Portfolio Review & Polish","Final Interview Readiness Check"],
-AI: ["Retrieval-Augmented Generation (RAG) Basics","Vector Databases Introduction","Building a Simple RAG Pipeline (Concept Walkthrough)","Fine-Tuning: Concepts & When to Use It","LoRA & Parameter-Efficient Fine-Tuning — Concept Level","Evaluation Metrics for LLMs","Building an Evaluation Harness — Concept Level","AI Safety Basics","Bias & Fairness in AI Models","Multi-Turn Conversation Management","Context Management Strategies","Building an AI Agent: Core Loop","Agent Planning & Reasoning Patterns","Multi-Agent Systems Intro","Observability for AI Applications","Logging & Tracing LLM Calls","Cost Optimization for LLM Apps","Latency & Throughput Analysis","Prompt Caching Strategies","Structured Output & JSON Mode","Guardrails & Content Filtering","Semantic Search Deep Dive","Hybrid Search (Keyword + Semantic)","Chunking Strategies for RAG","Advanced RAG: Re-ranking","Advanced RAG: Query Rewriting","LLMOps: Deployment Basics","LLMOps: Versioning & Rollbacks","LLMOps: Monitoring in Production","Building an AI Feature into a Real Product — Case Study","API Design for AI Features","Streaming Responses (SSE) — Concept Level","Rate Limiting AI API Usage","Handling AI API Failures Gracefully","Cost Analysis: Model Pricing Comparison","AI Business Models Overview","Build vs Buy Decisions for AI Features","AI Product Metrics That Matter","Multi-Modal Models: Vision + Language","Image Generation Models Overview","Audio & Speech Models Overview","Advanced Prompt Architectures","Prompt Chaining & Pipelines","Orchestration Frameworks Overview","Memory Systems for AI Agents","Long-Term vs Short-Term Context","Evaluating Agent Reliability","Red-Teaming Your AI Application","Handling Adversarial Prompts","AI Regulation & Compliance Basics","Explainability in AI Systems","Scaling AI Infrastructure Concepts","Choosing the Right Model for a Task","Open Source vs Proprietary Models","Self-Hosting Models: Trade-offs","Emerging Trends: Reasoning Models","Emerging Trends: Autonomous Agents","Case Study: A Successful AI Product","Case Study: An AI Product Failure","Production AI Systems: Reading an Architecture Diagram","Production AI Systems: Cost Optimization Deep Dive","Production AI Systems: Reliability & Fallbacks","AI Interview Prep: Technical Concepts","AI Interview Prep: Product Thinking","AI Interview Prep: System Design for AI","Mock AI Interview: Full Round","Final AI Portfolio Review"],
-JS: ["ES6+ Modules (import/export)","Closures","Higher-Order Functions","Functional Programming Basics","OOP in JS: Classes & Constructors","Prototypes & Inheritance","The `this` Keyword & Binding","Generators & Iterators","Map & Set Data Structures","Date & Math Objects","Immutability & Pure Functions","Currying & Function Composition","Memoization","Recursion in JavaScript","The Event Loop & Call Stack","Microtasks vs Macrotasks","DOM Selection & Traversal (read-level)","DOM Manipulation & Rendering (read-level)","Event Listeners & Event Object","Event Delegation","Forms & Input Validation","localStorage & sessionStorage","Browser APIs Overview","Debugging with DevTools","Code Quality & Linting: What Good Looks Like","Unit Testing Basics — Reading a Test Suite","Git Basics for Reading a Codebase","npm & package.json: What Engineers Mean By It","Module Bundlers (Webpack/Vite) — Concept Level","CommonJS vs ES Modules","Node.js Fundamentals — What It's For","The Node.js Module System","How a REST API Is Structured (Express)","Express Routing — Reading Route Files","Express Middleware — What It Does","Databases 101: SQL vs NoSQL, Read-Level","CRUD Operations End-to-End (Concept)","Authentication Basics (JWT) — What PMs Need to Know","Environment Variables & Config","Error Handling in Backend Apps","RESTful API Design Principles","Reading a Full Backend Service","Testing APIs with Postman/curl","Rate Limiting — Why Engineers Push Back","CORS Explained (Why It Breaks Demos)","Deploying an App — What 'Ship It' Actually Means","Logging & Monitoring Basics","Caching Strategies — Why 'Just Make It Faster' Isn't Simple","WebSockets Introduction","Real-Time Features — What They Cost to Build","GraphQL Introduction","GraphQL vs REST — Trade-offs a PM Should Know","Reading a GraphQL Schema","ORMs — What They Abstract Away","Database Schema Design — Reading an ERD","Migrations & Seeding — Why 'Just Add a Field' Isn't Free","Frontend-Backend Contracts (API Specs)","Loading & Error State Patterns","Reading a Full CRUD App's Architecture","Backend Performance — What 'Slow' Usually Means","Security Basics: SQL Injection & XSS (for risk assessment)","Input Sanitization — Why Every Form Needs It","Background Jobs & Queues — Concept Level","React Fundamentals & Component Thinking","Props & State — The Mental Model","The useState Hook (read-level)","The useEffect Hook (read-level)","Component Lifecycle in React — Concept","Conditional Rendering & Lists","Forms in React — Concept Level","Custom Hooks — What They're For","The Context API — Why It Exists","State Management Patterns (Redux/Zustand) — Concept","React Router — Reading Navigation Structure","Fetching Data in React — Concept Level","Component Composition Patterns","Performance: Why Re-Renders Matter","Testing React — What Coverage Actually Tells You","Reading a Multi-Page React App's Structure","Authentication in React Apps — Concept","Protected Routes — Concept","Deploying a React App — What CI/CD Means","Styling Systems: CSS Modules & Tailwind — Concept","Component Libraries — Build vs Buy","Accessibility Basics — Why It's a Requirement, Not a Nice-to-Have","Responsive Design Patterns — Reading a Breakpoint Strategy","Full-Stack Architecture — Reading a System Diagram","CI Basics — What a Pipeline Actually Checks","Error Boundaries — Concept Level","Code Splitting & Lazy Loading — Why Load Times Vary","SEO Basics for SPAs","State Persistence Patterns","Optimistic UI Updates — Why Some Apps 'Feel' Faster","WebSocket Integration — Reading a Real-Time Feature Spec","File Upload Handling — What Breaks in Practice","Image Optimization — Why Assets Bloat Load Time","Form Libraries — Concept Level","Validation Libraries (Zod) — Why Type Safety Matters","Reading a Dashboard's Data Flow","TypeScript Basics — Why Teams Adopt It","Types & Interfaces — Reading Type Definitions","Typing API Responses — Why Contracts Matter","Design Patterns: Singleton & Factory — Concept","Design Patterns: Observer & Module — Concept","Clean Code Principles — What 'Technical Debt' Means","Refactoring — Why Engineers Ask for Time to Do It","Performance Optimization — Reading a Profiler Report","Bundle Size Optimization — Why It Matters for Mobile","Memory Leaks — What They Look Like From the Outside","Browser Rendering Pipeline — Concept Level","Web Vitals & Performance Metrics — PM-Relevant Ones","Accessibility Deep Dive (ARIA) — Reading an Audit","Testing Strategy: Unit vs Integration vs E2E — What to Ask For","E2E Testing — What It Catches That Unit Tests Miss","CI/CD Pipeline Basics — Reading a Deploy Log","Docker Basics — What 'Containerized' Means","Production Deployment Checklist — What Engineers Actually Check","Monitoring & Error Tracking (Sentry) — Reading a Dashboard","System Design for Frontend — Concept Level","Reading a Technical RFC","Evaluating a Pull Request as a PM","Reviewing an Engineering Estimate — What to Ask","Full-Stack Capstone: Reading a Real Codebase","Full-Stack Capstone: Writing Technical Requirements","Full-Stack Capstone: Evaluating a Build vs Buy Decision","Advanced Evaluation: Spotting Scope Creep in a Spec","Advanced Evaluation: Reading a Postmortem","Advanced Evaluation: Sitting in on a Code Review","Advanced Evaluation: Estimating Engineering Effort","Advanced Evaluation: Technical Debt Triage"],
-DSA: ["Linked Lists: Singly Linked List","Linked Lists: Doubly Linked List","Linked List Problems (Reverse, Cycle Detection)","Stacks: Concept & Implementation","Stack Problems (Valid Parentheses, Min Stack)","Queues: Concept & Implementation","Circular Queues & Deques","Stack/Queue Applications","Hash Maps Deep Dive","Hash Map Problems (Two Sum, Anagrams)","Hash Set Use Cases","Recursion Deep Dive","Recursion vs Iteration","Backtracking Introduction","Backtracking: Subsets & Permutations","Trees: Terminology & Structure","Binary Trees: Implementation","Tree Traversal (Inorder/Preorder/Postorder)","Tree BFS (Level Order Traversal)","Tree Height & Depth Problems","Binary Search Trees (BST)","BST Insert, Delete & Search","Balanced Trees Concept (AVL)","Tries: Introduction & Autocomplete Use Case","Heaps Deep Dive","Priority Queue Problems","Graphs: Representation (List/Matrix)","Graph BFS","Graph DFS","Graph Traversal Problems — Concept Level","Connected Components","Cycle Detection in Graphs","Topological Sort","Dijkstra's Algorithm — Concept Level","Union-Find (Disjoint Set)","Minimum Spanning Tree Concepts","Two Pointers Technique","Sliding Window Technique","Fast & Slow Pointers (Cycle Detection)","Prefix Sum Technique","Bit Manipulation Basics","Dynamic Programming: Memoization vs Tabulation","DP: Fibonacci & Climbing Stairs","DP: Coin Change","DP: 0/1 Knapsack","DP: Longest Common Subsequence","Greedy Algorithms Introduction","Interval Problems (Merge Intervals)","Matrix Traversal Problems","String Matching — Concept Level","System Design: Scalability Basics","System Design: Load Balancing","System Design: Caching Strategies","System Design: Database Sharding","System Design: URL Shortener (classic case study)","System Design: Rate Limiter","System Design: Chat System","System Design: Recommendation System (PM-relevant)","System Design: Feed Ranking System (PM-relevant)","System Design: Search System (PM-relevant)","Reading a System Design Doc","Evaluating Trade-offs: Consistency vs Availability","Evaluating Trade-offs: Latency vs Cost","Evaluating Trade-offs: Build vs Buy Infrastructure","Capacity Planning — Concept Level","Database Indexing — Why Queries Get Slow","Sharding & Replication — Concept Level","Microservices vs Monolith — Trade-offs","API Gateway & Service Mesh — Concept Level","Event-Driven Architecture — Concept Level","Message Queues — Concept Level","CAP Theorem — What It Means for Product Decisions","Scalability Case Study: A Real Outage","Reading an Incident Postmortem","Time Complexity Drilling — Interview-Style","Space Optimization Techniques — Concept Level","Advanced Graph Algorithms — Concept Level (Floyd-Warshall)","A* Search Algorithm — Concept Level","Randomized Algorithms — Concept Level","Mock Technical Interview (As the Interviewer)","Evaluating a Candidate's System Design Answer","Estimating System Cost from an Architecture Diagram","Reading a Load Test Report","Reading a Database Query Plan","When to Say 'This Needs a Redesign'","Technical Risk Assessment for a Roadmap Item","System Design: AI Inference Pipeline","System Design: RAG Pipeline at Scale","System Design: Multi-Tenant SaaS Architecture","System Design: Real-Time Collaboration Feature","System Design: Payments System — Concept Level","System Design: Notification System","Reviewing an Architecture Decision Record (ADR)","Weak-Spot Review: Pick Your Shakiest Topic","Mock Interview: Full System Design Round","Mock Interview: Full System Design Round 2"],
-BUS: ["Business Models 101 (How Companies Make Money)","Revenue Models: Subscription vs Transactional vs Ads","Reading a P&L Statement (Profit & Loss)","Reading a Balance Sheet","Unit Economics Deep Dive (CAC, LTV, Payback)","Break-Even Analysis","SWOT Analysis Practice","Porter's Five Forces Framework","Industry & Market Analysis","Competitive Strategy Basics","Marketing Fundamentals: The 4 Ps","Branding & Positioning Basics","Sales Fundamentals: The Sales Funnel","B2B vs B2C Business Models","Startup Fundamentals: Idea to MVP","Fundraising Basics: Seed to Series A","Startup Valuation Basics","Business Case Writing","Financial Projections Basics","Pricing Strategy Deep Dive","Negotiation Fundamentals","Business Communication: Emails & Memos","Reading a Company's Annual Report","Economics 101: Supply & Demand","Operations Management Basics","Business Ethics & Corporate Governance","Case Study: A Business Failure","Case Study: A Business Turnaround","Case Interview Practice: Market Sizing","Case Interview Practice: Profitability","Business Plan: Executive Summary","Business Plan: Financial Plan","Growth Strategy: Ansoff Matrix","Blue Ocean Strategy Applied to Business Models","Lean Startup Methodology","Business Model Canvas Practice","Customer Acquisition Strategy","Customer Retention Strategy","Partnerships & Business Development","Understanding Venture Capital","International Business Basics","Business Risk Management","Analyzing a Tech Company's Business Model","Analyzing an AI Company's Business Model (OpenAI/Anthropic)","Investing Basics for Financial Literacy","Pitch Deck: Structure","Pitch Deck: Storytelling","Practice Pitch: Present Your AI Product Idea","Company Building: Org Design Basics","Company Building: Hiring Your First 10 People","Scaling: Operational Bottlenecks","Scaling: Process vs Speed Trade-offs","Fundraising: Reading a Term Sheet","Fundraising: Cap Table Basics","M&A Basics: Why Companies Get Acquired","Corporate Strategy vs Business Unit Strategy","International Expansion Playbook","Localization Strategy for Products","Crisis Management: Reading a PR Crisis","Strategy Capstone: Planning","Strategy Capstone: Research","Strategy Capstone: Recommendations","Strategy Capstone: Presentation"],
-DA: ["Spreadsheets Deep Dive: Formulas & Functions","Pivot Tables Mastery","Data Cleaning Techniques","SQL Basics: SELECT, WHERE, ORDER BY","SQL: JOINs (Inner, Left, Right, Full)","SQL: GROUP BY & Aggregate Functions","SQL: Subqueries","SQL: Window Functions","SQL Practice Problem Set 1","SQL Practice Problem Set 2","Statistics Basics: Mean, Median, Mode, Variance","Statistics: Distributions (Normal, Binomial)","Statistics: Standard Deviation & Z-Scores","Hypothesis Testing Basics","A/B Test Analysis: Statistical Significance","Confidence Intervals Explained","Correlation vs Causation","Regression Analysis Basics","Data Visualization Principles","Charts: Bar, Line, Pie — When to Use What","Dashboard Design Principles","Product Analytics Tools Overview (Amplitude/Mixpanel)","Funnel Analysis: Deep Dive","Cohort Analysis: Deep Dive","Retention Curves & Analysis","AARRR Metrics Framework","North Star Metric: Deep Application","OKRs: Setting Metrics That Matter","Building a Metrics Dashboard (Mock Data)","Public Dataset Exploration","Public Dataset: Drawing Insights","Writing a Data-Driven Report","Storytelling with Data: Best Practices","KPI Design: Choosing the Right Metrics","Experimentation: Designing an A/B Test","Experimentation: Reading Test Results","Forecasting Basics: Trend Analysis","Building a Simple Forecast Model","Data Quality: Spotting Bad Data","Survey Design & Analysis","Customer Segmentation Analysis","RFM Analysis (Recency, Frequency, Monetary)","Building a Churn Analysis","Acquisition Channel Analysis","SQL + Product Case Study 1","SQL + Product Case Study 2","Analytics Case Interview Practice","Analytics Report: Planning","Analytics Report: Analysis","Analytics Report: Presentation","Advanced Formulas (INDEX/MATCH)","AI Product Metrics: Token Costs & Latency Dashboards","AI Product Metrics: Model Quality & Eval Scores","Prediction & Recommendation Metrics","Analytics Capstone: Dataset Selection","Analytics Capstone: Cleaning & Exploration","Analytics Capstone: Analysis & Insights","Analytics Capstone: Dashboard Build","Analytics Capstone: Presentation & Write-Up"]
-};
+// Q2: Depth (cycles 16-30)
+{t:"A/B Testing & Experimentation Thinking", learn:"What to test, when to test, statistical significance, sample size. Why gut instinct isn't enough. Peeking problem.", practice:"Design 3 A/B tests for an AI feature. Write the hypothesis and success criterion for each.", build:"Calculate sample size for one test. Use an online calculator.", review:"When would you run a test? When wouldn't you?"},
+{t:"Feature Prioritization: MoSCoW & RICE", learn:"MoSCoW (Must/Should/Could/Won't). RICE (Reach, Impact, Confidence, Effort). Scoring frameworks.", practice:"Take 10 AI feature ideas. Sort by MoSCoW. Then score by RICE. Where do they diverge?", build:"Justify why each 'Must Have' truly is.", review:"Have you ever pushed back on a prioritization decision? Why?"},
+{t:"Writing User Stories & Acceptance Criteria", learn:"Story format: 'As a ___, I want ___ so that ___.' Acceptance criteria: specific, testable, independent.", practice:"Write 8 user stories for your AI product, covering happy path and 2 edge cases each.", build:"For each story, write 5-7 acceptance criteria.", review:"Could an engineer implement these without asking you questions? Test it."},
+{t:"Definition of Done & Launch Readiness", learn:"DoD is a team agreement. What counts as 'done'? Code review, testing, docs, monitoring setup, launch plan.", practice:"Draft a DoD checklist for an AI feature. What's on it?", build:"Create a launch readiness checklist: engineering, design, marketing, support angles.", review:"What surprises QA or support if you don't do it pre-launch?"},
+{t:"Working with Design: Feedback & Critique", learn:"How to give design feedback. What matters (flow, clarity, consistency) vs what doesn't (your personal taste). Design systems.", practice:"Review 3 design mockups. Write specific, actionable feedback on each.", build:"Design 2 different UIs for the same feature. Critique both objectively.", review:"Which design won? Could you justify it to a skeptical stakeholder?"},
+{t:"Metrics & KPI Definition", learn:"North Star vs leading/lagging metrics. Metric hierarchy: engagement → retention → growth. Guardrails (don't break quality).", practice:"Define a metric set for your AI product: 1 north star, 3 leading indicators, 3 guardrails.", build:"Chart what these metrics should look like over 12 months.", review:"Are these metrics defensible to a data analyst? Why?"},
+{t:"Dashboards & Data Literacy for PMs", learn:"How to read a dashboard. SQL basics (SELECT, WHERE, GROUP BY). Knowing what you don't know.", practice:"Study 3 product dashboards. Write down what each metric means and why it matters.", build:"Sketch a dashboard for your AI product: what's on it, why, refresh cadence?", review:"What would you want to know that isn't on this dashboard?"},
+{t:"Retention & Churn Fundamentals", learn:"Why retention > acquisition for profitability. Churn types: voluntary, involuntary. Cohort analysis basics.", practice:"Sketch a retention curve for an AI product. Where would you expect dropoff?", build:"Write 3 feature ideas specifically to improve day-1 retention.", review:"How would you measure whether these actually work?"},
+{t:"Go-to-Market Strategy Basics", learn:"Target audience, positioning, channels, launch timing, pricing. GTM is not launch; it's the first 90 days.", practice:"Design a GTM strategy for your AI product: who first, why, how do they find you, how do you measure success.", build:"Create a launch week timeline with daily tactics.", review:"What would break if you skipped any part of this?"},
+{t:"Pricing Strategy for AI Products", learn:"Pricing models: per-token, per-API-call, per-seat, freemium, metered. Unit economics. Anchor effects.", practice:"Define 3 different pricing strategies for the same AI product. Compare revenue potential and user friction.", build:"Write a pricing memo: what you'd charge, why, how you'd defend it.", review:"How does pricing affect your target customer? Is that intentional?"},
+{t:"Building a Product Roadmap: The Narrative", learn:"Roadmap isn't just a list. It's a story: where you are, where you're going, why it matters. Themes.", practice:"Read 2 public roadmaps. Write down what they're emphasizing and what they're hiding.", build:"Build a 12-month roadmap for your AI product that tells a clear story.", review:"If someone read only your roadmap title, would they get it? Test it."},
+{t:"Roadmap Communication & Buy-In", learn:"How to present a roadmap. Getting stakeholders to understand trade-offs, not just features. Managing expectations.", practice:"Give a 5-minute roadmap pitch. Record it. Watch it. Where did you lose people?", build:"Revise your pitch. What changed?", review:"What objections do you anticipate? How would you answer them?"},
 
-function templateBlocks(subj, title){
-  if(subj==="JS") return {
-    learn:`Study ${title}: the core concept, mental model, and 2–3 short reference examples — read at the depth a PM needs to evaluate it, not necessarily ship it.`,
-    practice:`Drill ${title} with 6–8 targeted exercises or a close read of real code until the pattern feels familiar.`,
-    build:`Apply ${title} inside a small script, or write a one-paragraph explanation you could give a non-technical stakeholder.`,
-    review:`Write 3 notes on ${title}: one gotcha, one use case, one thing to revisit.`
-  };
-  if(subj==="DSA") return {
-    learn:`Study how ${title} works: the core idea, complexity, and a worked example — with an eye toward what it costs to build.`,
-    practice:`Solve or trace 4–6 problems/examples using ${title}, starting easy and increasing difficulty.`,
-    build:`Implement ${title} from scratch, or write the trade-off summary you'd give an engineer proposing it.`,
-    review:`Note when ${title} is the right tool to reach for, and its complexity trade-offs.`
-  };
-  if(subj==="PM") return {
-    learn:`Study ${title}: what it is, when PMs use it, and a real example from a product you know.`,
-    practice:`Apply ${title} directly to an AI product idea you're tracking — write it out fully.`,
-    build:`Turn today's work on ${title} into a one-page artifact (doc, table, or diagram).`,
-    review:`Note how ${title} would change a real product decision you've seen made.`
-  };
-  if(subj==="BUS") return {
-    learn:`Study ${title}: the core concept and a real business example it shows up in.`,
-    practice:`Work through 2–3 exercises or mini-cases applying ${title}.`,
-    build:`Apply ${title} to a real company or your own AI product idea — write it out fully.`,
-    review:`Note how ${title} connects to a decision a PM would actually make.`
-  };
-  if(subj==="DA") return {
-    learn:`Study ${title}: the core concept and why it matters for product decisions.`,
-    practice:`Work through 3–5 exercises or queries applying ${title}.`,
-    build:`Apply ${title} to a real or sample dataset and write down what you find.`,
-    review:`Note one product decision ${title} could actually inform.`
-  };
-  return {
-    learn:`Study ${title}: the core idea and why it matters for working with LLMs day to day.`,
-    practice:`Test ${title} hands-on with 3–5 prompts or examples, comparing results.`,
-    build:`Apply ${title} to a real prompt or mini-project you're actually using.`,
-    review:`Note one surprising result and one open question about ${title}.`
-  };
-}
-function roundBlocks(title){
-  return {
-    learn:`Revisit ${title} at a deeper level — push into edge cases, nuance, or harder variations this round.`,
-    practice:`Work through fresh practice on ${title}, deliberately harder than last time.`,
-    build:`Apply ${title} to something more ambitious than before, testing real retention.`,
-    review:`Note how much stronger your grasp of ${title} feels compared to when you first learned it.`
-  };
+// Q3: Application (cycles 31-45)
+{t:"AI Product Case Study: ChatGPT", learn:"Why ChatGPT succeeded. Strategy, positioning, community, monetization. What changed the world.", practice:"Timeline ChatGPT from research paper to 100M users. What were the key moves?", build:"List 3 things ChatGPT did that surprised you. Why do you think they did each?", review:"What did OpenAI optimize for that typical products don't?"},
+{t:"AI Product Case Study: GitHub Copilot", learn:"How Copilot positioned itself in the dev tool market. Freemium model. Expanding use cases.", practice:"Map Copilot's evolution: 2021 technical preview → 2024 Copilot in everything. What was the strategy?", build:"Write a PM brief for 'Copilot for Writers' (hypothetical). Would you build it?", review:"Why did Copilot succeed where other AI dev tools stumbled?"},
+{t:"Shipping AI Features in Non-AI Products", learn:"When to add AI to an existing product. Seamless integration. Feature flagging & rollout. Cost & latency.", practice:"Pick a non-AI product. Design an AI feature that feels like it belongs. Where would you hide cost?", build:"Write a PRD for shipping that feature to 10% of users first.", review:"What's the biggest risk of getting it wrong?"},
+{t:"API Product Thinking for AI", learn:"LLM API providers (Anthropic, OpenAI, Mistral). Developer experience. Pricing models. Competitive differentiation.", practice:"Use 3 different LLM APIs. Which was best to use? Why? Which charged least clearly?", build:"Write a positioning memo: 'Why a startup should use [model] instead of [competitor].'", review:"What would make you switch APIs?"},
+{t:"Prompt Engineering as a Product", learn:"Prompt marketplaces, prompt ops, prompt versioning. Is prompting a sustainable moat? Probably not.", practice:"Build 5 prompts for the same task (e.g., code review). Which is best? Why? How would you version it?", build:"Design a 'prompt management' tool. Who uses it? What problem does it solve?", review:"Is prompt engineering a product, or just a technique?"},
+{t:"RAG (Retrieval-Augmented Generation) Thinking", learn:"How RAG works: retrieve context, pass to LLM, generate. Why it matters: fresher data, grounded answers, fewer hallucinations.", practice:"Sketch a RAG architecture for a customer support chatbot. What gets retrieved? How?", build:"Write a PRD for building this chatbot.", review:"What's the biggest failure mode? How do you test for it?"},
+{t:"Fine-Tuning vs Prompt Engineering vs RAG", learn:"When to invest in each. Fine-tuning costs, training time, latency trade-offs. Prompt engineering is fast. RAG is flexible.", practice:"Compare the 3 approaches for 3 different use cases. Build a decision matrix.", build:"For your AI product idea, decide which approach fits. Justify it.", review:"Could you explain this choice to an engineer in 2 minutes?"},
+{t:"Evaluating LLM Model Choices", learn:"Claude vs GPT-4 vs open-source (Llama, Mistral). Capability, cost, latency, moat, compliance. Benchmarks.", practice:"Compare Claude 3 and GPT-4 on 5 different tasks. Score each on quality, speed, cost.", build:"Write a memo: 'We should use [model]' with specific reasoning.", review:"How would you know if you made the wrong choice?"},
+{t:"Cost Optimization in AI Products", learn:"Token counting. Caching strategies. Batch processing. When to use cheaper models. Edge computing. Data centers.", practice:"Calculate the monthly cost of your AI product at 10k, 100k, 1M users. Where does cost explode?", build:"Propose 3 cost-optimization strategies. What's the trade-off for each?", review:"Would you ever turn away a customer to keep unit economics sane?"},
+{t:"Latency & Streaming in AI Products", learn:"Why latency matters for user experience. Streaming responses. Perceived speed. Token-by-token rendering.", practice:"Use an AI app. Note where it feels fast vs slow. Is it about absolute speed or perceived speed?", build:"Design a UI that makes a 5-second response feel fast.", review:"Does streaming always help? When might it hurt?"},
+{t:"Real-Time AI Features", learn:"WebSockets, server-sent events (SSE). Keeping state. Handling disconnects. Cost of always-on.", practice:"Design a real-time collaborative document editor with AI assistance. How would the tech work?", build:"Spec out the cost, latency, and complexity trade-offs.", review:"Is this worth building, or would batch processing suffice?"},
+{t:"Monitoring & Observability for AI Systems", learn:"LLM observability tools (Langchain, Traceloop, etc.). Logging prompts, outputs, tokens, costs, latency. Privacy concerns.", practice:"Set up monitoring for one AI API call. Track prompt, response, tokens, cost.", build:"Design a monitoring dashboard: what do you watch? What alerts you?", review:"What metric would tell you something's broken?"},
+{t:"Production AI: Fallbacks, Circuit Breakers, Graceful Degradation", learn:"What to do when the LLM is slow, expensive, or refusing. Fallback logic. When to turn off AI.", practice:"Design 3 different fallback strategies for an AI feature. When would you use each?", build:"Write a playbook: 'When does this feature gracefully degrade?'", review:"Have you ever shipped a feature that broke spectacularly? What would you do differently?"},
+
+// Q4: Mastery (cycles 46-60)
+{t:"AI Ethics & Responsible AI", learn:"Bias, fairness, transparency, accountability. Regulatory landscape (EU AI Act, etc.). Red-teaming. Prompt injection.", practice:"Take an AI product. Find 5 ways it could go wrong ethically.", build:"Write an ethics checklist for your AI product.", review:"Which risk keeps you up at night?"},
+{t:"Bias & Fairness in AI Systems", learn:"Training data bias, model bias, measurement bias. How bias gets encoded. Audit trails.", practice:"Find 3 examples of biased AI outputs in the wild. Root-cause each.", build:"Design a bias-testing framework for your AI product.", review:"How would you know if your product was biased?"},
+{t:"AI Safety & Adversarial Robustness", learn:"Jailbreaking, adversarial prompts, hallucinations, toxic outputs. When systems fail in high-stakes domains.", practice:"Try to 'jailbreak' an AI system. Document what works. Propose fixes.", build:"Design safety measures for an AI system in a sensitive domain (healthcare, finance, law).", review:"Is perfect safety possible? What's acceptable?"},
+{t:"Scaling AI Products: Infrastructure", learn:"GPU provisioning, load balancing, rate limiting, caching. When vertical scaling stops working.", practice:"Design infrastructure for an AI product at 10k, 100k, 1M daily users.", build:"Calculate infrastructure cost at each scale. Where does it get expensive?", review:"When would you switch from API-based to self-hosted?"},
+{t:"International & Regulatory Landscape", learn:"EU AI Act, GDPR for LLMs, data residency, compliance. Regional AI preferences (EU prefers open-source).", practice:"Pick 3 countries. How would you adapt an AI product for each?", build:"Write a compliance checklist for a global AI product.", review:"What's your biggest regulatory risk?"},
+{t:"Building AI Teams & Organizational Structure", learn:"PM + ML Engineer vs PM + Data Scientist. What skills you need on your team. Hiring for AI.", practice:"Design an org chart for an AI product team. What roles?", build:"Write a job description for an AI product manager.", review:"What would you want to learn before hiring into this role?"},
+{t:"Hiring & Onboarding for AI Expertise", learn:"What to look for in AI hires. Red flags. Generalist vs specialist. Building culture.", practice:"Design an interview for an AI engineer at your startup.", build:"Sketch an onboarding plan for a new AI PM.", review:"How would you know if someone's ready to lead AI products?"},
+{t:"AI Partnerships & Integrations", learn:"Embedding third-party LLMs (vs building your own). APIs vs fine-tuning partners. Revenue share.", practice:"Evaluate 5 different API providers for a partnership. Spreadsheet it.", build:"Negotiate a deal with one (hypothetically). What terms do you push for?", review:"When does partnership make sense vs building in-house?"},
+{t:"Building a Moat in AI", learn:"What's actually defensible? Models are commoditizing. Data is hard to get. UX matters. Community matters.", practice:"List 5 AI startups. What's their actual moat? Is it durable?", build:"Design a moat for your AI product idea.", review:"In 5 years, what will still be true about this moat?"},
+{t:"Fundraising for AI Startups", learn:"Investor narrative. Market size arguments. Unit economics. Competitive positioning. The 'magic' pitch.", practice:"Pitch your AI product to an AI VC. Record it. Critique yourself.", build:"Revise. Pitch again.", review:"What question did you dodge? Can you answer it better?"},
+{t:"Financial Modeling for AI Products", learn:"Churn, CAC, LTV. Margin impact of API costs. How to model profitability.", practice:"Build a 3-year financial model for your AI product. Assume 10% MoM growth.", build:"Stress-test it: what breaks your unit economics?", review:"At what revenue do you think you'd stop losing money?"},
+{t:"Long-Term AI Product Strategy", learn:"5-year thinking. Will this AI moat exist? Will regulation change? Will models shift? Antifragile product design.", practice:"Write a 5-year strategy for an AI product, assuming things change dramatically.", build:"Identify the 3 biggest assumptions. How would you stress-test each?", review:"What would you change if you knew the future?"},
+{t:"Saying No: Scope, Priorities, & Constraints", learn:"You will have more ideas than time. How to kill features gracefully. How to explain why.", practice:"List 10 feature ideas for your AI product. Kill 8. Justify the kills.", build:"Write the 'why we're not doing X' memo.", review:"How do you explain this to the person who proposed it?"},
+{t:"Communicating Uncertainty & Technical Complexity", learn:"How to tell execs 'we don't know' clearly. Monte Carlo estimates. Cone of uncertainty. Narrative honesty.", practice:"Present a technical roadmap with honest uncertainty. Record it.", build:"Critique yourself: did you muddy the message or clarify it?", review:"When is uncertainty a sign you're not ready to ship?"}
+];
+
+// ========== DEEP AI CURRICULUM (365 days / 6-day cycle = ~61 cycles) ==========
+const AI_TOPICS = [
+// Q1: Foundation (cycles 0-15)
+{t:"What is an LLM? (Deep)", learn:"Neural networks, transformers, attention mechanism (conceptual level, not math). Tokens. Scaling laws.", practice:"Read: 3Blue1Brown's transformer video + Andrej Karpathy's 'State of GPT'. Take notes.", build:"Explain a transformer to someone with no ML background. Use an analogy.", review:"Where did your analogy break down?"},
+{t:"Tokens, Context Windows & Cost", learn:"Token economics: what counts as a token, why subword tokenization exists. Context window limits and implications. Per-token pricing.", practice:"Tokenize 5 different strings using an online tokenizer. Notice patterns.", build:"Calculate the monthly cost of your AI product using 1M API calls at varying token counts.", review:"At what scale do tokens become your biggest cost lever?"},
+{t:"Sampling Parameters: Temperature, Top-p, Repetition Penalty", learn:"How each parameter shifts output distribution. Temperature (creativity). Top-p (diversity). Repetition penalty (variety). Defaults vs extremes.", practice:"Use the same prompt at temperature 0, 0.7, 1.5. Compare outputs. Do it 10 times.", build:"Pick a use case. Optimize its temperature. Can you predict output quality?", review:"What happens when you push parameters to extremes?"},
+{t:"Prompting Fundamentals: Clarity, Examples, Format", learn:"Prompt structure: role, task, examples, format. The CoT (chain of thought) technique. System prompts.", practice:"Write 3 versions of the same prompt: bad, OK, excellent. Test each. Measure output quality.", build:"Design a prompt for a real task you do weekly. Use it daily for a week.", review:"Did output quality improve? What changed?"},
+{t:"Prompting for Code & Technical Tasks", learn:"Code prompting specifics: 'import' statements, language hints, testing. When to ask for pseudocode first.", practice:"Generate code in 3 languages using the same prompt. Note where it fails.", build:"Write a prompt that reliably produces correct, runnable code in your language of choice.", review:"What kinds of bugs does the model introduce most often?"},
+{t:"Prompting for Analysis & Reasoning", learn:"Few-shot prompting. Chain-of-thought for complex reasoning. Self-consistency (prompt multiple times, aggregate).", practice:"Design a complex prompt (e.g., 'analyze this market opportunity'). Run it 5 times. Compare outputs.", build:"Use self-consistency: does aggregating multiple runs reduce errors?", review:"When is running multiple times worth the cost?"},
+{t:"Hands-On: Building a Prompt Evaluation Framework", learn:"How to measure prompt quality objectively. Rubrics, benchmarks, A/B testing prompts.", practice:"Create a rubric for evaluating output quality (e.g., 1-5 scale with criteria).", build:"Test 3 prompt versions against your rubric. Score each.", review:"Did the rubric help you pick the best one? Or was it arbitrary?"},
+{t:"Few-Shot & In-Context Learning", learn:"Zero-shot vs few-shot. How examples improve performance. Order matters. Quality of examples matters.", practice:"Test a task with 0, 1, 3, 5 examples. Does output quality plateau?", build:"Find the minimal set of examples that gets good results.", review:"Why does few-shot work at all? (Hint: memorization or learning?)"},
+{t:"System Prompts & Role-Playing", learn:"System prompts shape behavior, tone, guardrails. How LLMs respond to different 'personas'.", practice:"Write 3 system prompts for the same task. Use 5 different queries with each. Compare tone.", build:"Design a system prompt that reliably produces output in your target style.", review:"How much does system prompt matter vs the user query?"},
+{t:"Function Calling / Tool Use", learn:"How LLMs call external tools. Why this matters: grounding in reality, pulling fresh data. API specs.", practice:"Design a tool schema (name, params, description) for 3 different tools.", build:"Test function calling: does the model pick the right tool? Always?", review:"When does the model get confused about which tool to use?"},
+{t:"Structured Output & JSON Mode", learn:"Getting reliable JSON / structured output. Constraints. Why this matters for systems.", practice:"Prompt for JSON in 3 ways: raw, with examples, with schema. Compare reliability.", build:"Build a system that always outputs valid JSON (test it 20 times).", review:"When did it break? Why?"},
+{t:"Guardrails & Content Filtering", learn:"Detecting toxic/harmful prompts. Filtering outputs. When to refuse. Trade-offs (safety vs utility).", practice:"Design 5 test cases to check if your guardrails work.", build:"Write a content policy for your AI product.", review:"What false positives would frustrate your users?"},
+{t:"Embeddings Intro: Vectors & Similarity", learn:"What embeddings are, how they encode meaning. Vector similarity (cosine, dot product). Why they matter.", practice:"Generate embeddings for 10 sentences. Compute similarity scores. Do similar sentences have high scores?", build:"Find the 3 most similar documents to a query using embeddings.", review:"What surprised you about similarity? Did the model get it right?"},
+{t:"Semantic Search & Vector Databases", learn:"Moving beyond keyword search. Why vectors work. Vector database basics (Pinecone, Weaviate, Chroma).", practice:"Index 50 documents into a vector DB. Run 10 semantic searches. Grade the results.", build:"Compare semantic search vs keyword search on the same queries.", review:"When would you use each? When do they diverge?"},
+{t:"RAG Basics: Retrieval-Augmented Generation", learn:"Why RAG matters: grounding, freshness, hallucination reduction. Basic RAG pipeline: index → retrieve → augment → generate.", practice:"Build a tiny RAG system: index 10 documents, ask 5 questions, evaluate answers.", build:"Write a PRD for a RAG-based product (e.g., customer support chatbot).", review:"What's the biggest failure mode you can think of?"},
+
+// Q2: Depth (cycles 16-30)
+{t:"Advanced Prompting: Structured Problem-Solving", learn:"ReAct (Reasoning + Acting), prompt chaining, multi-step reasoning. When to use which.", practice:"Design a complex prompt that breaks a problem into steps. Test it.", build:"Chain 3 prompts together: first generates a plan, second executes, third reviews.", review:"Did chaining improve output? What's the cost in tokens?"},
+{t:"Self-Consistency & Ensemble Methods", learn:"Generate-and-aggregate: run a prompt N times, score outputs, pick the best.", practice:"Test a tricky question 5 ways. Aggregate results. Is the aggregate better than any single run?", build:"Design a voting system for outputs.", review:"At what point is running multiple times not worth the cost?"},
+{t:"Fine-Tuning Concepts & When to Use It", learn:"When prompt engineering stops working. When you should fine-tune. Cost, time, latency trade-offs.", practice:"Document 20 examples of your ideal input-output behavior.", build:"Estimate: would fine-tuning or prompt engineering be better for your use case?", review:"Have you ever seen a fine-tuned model in production? What was it for?"},
+{t:"LoRA & Parameter-Efficient Fine-Tuning", learn:"Why fine-tuning can be expensive. LoRA (Low-Rank Adaptation): same quality, 1/100 the cost.", practice:"Conceptually understand how LoRA works (read one medium-depth article).", build:"Sketch a comparison: full fine-tune vs LoRA vs prompt engineering.", review:"When is LoRA clearly the right choice?"},
+{t:"Evaluation Metrics for LLM Outputs", learn:"Automatic metrics (BLEU, ROUGE, F1) and their limitations. Human evaluation. Rubrics. Cost of evaluation.", practice:"Evaluate 10 AI outputs using 3 metrics. Which metric correlates with your gut feeling?", build:"Design a human evaluation rubric for your use case.", review:"Is human evaluation always necessary? When can you skip it?"},
+{t:"Building an Evaluation Harness", learn:"Test suite for prompts. Benchmark datasets. A/B testing prompts. CI/CD for LLMs.", practice:"Create a 10-question benchmark for your use case. Score 3 prompt versions.", build:"Automate this scoring (write a script that grades outputs).", review:"How would you know if your prompt regressed?"},
+{t:"Hallucinations: Understanding & Mitigating", learn:"Why LLMs hallucinate. Factual errors vs confabulation. Mitigation: RAG, grounding, explicit uncertainty.", practice:"Prompt an LLM to hallucinate (ask it to make something up). Analyze the output.", build:"Design 3 strategies to reduce hallucinations in your use case.", review:"Can you eliminate hallucinations? Or just reduce them?"},
+{t:"Multi-Modal Models: Vision + Language", learn:"GPT-4V, Claude's vision, image understanding. Use cases, limitations.", practice:"Run 5 queries with images through a multi-modal model. Note strengths/weaknesses.", build:"Design a use case that needs vision (not just text).", review:"What can multi-modal models do that text-only can't?"},
+{t:"Audio & Speech Models", learn:"Speech-to-text (Whisper), text-to-speech. Quality, latency, cost. Use cases.", practice:"Transcribe audio with Whisper. Test on accents, background noise.", build:"Design a use case combining audio + LLM (e.g., voice assistant).", review:"Where does audio add value vs text?"},
+{t:"Open Source Models: Llama, Mistral, Others", learn:"Commercial viability of open-source. Speed, cost, quality trade-offs. When to self-host.", practice:"Compare Llama 2 vs Claude vs GPT-4 on your use case.", build:"Estimate infrastructure cost of self-hosting a 7B or 13B model.", review:"When would you choose open-source over proprietary?"},
+{t:"Model Routing & Ensemble Strategies", learn:"Use different models for different tasks. Cheap models for easy tasks, powerful models for hard ones.", practice:"Design a routing strategy: which model for which query type?", build:"Implement routing (even pseudocode) for your use case.", review:"How much can routing save vs using one model for everything?"},
+{t:"Memory in AI Systems: Long & Short Term", learn:"Conversation history as short-term memory. External DBs as long-term memory. Vector stores for semantic memory.", practice:"Design a multi-turn conversation system. How do you maintain context?", build:"Implement context management: when do you truncate history? How?", review:"What gets forgotten that matters?"},
+{t:"Advanced RAG: Re-ranking & Query Rewriting", learn:"Naive RAG retrieves a lot. Re-ranking filters good docs. Query rewriting improves retrieval.", practice:"Implement basic RAG. Test. Add re-ranking. Test. Measure improvement.", build:"Add query rewriting: does it help? When?", review:"What's the cost-benefit of each step?"},
+
+// Q3: Application (cycles 31-45)
+{t:"Production AI: Reliability & Fallbacks", learn:"SLAs for AI. What to do when the API is down. Graceful degradation. Circuit breakers.", practice:"Design 3 different fallback strategies for an AI feature.", build:"Write a runbook: 'When does this feature degrade?'", review:"Have you ever relied on a fallback? What happened?"},
+{t:"Monitoring & Observability", learn:"Monitoring LLM costs, latency, error rates. Observability: tracing a single request through the system. Tooling (Langchain, Traceloop, custom).", practice:"Set up monitoring for 1 AI API call. What do you track?", build:"Design a monitoring dashboard for your product.", review:"What metric would alert you immediately?"},
+{t:"Cost Optimization Deep Dive", learn:"Token counting strategies, caching responses, batch processing, model selection by task, competitive pricing.", practice:"Audit your AI product's costs. Where's the biggest spend?", build:"Propose 3 optimizations. What's the trade-off for each?", review:"At what scale do you need to optimize?"},
+{t:"Latency & Performance Tuning", learn:"Where latency comes from: model inference, retrieval, networking. Caching, compression, edge compute.", practice:"Measure latency in your AI system. Identify the bottleneck.", build:"Optimize one bottleneck. Did it help?", review:"Is latency your customer's main complaint?"},
+{t:"Prompt Versioning & A/B Testing", learn:"How to version prompts. A/B testing different prompts in production. Statistical significance for AI.", practice:"Design an A/B test: does prompt A or B get better outputs?", build:"Implement A/B testing in your system (conceptually).", review:"How do you measure winner objectively?"},
+{t:"Shipping AI Features Incrementally", learn:"Gradual rollouts. Feature flags. Canary deployments. Knowing when to ship widely.", practice:"Design a phased rollout for an AI feature (10% → 50% → 100%).", build:"Write success criteria for each phase.", review:"When would you halt a rollout?"},
+{t:"API Rate Limiting & Cost Control", learn:"Why you need rate limiting. Tier-based limits. Cost caps for customers.", practice:"Design a rate limiting strategy for an AI API.", build:"Implement quota enforcement (conceptually).", review:"How do you avoid angering power users while protecting your costs?"},
+{t:"Building AI Agents: Architecture", learn:"Agent loop: sense → think → act. Decision trees, learned policies, LLM-based reasoning. Reward signals.", practice:"Design an agent for a specific task (e.g., 'book a meeting').", build:"Pseudocode the agent loop.", review:"Where would this agent fail?"},
+{t:"Agent Planning & Reasoning Patterns", learn:"ReAct agents, tool use, exploration vs exploitation. Constrained actions.", practice:"Trace an agent through 5 execution paths. Where does it go wrong?", build:"Design constraints to prevent agent failures.", review:"Do you trust the agent to act autonomously?"},
+{t:"Multi-Agent Systems", learn:"Agents collaborating or competing. Coordination, communication, consensus. Scalability.", practice:"Design 2 agents that work together to solve a task.", build:"What would they communicate? How?", review:"Is multi-agent better than single agent? When?"},
+{t:"Real-World AI Product: Research to Launch", learn:"Case study: building an AI product in a real domain (healthcare, finance, education).", practice:"Pick a domain. Research 5 competitors. What did they get right/wrong?", build:"Design your version. Why would it win?", review:"What's your riskiest assumption?"},
+{t:"Competitive Landscape: AI Products", learn:"What's winning in AI right now. Why some startups are thriving. Why others fail.", practice:"Analyze 5 hot AI startups. What's their moat?", build:"What would you build that's different?", review:"Is it about the model, the product, the community, or the founder?"},
+
+// Q4: Mastery (cycles 46-60)
+{t:"AI Ethics Deep Dive: Bias & Fairness", learn:"Sources of bias: training data, labeling, architectural. Measuring fairness. Debiasing strategies.", practice:"Find 3 examples of biased AI in the wild. Root-cause each.", build:"Design a bias audit for your AI product.", review:"Is perfect fairness possible? What's acceptable?"},
+{t:"AI Safety: Adversarial Robustness", learn:"Adversarial examples, jailbreaking, prompt injection. Red-teaming. When systems fail in high-stakes scenarios.", practice:"Try to break an AI system's safety guardrails. Document what works.", build:"Design security measures for your AI product.", review:"What's your threat model?"},
+{t:"Regulation & Compliance: EU AI Act & Beyond", learn:"EU AI Act risk tiers. GDPR implications for LLMs. Data residency. Export controls.", practice:"Classify your AI product under the EU AI Act. What's its risk tier?", build:"Design a compliance checklist.", review:"Which regulation keeps you up at night?"},
+{t:"Explainability & Interpretability", learn:"Why explanations matter (especially in regulated domains). Methods: attention visualization, LIME, SHAP.", practice:"Generate 5 explanations for an AI decision. Which feels most honest?", build:"Design an explanation UI for your product.", review:"Can users understand why the AI said what it said?"},
+{t:"Building for Scale: Infrastructure", learn:"GPU provisioning, load balancing, distributed inference. Self-hosted vs API-based.", practice:"Design infrastructure for an AI product at 1M DAU.", build:"Calculate compute cost at scale.", review:"When does self-hosting make financial sense?"},
+{t:"Scaling AI: Team & Process", learn:"Building AI-native teams. Experiment velocity. MLOps practices. Continuous evaluation.", practice:"Design team structure for an AI company. What roles?", build:"Write an onboarding doc for a new AI PM.", review:"What skills are underrated on AI teams?"},
+{t:"Data Strategy for AI Products", learn:"Why data is (sometimes) a moat. Data quality, labeling, synthetic data. Privacy in training data.", practice:"Audit your training data: what's good, what's risky?", build:"Design a data collection strategy that doesn't creep people out.", review:"When is more data always better? When is it not?"},
+{t:"Emerging Trends: Reasoning Models & o1", learn:"Models that spend more compute on reasoning (OpenAI's o1). Latency trade-offs. When reasoning matters.", practice:"Compare Claude 3 Opus vs a reasoning model on a complex task. Score output quality.", build:"When would you pay for a reasoning model vs Opus?", review:"Is thinking time always worth the latency?"},
+{t:"Emerging Trends: Autonomous Agents", learn:"Agents that run independently (not in a conversation). Long-horizon tasks. World models.", practice:"Design an autonomous agent for a real task.", build:"What would it need to succeed? What could it break?", review:"When is autonomy valuable vs just another UI?"},
+{t:"The Future of AI Products: 5-Year Outlook", learn:"Predictions: commodity LLMs, model diversity, new architectures, regulation, organizational change.", practice:"Write your own 5-year prediction about AI products. What changes?", build:"How would you adapt your product for that future?", review:"What's the one assumption you'd regret most if wrong?"},
+{t:"Building Your Unique AI POV", learn:"What do you believe about AI that most people don't? How does that shape your product choices?", practice:"Interview 5 AI leaders. What does each believe that's unpopular?", build:"Write your own AI manifesto: 3-5 core beliefs.", review:"How do these beliefs constrain your product design?"},
+{t:"Becoming an AI Expert", learn:"The journey from novice to expert. Deliberate practice. What to study next.", practice:"Take an inventory: what do you know deeply? Where are your gaps?", build:"Design your own 1-year learning plan for the next 365 days.", review:"What would make you an expert that others actually respect?"}
+];
+
+function getTopicForCycle(cycleNum, dayInCycle){
+  if(dayInCycle === 0 || dayInCycle === 2 || dayInCycle === 4){
+    // PM days
+    const idx = (cycleNum * 3) + Math.floor(dayInCycle / 2);
+    return PM_TOPICS[idx % PM_TOPICS.length];
+  } else {
+    // AI days
+    const idx = (cycleNum * 3) + Math.floor((dayInCycle - 1) / 2);
+    return AI_TOPICS[idx % AI_TOPICS.length];
+  }
 }
 
-function getTopic(subj, sessionIdx){
-  const detailed = DETAILED[subj] || [];
-  if(sessionIdx < detailed.length) return detailed[sessionIdx];
-  const extraIdx = sessionIdx - detailed.length;
-  const arr = EXTRA_TITLES[subj];
-  const cycle = Math.floor(extraIdx/arr.length);
-  const idx = extraIdx % arr.length;
-  const baseTitle = arr[idx];
-  const title = cycle>0 ? `${baseTitle} (Round ${cycle+1})` : baseTitle;
-  const blocks = cycle>0 ? roundBlocks(baseTitle) : templateBlocks(subj, baseTitle);
-  return {t:title, ...blocks};
-}
-
-// ---------- Communication (teach-back) day: built dynamically from the past week's topics ----------
-function buildCommTopic(weekLog, cycleNumber){
-  const pmEntries = weekLog.filter(e=>e.subj==="PM");
-  const otherEntries = weekLog.filter(e=>e.subj!=="PM");
-  const pmList = pmEntries.map(e=>e.title).join("; ");
-  const otherList = otherEntries.map(e=>`${e.subj} — ${e.title}`).join("; ");
-  const fullList = weekLog.map(e=>`Day ${e.day} (${e.subj}): ${e.title}`).join(" · ");
-  return {
-    t: `Teach-Back — Cycle ${cycleNumber} Recap`,
-    learn: `No new material today. Re-read your notes from the past week: ${fullList}.`,
-    practice: `Prepare a 10–15 minute teaching session covering all 4 PM concepts from this cycle (${pmList}), plus a one-line summary of the technical day (${otherList}). Write it out as if explaining to a smart friend with zero context.`,
-    build: `Record yourself teaching it out loud — phone video or audio, actually say it, don't just think it. This is where the week's concepts actually stick.`,
-    review: `Note which concept you explained shakily — that's your flag to revisit next time it comes around. Rate your teaching clarity 1–10.`
-  };
-}
-
-// ---------- Build 730 days starting Thursday Sep 10, 2026 ----------
-const startDate = new Date(2026,8,10);
-const TOTAL_DAYS = 730;
-
-let pmCounter=4, jsCounter=1, aiCounter=3, dsaCounter=4, busCounter=0, daCounter=2;
-// Counters start past what's already been completed (as of Sep 10, 2026), so nothing repeats:
-//   PM  -> done through "User Research Methods: Interviews & Surveys" (4 sessions)
-//   JS  -> done through "Variables, Data Types & Operators" (1 session)
-//   AI  -> done through "Temperature, Top-p & Max Tokens" (3 sessions)
-//   DSA -> done through "Linear Search vs Binary Search" (4 sessions)
-//   DA  -> done through "Pivot Tables Mastery" (2 sessions)
-//   BUS -> not started yet
-let weekLog = [];
-let cycleNumber = 0;
+// ---------- Build 365 days starting Monday Sep 14, 2026 ----------
+const startDate = new Date(2026, 8, 14); // Sep 14, 2026
+const TOTAL_DAYS = 365;
 
 const DAYS = [];
-for(let i=0;i<TOTAL_DAYS;i++){
+for(let i = 0; i < TOTAL_DAYS; i++){
   const d = new Date(startDate);
-  d.setDate(startDate.getDate()+i);
-
-  const cyclePos = i % 10; // 0..9
-  if(cyclePos===0) cycleNumber++;
+  d.setDate(startDate.getDate() + i);
+  
+  const cyclePos = i % 6; // 0..5
+  const cycleNum = Math.floor(i / 6);
+  
   const subj = PATTERN[cyclePos];
-  let topic;
-
-  if(subj==="COMM"){
-    topic = buildCommTopic(weekLog, cycleNumber);
-  } else {
-    if(subj==="PM")       topic = getTopic("PM", pmCounter++);
-    else if(subj==="JS")  topic = getTopic("JS", jsCounter++);
-    else if(subj==="AI")  topic = getTopic("AI", aiCounter++);
-    else if(subj==="DSA") topic = getTopic("DSA", dsaCounter++);
-    else if(subj==="BUS") topic = getTopic("BUS", busCounter++);
-    else if(subj==="DA")  topic = getTopic("DA", daCounter++);
-    weekLog.push({day:cyclePos+1, subj, title:topic.t});
-  }
-  if(cyclePos===8) weekLog = []; // reset after the teach-back day consumes it
-
-  DAYS.push({date:d, subj, topic});
+  const topic = getTopicForCycle(cycleNum, cyclePos);
+  
+  DAYS.push({date: d, subj, topic});
 }
 
 const WEEKDAYS = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
@@ -769,22 +489,23 @@ function buildCalendar(){
   const jump = document.getElementById('jump');
   const byMonth = {};
   const monthKeys = [];
-  DAYS.forEach(day=>{
-    const key = day.date.getFullYear()+"-"+day.date.getMonth();
-    if(!byMonth[key]){ byMonth[key]=[]; monthKeys.push(key); }
+  
+  DAYS.forEach(day => {
+    const key = day.date.getFullYear() + "-" + day.date.getMonth();
+    if(!byMonth[key]){ byMonth[key] = []; monthKeys.push(key); }
     byMonth[key].push(day);
   });
 
-  monthKeys.forEach(key=>{
+  monthKeys.forEach(key => {
     const monthDays = byMonth[key];
     const first = monthDays[0].date;
     const year = first.getFullYear();
     const month = first.getMonth();
-    const anchorId = "m-"+key;
+    const anchorId = "m-" + key;
 
     const jumpLink = document.createElement('a');
-    jumpLink.href = "#"+anchorId;
-    jumpLink.textContent = MONTHNAMES[month].slice(0,3)+" '"+String(year).slice(2);
+    jumpLink.href = "#" + anchorId;
+    jumpLink.textContent = MONTHNAMES[month].slice(0,3) + " '" + String(year).slice(2);
     jump.appendChild(jumpLink);
 
     const monthEl = document.createElement('div');
@@ -796,21 +517,21 @@ function buildCalendar(){
 
     const grid = document.createElement('div');
     grid.className = 'grid';
-    WEEKDAYS.forEach(wd=>{
+    WEEKDAYS.forEach(wd => {
       const wdEl = document.createElement('div');
-      wdEl.className='wd';
-      wdEl.textContent=wd;
+      wdEl.className = 'wd';
+      wdEl.textContent = wd;
       grid.appendChild(wdEl);
     });
 
     const firstWeekday = first.getDay();
-    for(let i=0;i<firstWeekday;i++){
+    for(let i = 0; i < firstWeekday; i++){
       const empty = document.createElement('div');
-      empty.className='cell empty';
+      empty.className = 'cell empty';
       grid.appendChild(empty);
     }
 
-    monthDays.forEach(day=>{
+    monthDays.forEach(day => {
       const cell = document.createElement('div');
       const subjInfo = SUBJECTS[day.subj];
       cell.className = 'cell ' + subjInfo.key;
@@ -821,7 +542,7 @@ function buildCalendar(){
         </div>
         <div class="topic">${day.topic.t}</div>
       `;
-      cell.addEventListener('click', ()=>openModal(day));
+      cell.addEventListener('click', () => openModal(day));
       grid.appendChild(cell);
     });
 
@@ -833,26 +554,31 @@ function buildCalendar(){
 function openModal(day){
   const subjInfo = SUBJECTS[day.subj];
   const modal = document.getElementById('modal');
-  const dateStr = day.date.toLocaleDateString('en-US',{weekday:'long', month:'long', day:'numeric', year:'numeric'});
+  const dateStr = day.date.toLocaleDateString('en-US', {weekday:'long', month:'long', day:'numeric', year:'numeric'});
+  
   modal.innerHTML = `
     <button class="close" onclick="closeModal()">✕</button>
     <span class="subj ${subjInfo.key}">${subjInfo.name}</span>
     <h3>${day.topic.t}</h3>
-    <div class="date-line">${dateStr} · 2.5 hour focus block</div>
-    <div class="block"><div class="lbl"><span>Learn</span><span>40 min</span></div><div class="desc">${day.topic.learn}</div></div>
-    <div class="block"><div class="lbl"><span>Practice</span><span>60 min</span></div><div class="desc">${day.topic.practice}</div></div>
-    <div class="block"><div class="lbl"><span>Build / Apply</span><span>30 min</span></div><div class="desc">${day.topic.build}</div></div>
-    <div class="block"><div class="lbl"><span>Review & Notes</span><span>20 min</span></div><div class="desc">${day.topic.review}</div></div>
+    <div class="date-line">${dateStr} · 3 hour deep focus</div>
+    <div class="block learn"><div class="lbl"><span>Learn</span><span>50 min</span></div><div class="desc">${day.topic.learn}</div></div>
+    <div class="block practice"><div class="lbl"><span>Practice</span><span>70 min</span></div><div class="desc">${day.topic.practice}</div></div>
+    <div class="block build"><div class="lbl"><span>Build / Apply</span><span>35 min</span></div><div class="desc">${day.topic.build}</div></div>
+    <div class="block review"><div class="lbl"><span>Review & Reflect</span><span>25 min</span></div><div class="desc">${day.topic.review}</div></div>
   `;
-  modal.querySelector('.subj').style.background =
-    getComputedStyle(document.documentElement).getPropertyValue('--'+subjInfo.key);
+  
+  const subjTag = modal.querySelector('.subj');
+  subjTag.style.background = getComputedStyle(document.documentElement).getPropertyValue('--' + subjInfo.key);
+  
   document.getElementById('overlay').classList.add('show');
 }
+
 function closeModal(){
   document.getElementById('overlay').classList.remove('show');
 }
-document.getElementById('overlay').addEventListener('click', (e)=>{
-  if(e.target.id==='overlay') closeModal();
+
+document.getElementById('overlay').addEventListener('click', (e) => {
+  if(e.target.id === 'overlay') closeModal();
 });
 
 buildCalendar();

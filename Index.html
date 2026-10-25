@@ -2,280 +2,101 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>AI-Expert PM Intensive — 365 Days</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#F9F7F3;
-    --card:#FFFFFF;
-    --ink:#1A1A18;
-    --ink-soft:#5A5956;
-    --line:#E8E5DF;
-    --pm:#1C3A4B;
-    --pm-bg:#E8F0F5;
-    --ai:#FF6B35;
-    --ai-bg:#FFF3E8;
-    --biz:#2D7C4F;
-    --biz-bg:#E8F3EC;
+    --paper:#F9F7F3;--card:#FFFFFF;--ink:#1A1A18;--ink-soft:#5A5956;--line:#E8E5DF;
+    --pm:#1C3A4B;--pm-bg:#E8F0F5;--ai:#FF6B35;--ai-bg:#FFF3E8;--biz:#2D7C4F;--biz-bg:#E8F3EC;
+    box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
   }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#141412;--card:#1E1E1B;--ink:#F2F0EB;--ink-soft:#A9A7A0;--line:#33322E;
+      --pm:#6FA8C4;--pm-bg:#1B2A33;--ai:#FF7F4F;--ai-bg:#33231A;--biz:#4FB27A;--biz-bg:#1A2B21;
+      color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#141412;--card:#1E1E1B;--ink:#F2F0EB;--ink-soft:#A9A7A0;--line:#33322E;
+    --pm:#6FA8C4;--pm-bg:#1B2A33;--ai:#FF7F4F;--ai-bg:#33231A;--biz:#4FB27A;--biz-bg:#1A2B21;color-scheme:dark;
+  }
+  html{scroll-padding-top:env(safe-area-inset-top,0px);}
   *{box-sizing:border-box;}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Inter',sans-serif;
-    padding:32px 20px 60px;
-  }
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;padding:32px 20px 60px;}
   .wrap{max-width:1000px;margin:0 auto;}
   header{margin-bottom:24px;}
-  .eyebrow{
-    font-family:'Space Grotesk',sans-serif;
-    font-size:12px;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    color:var(--ink-soft);
-    margin-bottom:8px;
-  }
-  h1{
-    font-family:'Space Grotesk',sans-serif;
-    font-size:36px;
-    font-weight:700;
-    margin:0 0 8px;
-    letter-spacing:-.015em;
-    color:var(--ink);
-  }
+  .eyebrow{font-family:'Space Grotesk',system-ui,sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px;}
+  h1{font-family:'Space Grotesk',system-ui,sans-serif;font-size:36px;font-weight:700;margin:0 0 8px;letter-spacing:-.015em;}
   .sub{color:var(--ink-soft);font-size:15px;line-height:1.6;max-width:720px;}
-
-  .phases{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:12px;
-    margin:28px 0 32px;
-  }
-  .phase{
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:12px;
-    padding:16px 14px;
-  }
-  .phase .p-label{font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;}
+  .phases{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:28px 0 32px;}
+  .phase{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 14px;}
+  .phase .p-label{font-family:'Space Grotesk',system-ui,sans-serif;font-size:10px;font-weight:700;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;}
   .phase .p-range{font-size:11.5px;color:var(--ink-soft);margin:3px 0 8px;font-weight:500;}
-  .phase .p-goal{font-size:13px;line-height:1.4;color:var(--ink);}
-
-  .legend{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-    margin:0 0 16px;
-  }
-  .tag{
-    display:flex;align-items:center;gap:8px;
-    font-family:'Space Grotesk',sans-serif;
-    font-size:13px;font-weight:600;
-    padding:7px 14px;border-radius:22px;
-    border:1px solid var(--line);
-    background:var(--card);
-  }
+  .phase .p-goal{font-size:13px;line-height:1.4;}
+  .legend{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 16px;}
+  .tag{display:flex;align-items:center;gap:8px;font-family:'Space Grotesk',system-ui,sans-serif;font-size:13px;font-weight:600;padding:7px 14px;border-radius:22px;border:1px solid var(--line);background:var(--card);}
   .dot{width:10px;height:10px;border-radius:50%;}
-  .dot.pm{background:var(--pm);} 
-  .dot.ai{background:var(--ai);}
-  .dot.biz{background:var(--biz);}
-
-  .cycle-strip{
-    display:flex;flex-wrap:wrap;gap:7px;
-    margin:0 0 28px;
-    font-family:'Space Grotesk',sans-serif;
-    font-size:11px;font-weight:600;color:var(--ink-soft);
-  }
-  .cycle-strip span{
-    padding:6px 11px;border-radius:7px;border:1px solid var(--line);background:var(--card);
-  }
-
-  .progress{
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:12px;
-    padding:16px 20px;
-    margin:0 0 28px;
-  }
-  .progress .p-title{
-    font-family:'Space Grotesk',sans-serif;
-    font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;
-    color:var(--ink-soft);margin-bottom:12px;
-  }
-  .progress .p-row{
-    display:flex;gap:12px;align-items:baseline;
-    font-size:13px;line-height:1.6;margin-bottom:5px;
-  }
-  .progress .p-row .p-subj{
-    font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:11px;
-    min-width:90px;flex-shrink:0;
-  }
-  .progress .p-subj.pm{color:var(--pm);} 
-  .progress .p-subj.ai{color:var(--ai);}
-  .progress .p-subj.biz{color:var(--biz);}
-
-  #jump{
-    margin-bottom:28px;
-    display:flex;flex-wrap:wrap;
-    gap:8px;
-  }
-  #jump a{
-    font-family:'Space Grotesk',sans-serif;
-    font-size:11.5px;font-weight:600;
-    padding:6px 12px;border-radius:8px;
-    background:var(--card);border:1px solid var(--line);
-    color:var(--ink-soft);text-decoration:none;
-    transition:background .15s ease;
-  }
+  .dot.pm{background:var(--pm);} .dot.ai{background:var(--ai);} .dot.biz{background:var(--biz);}
+  .cycle-strip{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 28px;font-family:'Space Grotesk',system-ui,sans-serif;font-size:11px;font-weight:600;color:var(--ink-soft);}
+  .cycle-strip span{padding:6px 11px;border-radius:7px;border:1px solid var(--line);background:var(--card);}
+  .progress{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:0 0 28px;}
+  .progress .p-title{font-family:'Space Grotesk',system-ui,sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);margin-bottom:12px;}
+  .progress .p-row{display:flex;gap:12px;align-items:baseline;font-size:13px;line-height:1.6;margin-bottom:5px;}
+  .progress .p-row .p-subj{font-family:'Space Grotesk',system-ui,sans-serif;font-weight:700;font-size:11px;min-width:90px;flex-shrink:0;}
+  .p-subj.pm{color:var(--pm);} .p-subj.ai{color:var(--ai);} .p-subj.biz{color:var(--biz);}
+  .resume{display:inline-block;margin:0 0 20px;font-family:'Space Grotesk',system-ui,sans-serif;font-size:13px;font-weight:700;padding:9px 16px;border-radius:10px;background:var(--ink);color:var(--paper);text-decoration:none;}
+  #jump{margin-bottom:28px;display:flex;flex-wrap:wrap;gap:8px;}
+  #jump a{font-family:'Space Grotesk',system-ui,sans-serif;font-size:11.5px;font-weight:600;padding:6px 12px;border-radius:8px;background:var(--card);border:1px solid var(--line);color:var(--ink-soft);text-decoration:none;transition:background .15s ease;}
   #jump a:hover{background:var(--line);}
-
   .month{margin-bottom:40px;scroll-margin-top:20px;}
-  .month h2{
-    font-family:'Space Grotesk',sans-serif;
-    font-size:20px;font-weight:700;
-    margin:0 0 14px;
-    padding-bottom:10px;
-    border-bottom:2px solid var(--ink);
-    display:inline-block;
-  }
-  .grid{
-    display:grid;
-    grid-template-columns:repeat(7,1fr);
-    gap:7px;
-  }
-  .wd{
-    font-family:'Space Grotesk',sans-serif;
-    font-size:11px;font-weight:700;
-    color:var(--ink-soft);
-    text-align:center;
-    padding-bottom:6px;
-    text-transform:uppercase;
-    letter-spacing:.08em;
-  }
-  .cell{
-    min-height:85px;
-    border-radius:11px;
-    padding:10px 9px;
-    cursor:pointer;
-    border:1.5px solid var(--line);
-    background:var(--card);
-    display:flex;flex-direction:column;justify-content:space-between;
-    transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;
-  }
-  .cell:hover{
-    transform:translateY(-3px);
-    box-shadow:0 6px 18px rgba(0,0,0,.1);
-    border-color:var(--ink-soft);
-  }
+  .month h2{font-family:'Space Grotesk',system-ui,sans-serif;font-size:20px;font-weight:700;margin:0 0 14px;padding-bottom:10px;border-bottom:2px solid var(--ink);display:inline-block;}
+  .grid{display:grid;grid-template-columns:repeat(7,1fr);gap:7px;}
+  .wd{font-family:'Space Grotesk',system-ui,sans-serif;font-size:11px;font-weight:700;color:var(--ink-soft);text-align:center;padding-bottom:6px;text-transform:uppercase;letter-spacing:.08em;}
+  .cell{min-height:85px;border-radius:11px;padding:10px 9px;cursor:pointer;border:1.5px solid var(--line);background:var(--card);display:flex;flex-direction:column;justify-content:space-between;transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;}
+  .cell:hover{transform:translateY(-3px);box-shadow:0 6px 18px rgba(0,0,0,.15);border-color:var(--ink-soft);}
   .cell.empty{visibility:hidden;pointer-events:none;}
-  .cell .num{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:var(--ink);}
-  .cell .subj{
-    font-family:'Space Grotesk',sans-serif;
-    font-size:10px;font-weight:700;
-    letter-spacing:.06em;
-    text-transform:uppercase;
-    padding:3px 8px;border-radius:6px;
-    display:inline-block;width:fit-content;
-    margin-bottom:4px;
-  }
-  .cell .topic{font-size:11.5px;line-height:1.3;color:var(--ink);opacity:.8;font-weight:500;}
-
-  .cell.pm{background:var(--pm-bg);} .cell.pm .subj{background:var(--pm);color:#fff;}
+  .cell.today{border:2.5px solid var(--ink);box-shadow:0 0 0 3px var(--line);}
+  .cell .num{font-family:'Space Grotesk',system-ui,sans-serif;font-size:14px;font-weight:700;}
+  .cell .subj{font-family:'Space Grotesk',system-ui,sans-serif;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:6px;display:inline-block;width:fit-content;margin-bottom:4px;}
+  .cell .topic{font-size:11.5px;line-height:1.3;opacity:.85;font-weight:500;}
+  .cell.pm{background:var(--pm-bg);} .cell.pm .subj{background:var(--pm);color:var(--paper);}
   .cell.ai{background:var(--ai-bg);} .cell.ai .subj{background:var(--ai);color:#fff;}
-  .cell.biz{background:var(--biz-bg);} .cell.biz .subj{background:var(--biz);color:#fff;}
-
-  .overlay{
-    position:fixed;inset:0;background:rgba(15,15,12,.6);
-    display:none;align-items:center;justify-content:center;
-    padding:20px;z-index:50;
-    backdrop-filter:blur(2px);
-  }
+  .cell.biz{background:var(--biz-bg);} .cell.biz .subj{background:var(--biz);color:var(--paper);}
+  .overlay{position:fixed;inset:0;background:rgba(15,15,12,.6);display:none;align-items:center;justify-content:center;padding:20px;z-index:50;backdrop-filter:blur(2px);}
   .overlay.show{display:flex;}
-  .modal{
-    background:var(--card);
-    max-width:560px;width:100%;
-    border-radius:16px;
-    padding:28px;
-    max-height:88vh;overflow-y:auto;
-    position:relative;
-    box-shadow:0 20px 60px rgba(0,0,0,.2);
-  }
-  .modal .subj{
-    font-family:'Space Grotesk',sans-serif;
-    font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
-    padding:5px 12px;border-radius:7px;display:inline-block;color:#fff;margin-bottom:12px;
-  }
-  .modal h3{
-    font-family:'Space Grotesk',sans-serif;
-    font-size:22px;margin:0 0 6px;line-height:1.3;font-weight:700;
-  }
+  .modal{background:var(--card);max-width:560px;width:100%;border-radius:16px;padding:28px;max-height:88vh;overflow-y:auto;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.3);}
+  .modal .subj{font-family:'Space Grotesk',system-ui,sans-serif;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:5px 12px;border-radius:7px;display:inline-block;color:#fff;margin-bottom:12px;}
+  .modal h3{font-family:'Space Grotesk',system-ui,sans-serif;font-size:22px;margin:0 0 6px;line-height:1.3;font-weight:700;}
   .modal .date-line{font-size:13px;color:var(--ink-soft);margin-bottom:20px;font-weight:500;}
   .block{margin-bottom:18px;padding-left:16px;border-left:3.5px solid;}
-  .block.learn{border-color:var(--pm);}
-  .block.practice{border-color:var(--ai);}
-  .block.build{border-color:var(--biz);}
-  .block.review{border-color:var(--ink-soft);}
-  .block .lbl{
-    font-family:'Space Grotesk',sans-serif;
-    font-size:12px;font-weight:700;
-    display:flex;justify-content:space-between;margin-bottom:4px;
-    text-transform:uppercase;letter-spacing:.05em;
-    color:var(--ink);
-  }
-  .block .desc{font-size:14px;line-height:1.6;color:var(--ink);}
-  .close{
-    position:absolute;top:18px;right:18px;
-    width:32px;height:32px;border-radius:50%;
-    border:1.5px solid var(--line);background:var(--paper);
-    cursor:pointer;font-size:16px;line-height:1;color:var(--ink-soft);
-    transition:background .15s ease, color .15s ease;
-  }
+  .block.learn{border-color:var(--pm);} .block.practice{border-color:var(--ai);} .block.build{border-color:var(--biz);} .block.review{border-color:var(--ink-soft);}
+  .block .lbl{font-family:'Space Grotesk',system-ui,sans-serif;font-size:12px;font-weight:700;display:flex;justify-content:space-between;margin-bottom:4px;text-transform:uppercase;letter-spacing:.05em;}
+  .block .desc{font-size:14px;line-height:1.6;}
+  .close{position:absolute;top:18px;right:18px;width:32px;height:32px;border-radius:50%;border:1.5px solid var(--line);background:var(--paper);cursor:pointer;font-size:16px;line-height:1;color:var(--ink-soft);}
   .close:hover{background:var(--line);color:var(--ink);}
   footer{margin-top:32px;font-size:12.5px;color:var(--ink-soft);text-align:center;line-height:1.6;}
-
-  @media (max-width: 900px){
-    .phases{grid-template-columns:repeat(2,1fr);}
-  }
-
-  @media (max-width: 750px){
-    body{padding:24px 14px 48px;}
-    h1{font-size:28px;}
-    .sub{font-size:14px;}
-    .cell{min-height:72px;padding:8px 7px;}
-    .cell .num{font-size:13px;}
+  @media (max-width:900px){.phases{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:750px){
+    body{padding:24px 14px 48px;} h1{font-size:28px;} .sub{font-size:14px;}
+    .cell{min-height:72px;padding:8px 7px;} .cell .num{font-size:13px;}
     .cell .subj{font-size:9px;padding:2px 6px;}
     .cell .topic{font-size:10.5px;-webkit-line-clamp:2;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden;}
-    .grid{gap:5px;}
-    .wd{font-size:9px;}
-    .month h2{font-size:17px;}
+    .grid{gap:5px;} .wd{font-size:9px;} .month h2{font-size:17px;}
   }
-
-  @media (max-width: 540px){
-    .phases{grid-template-columns:1fr;}
-    .phase .p-goal{font-size:12.5px;}
-    .legend{gap:8px;}
-    .tag{font-size:12px;padding:6px 11px;}
-    .cycle-strip{font-size:10px;gap:6px;}
-    .cycle-strip span{padding:5px 9px;}
-    .cell{min-height:60px;padding:6px 6px;}
-    .cell .num{font-size:12px;}
-    .cell .subj{font-size:8px;letter-spacing:.02em;}
-    .cell .topic{font-size:9.5px;line-height:1.2;-webkit-line-clamp:1;}
-    .grid{gap:4px;}
-    .wd{font-size:8px;letter-spacing:0;}
+  @media (max-width:540px){
+    .phases{grid-template-columns:1fr;} .legend{gap:8px;} .tag{font-size:12px;padding:6px 11px;}
+    .cycle-strip{font-size:10px;gap:6px;} .cycle-strip span{padding:5px 9px;}
+    .cell{min-height:60px;padding:6px;} .cell .num{font-size:12px;} .cell .subj{font-size:8px;letter-spacing:.02em;}
+    .cell .topic{font-size:9.5px;line-height:1.2;-webkit-line-clamp:1;} .grid{gap:4px;} .wd{font-size:8px;letter-spacing:0;}
     #jump a{font-size:10px;padding:5px 9px;}
-    .modal{padding:22px 18px;border-radius:14px;max-height:92vh;}
-    .modal h3{font-size:19px;}
-    .modal .date-line{font-size:12px;margin-bottom:16px;}
-    .block .desc{font-size:13.5px;}
+    .modal{padding:22px 18px;border-radius:14px;max-height:92vh;} .modal h3{font-size:19px;}
+    .modal .date-line{font-size:12px;margin-bottom:16px;} .block .desc{font-size:13.5px;}
     .close{width:30px;height:30px;top:14px;right:14px;font-size:15px;}
   }
-
-  @media (max-width: 400px){
-    .phases{grid-template-columns:1fr;}
+  @media (max-width:400px){
     .cell .topic{display:none;}
     .cell{min-height:48px;flex-direction:row;align-items:center;justify-content:space-between;}
   }
@@ -286,18 +107,19 @@
   <header>
     <div class="eyebrow">365-day intensive · 3 hrs deep focus · AI-Expert PM program</div>
     <h1>AI-Expert Product Leader</h1>
-    <div class="sub">A focused 1-year curriculum for becoming a world-class AI-driven product leader. The program integrates three critical dimensions: Product Management (strategy & design), AI Fundamentals & Applications (technology), and Business & Finance (growth & economics). Each topic deepens as cycles repeat. Core principle: to lead AI products successfully, you must master the technology, own the user experience, and understand the business model.</div>
+    <div class="sub">A focused 1-year curriculum for becoming a world-class AI-driven product leader. The program integrates three critical dimensions: Product Management (strategy &amp; design), AI Fundamentals &amp; Applications (technology), and Business &amp; Finance (growth &amp; economics). Each topic deepens as cycles repeat. Core principle: to lead AI products successfully, you must master the technology, own the user experience, and understand the business model.</div>
   </header>
 
   <div class="phases">
-    <div class="phase"><div class="p-label">Q1 · Foundations</div><div class="p-range">Sep 14 – Dec 13, 2026</div><div class="p-goal">PM essentials, LLM basics, market dynamics. First pass at strategy, technical fundamentals, and unit economics.</div></div>
-    <div class="phase"><div class="p-label">Q2 · Depth</div><div class="p-range">Dec 14, 2026 – Mar 15, 2027</div><div class="p-goal">Advanced prompting, RAG, financial modeling, competitive strategy.</div></div>
-    <div class="phase"><div class="p-label">Q3 · Application</div><div class="p-range">Mar 16 – Jun 14, 2027</div><div class="p-goal">Real product work: metrics, PRDs, go-to-market, fundraising narrative.</div></div>
-    <div class="phase"><div class="p-label">Q4 · Mastery</div><div class="p-range">Jun 15 – Sep 13, 2027</div><div class="p-goal">Leadership, ethics, production systems, organizational scaling, investor relations.</div></div>
+    <div class="phase"><div class="p-label">Q1 · Foundations</div><div class="p-range">Oct 25, 2026 – Jan 23, 2027</div><div class="p-goal">PM essentials, LLM basics, market dynamics. First pass at strategy, technical fundamentals, and unit economics.</div></div>
+    <div class="phase"><div class="p-label">Q2 · Depth</div><div class="p-range">Jan 24 – Apr 24, 2027</div><div class="p-goal">Advanced prompting, RAG, financial modeling, competitive strategy.</div></div>
+    <div class="phase"><div class="p-label">Q3 · Application</div><div class="p-range">Apr 25 – Jul 24, 2027</div><div class="p-goal">Real product work: metrics, PRDs, go-to-market, fundraising narrative.</div></div>
+    <div class="phase"><div class="p-label">Q4 · Mastery</div><div class="p-range">Jul 25 – Oct 24, 2027</div><div class="p-goal">Leadership, ethics, production systems, organizational scaling, investor relations.</div></div>
   </div>
 
   <div class="progress">
-    <div class="p-title">Your Starting Point (Sep 13, 2026)</div>
+    <div class="p-title">Your Progress · Resumed Oct 25, 2026</div>
+    <div class="p-row"><span class="p-subj pm">STATUS</span><span>Completed through Oct 8 (24 curriculum days). The Oct 8 lesson is now scheduled for Oct 25 and everything after follows in order.</span></div>
     <div class="p-row"><span class="p-subj pm">PM</span><span>New to formal product thinking; familiar with tech from engineering background</span></div>
     <div class="p-row"><span class="p-subj ai">AI</span><span>Comfortable writing prompts; want to understand the full stack</span></div>
     <div class="p-row"><span class="p-subj biz">BIZ</span><span>Learning business fundamentals; building investor and stakeholder acumen</span></div>
@@ -305,36 +127,32 @@
 
   <div class="legend">
     <div class="tag"><span class="dot pm"></span>Product Management</div>
-    <div class="tag"><span class="dot ai"></span>AI Fundamentals & Applications</div>
-    <div class="tag"><span class="dot biz"></span>Business & Finance</div>
+    <div class="tag"><span class="dot ai"></span>AI Fundamentals &amp; Applications</div>
+    <div class="tag"><span class="dot biz"></span>Business &amp; Finance</div>
   </div>
 
   <div class="cycle-strip">
-    <span>Day 1 PM: Strategy & Vision</span><span>Day 2 AI: Fundamentals</span><span>Day 3 BIZ: Market & Finance</span><span>Day 4 PM: Execution & Design</span><span>Day 5 AI: Products & Applications</span><span>Day 6 BIZ: Growth & Operations</span><span>Day 7 PM: User Research</span><span>Day 8 AI: Ethics & Production</span><span>Day 9 BIZ: Leadership & Scaling</span>
+    <span>Day 1 PM: Strategy &amp; Vision</span><span>Day 2 AI: Fundamentals</span><span>Day 3 BIZ: Market &amp; Finance</span><span>Day 4 PM: Execution &amp; Design</span><span>Day 5 AI: Products &amp; Applications</span><span>Day 6 BIZ: Growth &amp; Operations</span><span>Day 7 PM: User Research</span><span>Day 8 AI: Ethics &amp; Production</span><span>Day 9 BIZ: Leadership &amp; Scaling</span>
   </div>
 
-  <div id="jump"></div>
+  <a class="resume" id="resume" href="#">Jump to today →</a>
 
+  <div id="jump"></div>
   <div id="calendar"></div>
 
-  <footer>Send daily study logs weekly. We'll review progress and recalibrate based on what's landing. The depth comes from repetition across quarters — each pass at a topic assumes you've mastered the previous round.</footer>
+  <footer>Send daily study logs weekly. We’ll review progress and recalibrate based on what’s landing. The depth comes from repetition across quarters — each pass at a topic assumes you’ve mastered the previous round.</footer>
 </div>
 
-<div class="overlay" id="overlay">
-  <div class="modal" id="modal"></div>
-</div>
+<div class="overlay" id="overlay"><div class="modal" id="modal"></div></div>
 
 <script>
 const SUBJECTS = {
-  PM:  {name:"Product Management", key:"pm"},
-  AI:  {name:"AI Fundamentals & Products", key:"ai"},
-  BIZ: {name:"Business & Finance", key:"biz"}
+  PM:{name:"Product Management", key:"pm"},
+  AI:{name:"AI Fundamentals & Products", key:"ai"},
+  BIZ:{name:"Business & Finance", key:"biz"}
 };
-
-// 9-day cycle: PM → AI → BIZ → PM → AI → BIZ → PM → AI → BIZ
 const PATTERN = ["PM","AI","BIZ","PM","AI","BIZ","PM","AI","BIZ"];
 
-// ========== PM CURRICULUM (365 days / 9-day cycle) ==========
 const PM_TOPICS = [
 {t:"What is a Product Manager?", learn:"Your role, your leverage, your constraints. PM as a glue role: between engineering, design, marketing, business. Read: Marty Cagan on PM roles.", practice:"Interview 3 PMs at different companies. How do they describe their job?", build:"Write your own 1-page PM role definition for an AI company.", review:"How has your understanding of PM scope shifted?"},
 {t:"Product Strategy vs Roadmap Basics", learn:"Strategy = why and where. Roadmap = what and when. How they connect. Who owns what.", practice:"Reverse-engineer strategy from a company's public roadmap.", build:"Draft 6-month vision + strategy for an AI product you care about.", review:"Was defining 'why' or 'what' harder?"},
@@ -371,7 +189,6 @@ const PM_TOPICS = [
 {t:"Cross-Functional Leadership", learn:"Leading without direct reports. How PMs lead: through vision, clarity, removing blockers.", practice:"Design org collaboration model for AI product team.", build:"Write 1-pager on 'how we work together.'", review:"What could still break?"},
 ];
 
-// ========== AI CURRICULUM ==========
 const AI_TOPICS = [
 {t:"What is an LLM? (Deep)", learn:"Neural networks, transformers, attention (conceptual, not math). Tokens. Scaling laws.", practice:"Watch 3Blue1Brown transformer video + Karpathy's 'State of GPT'. Notes.", build:"Explain transformer to someone with no ML background. Use analogy.", review:"Where did analogy break down?"},
 {t:"Tokens, Context & Cost", learn:"Token economics: what counts as token, subword tokenization, context windows, per-token pricing.", practice:"Tokenize 5 strings using online tokenizer. Notice patterns.", build:"Calculate monthly cost of AI product (1M API calls, varying token counts).", review:"At what scale do tokens become biggest cost lever?"},
@@ -411,7 +228,6 @@ const AI_TOPICS = [
 {t:"Ethics Deep Dive", learn:"Bias sources, fairness measurement, debiasing. Adversarial robustness. Jailbreaking. Red-teaming.", practice:"Find 3 biased AI examples. Root-cause each.", build:"Design bias audit for your product.", review:"Perfect fairness possible? Acceptable?"},
 ];
 
-// ========== BUSINESS CURRICULUM ==========
 const BIZ_TOPICS = [
 {t:"Market Sizing: TAM/SAM/SOM", learn:"Total Addressable Market vs Serviceable vs Obtainable. Bottom-up vs top-down. Investor expectations.", practice:"Size 3 different AI markets. Use multiple approaches. Compare.", build:"Write market size memo with clear assumptions.", review:"Which assumptions would investors challenge?"},
 {t:"Unit Economics & CAC/LTV", learn:"Customer Acquisition Cost vs Lifetime Value. Payback period. Gross vs Magic Number. Why it matters.", practice:"Calculate unit economics for 3 hypothetical AI products.", build:"What CAC/LTV ratio would you need to raise funding?", review:"When do unit economics matter most?"},
@@ -444,50 +260,39 @@ const BIZ_TOPICS = [
 ];
 
 function getTopicForCycle(cycleNum, dayInCycle){
-  const pattern_pos = dayInCycle % 9;
-  const subj = PATTERN[pattern_pos];
-  
-  let idx;
-  if(subj === "PM"){
-    idx = (cycleNum * 3) + Math.floor(dayInCycle / 3);
-  } else if(subj === "AI"){
-    idx = (cycleNum * 3) + Math.floor(dayInCycle / 3);
-  } else { // BIZ
-    idx = (cycleNum * 3) + Math.floor(dayInCycle / 3);
-  }
-  
+  const subj = PATTERN[dayInCycle % 9];
+  const idx = (cycleNum * 3) + Math.floor(dayInCycle / 3);
   if(subj === "PM") return PM_TOPICS[idx % PM_TOPICS.length];
   if(subj === "AI") return AI_TOPICS[idx % AI_TOPICS.length];
-  if(subj === "BIZ") return BIZ_TOPICS[idx % BIZ_TOPICS.length];
+  return BIZ_TOPICS[idx % BIZ_TOPICS.length];
 }
 
-// ---------- Build 365 days starting Monday Sep 14, 2026 ----------
-const startDate = new Date(2026, 8, 14); // Sep 14, 2026
+// ---------- Re-based schedule ----------
+// Original curriculum began Sep 14, 2026. Oct 8 = curriculum day 24 (0-indexed).
+// Today (Oct 25, 2026) now shows that Oct 8 lesson; every later date follows in order.
+const startDate = new Date(2026, 9, 25);   // Oct 25, 2026
+const OFFSET = 24;                          // curriculum index shown on startDate
 const TOTAL_DAYS = 365;
 
 const DAYS = [];
 for(let i = 0; i < TOTAL_DAYS; i++){
   const d = new Date(startDate);
   d.setDate(startDate.getDate() + i);
-  
-  const cyclePos = i % 9; // 0..8
-  const cycleNum = Math.floor(i / 9);
-  
-  const subj = PATTERN[cyclePos];
-  const topic = getTopicForCycle(cycleNum, cyclePos);
-  
-  DAYS.push({date: d, subj, topic});
+  const j = i + OFFSET;
+  const cyclePos = j % 9;
+  const cycleNum = Math.floor(j / 9);
+  DAYS.push({date:d, subj:PATTERN[cyclePos], topic:getTopicForCycle(cycleNum, cyclePos)});
 }
 
 const WEEKDAYS = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
 const MONTHNAMES = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const todayKey = (() => { const n = new Date(); return n.getFullYear()+"-"+n.getMonth()+"-"+n.getDate(); })();
+const dayKey = d => d.getFullYear()+"-"+d.getMonth()+"-"+d.getDate();
 
 function buildCalendar(){
   const container = document.getElementById('calendar');
   const jump = document.getElementById('jump');
-  const byMonth = {};
-  const monthKeys = [];
-  
+  const byMonth = {}, monthKeys = [];
   DAYS.forEach(day => {
     const key = day.date.getFullYear() + "-" + day.date.getMonth();
     if(!byMonth[key]){ byMonth[key] = []; monthKeys.push(key); }
@@ -497,13 +302,12 @@ function buildCalendar(){
   monthKeys.forEach(key => {
     const monthDays = byMonth[key];
     const first = monthDays[0].date;
-    const year = first.getFullYear();
-    const month = first.getMonth();
+    const year = first.getFullYear(), month = first.getMonth();
     const anchorId = "m-" + key;
 
     const jumpLink = document.createElement('a');
     jumpLink.href = "#" + anchorId;
-    jumpLink.textContent = MONTHNAMES[month].slice(0,3) + " '" + String(year).slice(2);
+    jumpLink.textContent = MONTHNAMES[month].slice(0,3) + " ’" + String(year).slice(2);
     jump.appendChild(jumpLink);
 
     const monthEl = document.createElement('div');
@@ -517,33 +321,26 @@ function buildCalendar(){
     grid.className = 'grid';
     WEEKDAYS.forEach(wd => {
       const wdEl = document.createElement('div');
-      wdEl.className = 'wd';
-      wdEl.textContent = wd;
+      wdEl.className = 'wd'; wdEl.textContent = wd;
       grid.appendChild(wdEl);
     });
-
-    const firstWeekday = first.getDay();
-    for(let i = 0; i < firstWeekday; i++){
+    for(let i = 0; i < first.getDay(); i++){
       const empty = document.createElement('div');
       empty.className = 'cell empty';
       grid.appendChild(empty);
     }
-
     monthDays.forEach(day => {
       const cell = document.createElement('div');
       const subjInfo = SUBJECTS[day.subj];
-      cell.className = 'cell ' + subjInfo.key;
+      const isToday = dayKey(day.date) === todayKey;
+      cell.className = 'cell ' + subjInfo.key + (isToday ? ' today' : '');
+      if(isToday) cell.id = 'today';
       cell.innerHTML = `
-        <div>
-          <div class="num">${day.date.getDate()}</div>
-          <span class="subj">${day.subj}</span>
-        </div>
-        <div class="topic">${day.topic.t}</div>
-      `;
+        <div><div class="num">${day.date.getDate()}</div><span class="subj">${day.subj}</span></div>
+        <div class="topic">${day.topic.t}</div>`;
       cell.addEventListener('click', () => openModal(day));
       grid.appendChild(cell);
     });
-
     monthEl.appendChild(grid);
     container.appendChild(monthEl);
   });
@@ -553,37 +350,29 @@ function openModal(day){
   const subjInfo = SUBJECTS[day.subj];
   const modal = document.getElementById('modal');
   const dateStr = day.date.toLocaleDateString('en-US', {weekday:'long', month:'long', day:'numeric', year:'numeric'});
-  
   modal.innerHTML = `
     <button class="close" onclick="closeModal()">✕</button>
-    <span class="subj ${subjInfo.key}">${subjInfo.name}</span>
+    <span class="subj">${subjInfo.name}</span>
     <h3>${day.topic.t}</h3>
     <div class="date-line">${dateStr} · 3 hour deep focus (Learn 50m · Practice 70m · Build 35m · Review 25m)</div>
     <div class="block learn"><div class="lbl"><span>Learn</span><span>50 min</span></div><div class="desc">${day.topic.learn}</div></div>
     <div class="block practice"><div class="lbl"><span>Practice</span><span>70 min</span></div><div class="desc">${day.topic.practice}</div></div>
     <div class="block build"><div class="lbl"><span>Build / Apply</span><span>35 min</span></div><div class="desc">${day.topic.build}</div></div>
-    <div class="block review"><div class="lbl"><span>Review & Reflect</span><span>25 min</span></div><div class="desc">${day.topic.review}</div></div>
-  `;
-  
-  const subjTag = modal.querySelector('.subj');
-  let bgColor;
-  if(subjInfo.key === 'pm') bgColor = '#1C3A4B';
-  if(subjInfo.key === 'ai') bgColor = '#FF6B35';
-  if(subjInfo.key === 'biz') bgColor = '#2D7C4F';
-  subjTag.style.background = bgColor;
-  
+    <div class="block review"><div class="lbl"><span>Review &amp; Reflect</span><span>25 min</span></div><div class="desc">${day.topic.review}</div></div>`;
+  const colors = {pm:'#1C3A4B', ai:'#FF6B35', biz:'#2D7C4F'};
+  modal.querySelector('.subj').style.background = colors[subjInfo.key];
   document.getElementById('overlay').classList.add('show');
 }
-
-function closeModal(){
-  document.getElementById('overlay').classList.remove('show');
-}
-
-document.getElementById('overlay').addEventListener('click', (e) => {
-  if(e.target.id === 'overlay') closeModal();
-});
+function closeModal(){ document.getElementById('overlay').classList.remove('show'); }
+document.getElementById('overlay').addEventListener('click', e => { if(e.target.id === 'overlay') closeModal(); });
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
 
 buildCalendar();
+document.getElementById('resume').addEventListener('click', e => {
+  e.preventDefault();
+  const t = document.getElementById('today') || document.querySelector('.month');
+  t.scrollIntoView({behavior:'smooth', block:'center'});
+});
 </script>
 </body>
 </html>
